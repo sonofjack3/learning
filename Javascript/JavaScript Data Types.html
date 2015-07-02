@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Data Types</title>
+</head>
+<body>
+
+<!-- JavaScript data types are dynamic (type of a variable can be changed at any time by assigning a value of different type) -->
+<!-- JavaScript data types include String, Number, Boolean, Array and Object -->
+<!-- String, Number and Boolean are rather boring, let's look at Array and Object -->
+
+<!-- The following code declares an array called cars: -->
+<script type="text/javascript">
+	var cars = ["Honda", "Mazda", "Toyota"];
+</script>
+
+<p>The first element of the cars array is:</p>
+<p id="cars0"></p>
+<!-- The following code displays the first element of the cars array -->
+<script type="text/javascript">
+	document.getElementById("cars0").innerHTML = cars[0];
+</script>
+
+<!-- The following code declares an object called person -->
+<script type="text/javascript">
+	var person = {firstName:"Evan", lastName:"Jackson", age:23};
+</script>
+
+<p id="personDesc"></p>
+<!-- Use the dot operator to access elements of an object -->
+<script type="text/javascript">
+	document.getElementById("personDesc").innerHTML = person.firstName + " " + person.lastName + " is " + person.age + " years old.";
+</script>
+
+<!-- The typeof operator can be used to find the data type of a JavaScript variable -->
+<p id="dataTypes"></p>
+<script type="text/javascript">
+	document.getElementById("dataTypes").innerHTML = typeof(person) + "<br>" + typeof(person.age) + "<br>" + typeof(person.firstName) + "<br>" + typeof(cars);
+</script>
+
+</body>
+</html>
