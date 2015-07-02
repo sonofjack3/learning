@@ -1,0 +1,30 @@
+/* The background-color property specifies the background color of an element
+
+/* To set the background color of an entire page, do the following: */
+body {
+	background-color: red;
+}
+
+/* The background-image property can set a background image */
+body {
+	background-image: url("images/jon.jpg");
+}
+
+/* By default, the background-image property repeats both horizontally and vertically */
+/* The background-repeat property can set whether an image is repeated vertically, horizontally or neither */
+body {
+	background-image: url("images/jon.jpg");
+	background-repeat: no-repeat;
+}
+
+/* The background-position property sets... the... background's position */
+body {
+	background-image: url("images/jon.jpg");
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+
+/* All of these properties can be combined into a shorthand */
+body {
+	background: red url("images/jon.jpg") no-repeat right top;
+}

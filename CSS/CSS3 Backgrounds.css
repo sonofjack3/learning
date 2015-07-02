@@ -1,0 +1,13 @@
+/* The following properties have been added in CSS3 for creating backgrounds: ;
+	1. background-size
+	2. background-origin
+	3. background-clip
+*/
+
+div#background-1 {
+	background-image: url("images/img-flwr.gif"), url("images/paper.gif");
+	background-position: right bottom, left top; /* Put the first image in the bottom right, the second in the top left */
+	background-repeat: no-repeat, repeat; /* Don't repeat the first image, repeat the second */
+	padding: 20px;
+	font-size: 16px;
+}

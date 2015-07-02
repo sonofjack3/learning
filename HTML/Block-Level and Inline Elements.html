@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<html>
+
+<head>
+	<title>Block-Level and Inline Elements</title>
+	<link rel="stylesheet" type="text/css" href="blocklevel-inline.css">
+</head>
+
+<body>
+
+<!-- The following are block-level elements (start on a new line and take up full width available):
+		<div>
+		<h1> - <h6>
+		<p>
+		<form>
+-->
+<!-- The following are inline elements (don't start on a new line and only take up as much width as necessary):
+		<span>
+		<a>
+		<img>
+-->
+
+<!-- <div> is a block level element often used as a container for other HTML elements -->
+<!-- <div> can be used with CSS to create styled blockes of content -->
+<div style="background-color:black; color:white; padding:20px; border-radius: 10px 10px 10px 10px">
+
+<h2>Game Grumps</h2>
+<p>Game Grumps was a pretty good show. I got nothing else to say. Gumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgum.</p>
+
+</div>
+
+<!-- Ideally, block elements should be classed (see blocklevel-inline.css) -->
+<div class="youtubers">
+<h2>AVGN</h2>
+<p>AVGN gets angry at games.</p>
+</div>
+
+<div class="youtubers">
+<h2>Game Grumps</h2>
+<p>Game Grumps was a pretty good show. I got nothing else to say. Gumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgum.</p>
+</div>
+
+<div class="youtubers">
+<h2>Jontron</h2>
+<p>Jontron goes echechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechechech.</p>
+</div>
+
+<!-- <span> is an inline element often used as a container for some text -->
+<!-- <span> can be used with CSS to create styled parts of text -->
+<h1>My <span style="color:red; font-size:150%">Giant</span> Weiner</h1>
+
+<!-- Ideally, inline elements should be classed as well (see blocklevel-inline.css) -->
+<h1>My <span class="emphasize">Giant</span> Weiner</h1>
+<h1>It's No <span class="emphasize">USE</span></h1>
+
+</body>
+</html>

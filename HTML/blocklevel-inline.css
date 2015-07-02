@@ -1,0 +1,17 @@
+/* Block-level elements (like <div>) should be classed */
+div.youtubers {
+	background-color: black;
+	color: white;
+	margin: 20px;
+	padding: 20px;
+	border-radius: 10px 10px 10px 10px;
+}
+/* Inline elements (like <span>) should be classed as well */
+span.emphasize {
+	color: red;
+	font-size: 150%;
+	font-weight: 150%;
+	outline-color: black;
+	outline-style: groove;
+	background-color: blue; 
+}

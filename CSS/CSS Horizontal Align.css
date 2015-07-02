@@ -1,0 +1,19 @@
+/* Block elements (recall: take up full width available and start new line) can be center-aligned by setting left and right margins to auto */
+.center-block {
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	background-color: orange;
+	font-size: 30px;
+	font-style: arial-black;
+	text-align: center;
+}
+.awesome-border {
+	border-style: ridge;
+	border-width: 10px;
+	border-color: orange;
+	outline-style: outset;
+	outline-width: 10px;
+	outline-color: red;
+	border-radius: 10px;
+}

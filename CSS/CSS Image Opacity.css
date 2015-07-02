@@ -1,0 +1,32 @@
+/* The opacity property allows image opacities to be adjusted */
+/* The value ranges from 0.0 to 1.0 (lower means more transparent) */
+img.transparent {
+	opacity: 0.4;
+}
+
+/* Lets do some fancy stuff */
+img.transparent:hover {
+	opacity: 1.0;
+}
+
+/* Works for other stuff too */
+
+div.flower-background {
+	background: url("images/klematis.jpg") repeat;
+	border: solid black 3px;
+}
+
+div.transparent-box {
+	opacity: 0.6;
+	margin: 20px;
+	background-color: white;
+	border: solid black 1px;
+}
+
+div.transparent-box p {
+	text-align: center;
+	margin: 5%;
+	font-size: 14px;
+	font-family: verdana;
+	font-weight: bold;
+}

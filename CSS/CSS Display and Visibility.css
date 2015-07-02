@@ -1,0 +1,41 @@
+/* The visibility property can hide or show an HTML element */
+.hidden {
+	/* Setting visibility to hidden hides the element, but the layout around it still will be affected */
+	visibility: hidden;
+}
+/* Setting the display property to "none" hides the element, and it will not affect the layout around it */
+.display-none {
+	display: none;
+}
+/* The display property can also have the following values:
+		-inline (makes the element inline - takes up only as much width as necessary and does not force line breaks)
+		-block (takes up full width available and forces line breaks)
+*/
+.display-inline {
+	display: inline;
+}
+.display-block {
+	display: block;
+}
+div#div01 {
+	border-style: ridge;
+	border-color: orange;
+	border-width: 10px;
+	outline-style: inset;
+	outline-color: yellow;
+	border-width: 10px;
+	font-style: arial-black;
+	font-size: 30px;
+	text-align: center;
+}
+span#span01 {
+	border-style: ridge;
+	border-color: orange;
+	border-width: 10px;
+	outline-style: inset;
+	outline-color: yellow;
+	border-width: 10px;
+	font-style: arial-black;
+	font-size: 30px;
+	text-align: center;
+}

@@ -1,0 +1,41 @@
+/* The border-style, border-color and border-width properties specifies the kind of border */
+p.ridged-border {
+	border-color: #669900;
+	border-style: ridge;
+	border-width: 7px;
+}
+
+p.outset-border {
+	border-color: #669900;
+	border-style: outset;
+	border-width: 5px;
+}
+
+/* CSS allows you to specify different border sides */
+p.multi-style-border-1 {
+	border-top-style: dotted;
+    border-right-style: solid;
+    border-bottom-style: ridge;
+    border-left-style: outset;
+}
+
+/* This can also be set with a single property (as can border-color and border-width) */
+p.multi-style-border-2 {
+	border-style: dotted solid ridge outset;
+}
+
+/* Another shorthand */
+p.shorthanded {
+	border: 5px dotted red;
+}
+
+/* An outline is a line drawn around elements (outisde the borders) */
+/* The outline property sets the style, color and width of an outline */
+p.border-with-outline {
+	border: 10px ridge orange;
+	outline: 10px outset red;
+	text-align: center;
+	font-family: century;
+	font-size: 50px;
+	background-color: orange;
+}

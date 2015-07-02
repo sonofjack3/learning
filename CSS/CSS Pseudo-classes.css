@@ -1,0 +1,21 @@
+/* A pseudo-class is used to define a special state of an element */
+/* For example, it can be used to:
+	-style an element when a user mouses over it
+	-style visisted and unvisited links differently
+*/
+/* The syntax for pseudo-classes is:
+	select:pseudo-class {
+		property:value;
+	}
+*/
+/* "CSS Links.css" has some examples of pseudo classes for the a element */
+
+/* Pseudo-classes and CSS classes can be combined */
+a.highlight:hover {
+	color: #ff0000;
+}
+
+/* The :first-child pseudo-class matches an element that is the first child of another element */
+p:first-child {
+	color: blue;
+}

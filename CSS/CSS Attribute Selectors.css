@@ -1,0 +1,20 @@
+/* It is possible to style HTML elements based on their attributes and attribute values */
+/* The [attribute], [attribute=value] selectors in CSS can do this */
+
+/* The following selects all <a> elements that have a target attribute */
+a[target] {
+	background-color: yellow;
+}
+
+/* The following selects all <a> elements with a target attribute with a value of "_blank" */
+a[target="_blank"] {
+	background-color: red;
+}
+
+/* The following selectors are also available in CSS: 
+	[attribute~=value] - selects elements with an attribute value containing a specific word (whole words only)
+	[attribute|=value] - selects elements with the specified attribute with values starting with the specified value (eg: [class|="top"] will select elements with class "top" and "top-text") (whole words only)
+	[attribute^=value] - selects elements with the specified attribute with values starting with the specified value (whole words not required)
+	[attribute$=value] - selects elements with the specified attribute with values ending with the specified value (whole words not required)
+	[attribute*=value] - selects elements with the specified attribute with values containing the specified value (whole words not required)
+*/

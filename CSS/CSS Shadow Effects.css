@@ -1,0 +1,12 @@
+/* The CSS text-shadow property applies shadow to text */
+h1 {
+	text-shadow: 1px 1px black;
+	color: #8ebe3f;
+}
+
+/* The CSS box-shadow property applies shadow to boxes */
+div {
+	box-shadow: 10px 10px black;
+	padding: 10px;
+	background-color: yellow;
+}

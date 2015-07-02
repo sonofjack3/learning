@@ -1,0 +1,23 @@
+/* The list-style-type property changes the list item marker */
+ul.a {
+	list-style-type: upper-roman;
+}
+
+ul.b {
+	list-style-type: square;
+}
+
+/* The list-style-position property specifies whether the markers should appear inside or outside the content flow */
+ul.c {
+	list-style-position: inside;
+}
+
+/* The list-style-image property can be used to replace the list marker with an image */
+ul.d {
+	list-style-image: url("images/jon-icon.png");
+}
+
+/* Shorthand property: */
+ul.e {
+	list-style: square inside url("images/jon-icon.png");
+}

@@ -1,0 +1,20 @@
+/* The border-image property allows images to be used as borders */
+/* The border-image property has three parts:
+	1. The image to use as the border
+	2. Where to slice the image
+	3. Define whether the middle sections should be repeated or stretched
+*/
+
+.image-border-1 {
+	border: 10px solid transparent;
+	/* 30 means slice the image every 30 pixels */
+	border-image: url("images/border.png") 30 round;
+}
+
+/* Different slice values can change the look of the border */
+.image-border-2 {
+	border: 10px solid transparent;
+	/* 30 means slice the image every 30 pixels */
+	border-image: url("images/border.png") 20% round;
+}
+

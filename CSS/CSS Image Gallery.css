@@ -1,0 +1,22 @@
+/* CSS can be used to create an image gallery */
+
+div.image-with-description {
+	border-color: blue;
+	border-style: solid;
+	border-width: 1px;
+	padding: 5px;
+	margin: 5px;
+	float: left;
+}
+
+div.image-with-description img {
+	margin: 5px;
+}
+
+div.image-with-description p {
+	text-align: center;
+	font-size: 18px;
+	font-family: Verdana;
+	width: 110px;
+	margin: 5px;
+}

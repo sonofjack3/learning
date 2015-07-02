@@ -1,0 +1,27 @@
+/* The CSS Box Model is essentially a box that wraps around HTML elements; consists of:
+	-margins, which wrap around,
+	-borders, which wrap around,
+	-padding, which wrap around,
+	-content
+*/
+
+div {
+	height: 300px;
+	width: 300px; /* The content part of the box */
+	padding: 25px;
+	border: 5px solid black;
+	margin: 25px;
+}
+/* 	The total width of this div is: 
+		300 (width) 
+		+ 25*2 (left and right padding) 
+		+ 5*2 (left and right border) 
+		+ 25*2 (left and right margin)
+		= 410px
+	The total height of this div is:
+		300 (height)
+		+ 25*2 (top and bottom padding)
+		+ 5*2 (top and bottom border)
+		+ 25*2 (top and bottom margin)
+		= 410px
+*/

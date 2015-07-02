@@ -1,0 +1,22 @@
+/* The float property allows elements to be pushed left or right, allowing other elements to wrap around them */
+/* A floated element will move as far left/right of the containing element as possible */
+/* Elements that come after a floating element will "flow" around it */
+img#jon {
+	float: left;
+}
+img#arin {
+	float: right;
+}
+
+/* Several floating elements placed next to one another will float nicely */
+.icon {
+	float: left;
+	width: 50px;
+	height: 50px;
+	margin: 40px;
+}
+
+/* The clear property specifies on which sides of an element floating elements are not allowed to float */
+.text-line {
+	clear: both;
+}

@@ -1,0 +1,13 @@
+/* A CSS rule set consists of a selector and a declaration block:
+	h1 {color:blue;}
+		-h1 is the selector
+		-color:blue is a declaration;
+		-color is a property
+		-blue is a value
+*/
+
+/* The following rule makes all paragraphs in an HTML document red and center them */
+p {
+	color: red;
+	text-align: center;
+}

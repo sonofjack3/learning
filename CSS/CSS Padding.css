@@ -1,0 +1,18 @@
+/* The padding clears an area around the content (inside the border) of an element */
+/* As with borders, margins and borders, all sides can be set separately and a shorthand exists */
+p#p01 {
+	padding: 10px;
+}
+p#p02 {
+	padding: 10%;
+}
+p#p03 {
+	padding-top: 25px;
+	padding-right: 50px;
+	padding-bottom: 75px;
+	padding-left: 100px;
+}
+/* Top, right, bottom, left */
+p#p04 {
+	padding: 25px 50px 75px 100px;
+}

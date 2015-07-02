@@ -1,0 +1,32 @@
+/* The border-radius property allows borders to be rounded using CSS */
+.rounded-corners-1 {
+	border-radius: 20px;
+	border-color: #8AC007;
+	border-width: 3px;
+	border-style: solid;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-family: verdana;
+}
+
+/* Each corner can have its own border radius */
+
+.rounded-corners-2 {
+	border-style: solid;
+	border-color: #8AC007;
+	border-width: 2px;
+	border-radius: 30px 10px 30px 10px; /* Order: top-left, top-right, bottom-right, bottom-left; */
+	padding: 3px;
+}
+
+/* Elliptical corners are also possible */
+
+.rounded-corners-3 {
+	border-style: solid;
+	border-color: #8AC007;
+	border-width: 2px;
+	border-radius: 30px/15px; /* Order: top-left, top-right, bottom-right, bottom-left; */
+	padding: 3px;
+}

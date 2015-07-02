@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML Forms</title>
+</head>
+<body>
+
+<!-- HTML forms are used to collect user input -->
+<!-- The <form> element defines an HTML form; forms contain form elements, including checkboxes, radio buttons, submit buttons, etc. -->
+<form>
+First name:<br />
+<!-- The <input> element allows for user input; there are several types -->
+<input type="text" name="firstname">
+<br />
+Last name:<br />
+<input type="text" name="lastname">
+<br />
+<input type="radio" name="sex" value="male" checked>Male
+<br />
+<input type="radio" name="sex" value="female">Female
+<br />
+<br />
+<input type="submit" value="Submit">
+</form>
+
+<!-- The action attribute of <form> defines an action to be performed when the form is submitted -->
+<!-- The method attribute of <form> specifies which HTTP method (GET or POST) to be used when submitting the form -->
+<!-- GET should be used with passive, non-sensitive information; the form data will appear in the page's address -->
+<!-- POST should be used when the form is updating data or there is sensitive information being sent (form data will not appear in the page's address) -->
+<br />
+<br />
+<form action="action.php" method="GET">
+<input type="radio" name="sex" value="male" checked>Male
+<br />
+<input type="radio" name="sex" value="female">Female
+<br />
+<br />
+<input type="submit" value="Submit">
+</form>
+
+<!-- The <fieldset> element groups related data in a form (with a really pretty box) -->
+<!-- The <legend> element defines a caption for the <fieldset> element -->
+<form>
+<fieldset>
+<legend>Personal information:</legend>
+First name:<br />
+<!-- The <input> element allows for user input; there are several types -->
+<input type="text" name="firstname">
+<br />
+Last name:<br />
+<input type="text" name="lastname">
+<br />
+<input type="radio" name="sex" value="male" checked>Male
+<br />
+<input type="radio" name="sex" value="female">Female
+<br />
+<br />
+<input type="submit" value="Submit">
+</fieldset>
+</form>
+<form action="signawayyourlife.php" method="POST">
+<fieldset>
+<legend>Non-personal information:</legend>
+Social security number:<br />
+<input type="text" name="ssn">
+<br />
+Credit card number:<br />
+<input type="text" name="ccn">
+<br />
+<br />
+<input type="submit" value="Press this totally safe button">
+</fieldset>
+</form>
+
+<!-- Other form attributes include target, enctype, autocomplete, nonvalidate, etc. -->
+
+<!-- HTML Form Elements -->
+
+<!-- The <input> element (see above) -->
+<!-- The <select> element defines a drop-down list -->
+<br />
+<select name="youtubers">
+<option value="gameGrumps">Game Grumps</option>
+<option value="avgn">AVGN</option>
+<!-- The selected attribute defines a predefined option in a dropdown list -->
+<option value="jontron" selected>Jontron</option>
+</select>
+
+<!-- The <textarea> element defines a multi-line input field (a text area) -->
+<br />
+<br />
+<textarea name="message" rows="10" cols="30">
+Enter a nice message here for fuck's sake
+</textarea>
+
+<!-- The <button> element defines a clickable button -->
+<br />
+<br />
+<button type="button" onclick="alert('Don\'t touch me!!!!!!')">Touch me!</button>
+<!-- NOTE: The value of onclick is a script (JavaScript in this case) -->
+
+<!-- The following are new HTML5 elements -->
+
+<!-- The <datalist> element specifies a list of pre-defined options for an <input> element -->
+<!-- The list attribute of the <input> element must refer to the id attribute of the <datalist> element. Kinda dumb. -->
+<br />
+<br />
+<form>
+<input list="youtubers">
+<datalist id="youtubers">
+	<option value="Game Grumps"></option>
+	<option value="Jontron"></option>
+	<option value="AVGN"></option>
+</datalist>
+</form>
+
+<!-- The <keygen> element is to provide a secure way to authenticate users -->
+<br />
+<br />
+<form action="action.php">
+Username: <input type="text" name="user">
+Encryption: <keygen name="security">
+<input type="submit">
+</form>
+
+<!-- The <output> element represents the result of a calculation (eg: one performed by a scripts) -->
+<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+0
+<input type="range"  id="a" name="a" value="50">
+100 +
+<input type="number" id="b" name="b" value="50">
+=
+<output name="x" for="a b"></output>
+<br><br>
+<input type="submit">
+</form>
+
+<!-- The password input type will mask input with dots -->
+<br />
+<br />
+User password:
+<input type="password" name="psw"> 
+
+<!-- The number input type is used for input fields that should contain a numeric value; a min and max value can be set -->
+<br />
+<br />
+<form>
+Quantity (between 1 and 5):
+<input type="number" name="quantity" min="1" max="5">
+</form>
+
+<!-- The date input type is used for input fields that should contain a date. -->
+<br />
+<br />
+<form>
+Birthday:
+<input type="date" name="birthday">
+</form>
+
+<!-- There are lots more input attributes and types -->
+
+</body>
+</html>

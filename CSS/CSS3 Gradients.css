@@ -1,0 +1,45 @@
+/* CSS3 allows for linear gradients and radial gradients */
+/* The syntax is
+	background: linear-gradient(direction, startcolor1-stopcolor1, startcolor2-stopcolor2, ...);
+
+/* The default for linear gradients is top-bottom */
+body {
+	background: linear-gradient(#8EBE3F, #FFFFFF);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	height: 100%;
+}
+
+body {
+	background: linear-gradient(to bottom, #8EBE3F, #FFFFFF);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	height: 100%;
+}
+
+/* The direction can also be in degrees to put it at an angle */
+
+body {
+	background: linear-gradient(140deg, #8EBE3F, #FFFFFF);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	height: 100%;
+}
+
+/* Multiple color stops are also possible */
+
+body {
+	background: linear-gradient(red, yellow, green, blue);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	height: 100%;
+}
+
+/* Gradients also support transparency (use the rgba() function) */
+
+/* The repeating-linear-gradient() function is used to repeat linear gradients */
+body {
+	background: repeating-linear-gradient(red, yellow, green, blue);
+}
+
+/* Radial gradients are also possible

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML Canvas</title>
+</head>
+<body>
+
+<!-- The <canvas> element is used to draw graphics via scripting -->
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+</canvas>
+
+<script type="text/javascript">
+	var c = document.getElementId("myCanvas");
+	var ctx = c.getContext("2d");
+	ctx.fillStyle = "#FF000";
+	ctx.fillRect(0,0,150,75);
+</script>
+
+</body>
+</html>

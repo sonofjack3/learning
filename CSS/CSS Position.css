@@ -1,0 +1,32 @@
+/* The position property allows the positions of elements to be set in CSS */
+/* There are four positioning methods: 
+	-static positioning (default HTML positioning)
+	-fixed positioning (positioned relative to the browser window; will not move when window scrolls; other elements behave like this element doesn't exist)
+	-relative positioning (positioned relative to the element's normal position; use top, bottom, left and right properties)
+	-absolute positioning (positioned relative to the first parent element that has a position other than static; other elements behave like this element doesn't exist)
+*/
+.position-fixed {
+	position: fixed;
+	top: 30px;
+	right: 5px;
+}
+.position-relative-left {
+	position: relative;
+	left: 20px;
+}	
+.position-relative-right {
+	position: relative;
+	right: 20px;
+}
+.position_absolute {
+	position: absolute;
+	left: 100px;
+}
+/* Use the z-index property when elements overlap to specify which elements appear on top (greater numbers appear in front) */
+.overlap {
+	position: absolute;
+	left: 100px;
+	top: 110px;
+	z-index: -1;
+	color: blue;
+}

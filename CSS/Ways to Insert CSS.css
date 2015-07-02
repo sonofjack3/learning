@@ -1,0 +1,12 @@
+/* Three ways to insert CSS:
+	1. External style sheet (a separate CSS file linked in the HTML docs)
+	2. Internal style sheet (styles defined in the style element inside the head section of an HTML doc)
+	3. Inline style (used to apply a unique style for a single element (use sparingly))
+*/
+
+/* Multiple styles cascade in the following order:
+	1. Browser default
+	2. External and internal style sheets
+	3. Inline style
+	NOTE: Internal and external will override each other depending on when they are declared in the HTML doc (last overrides first)
+*/

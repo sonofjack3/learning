@@ -1,0 +1,50 @@
+/* The border property changes a table border */
+table, th, td {
+	border: 3px solid #ABCC47;
+}
+
+/* The border-collapse property can set whether the table borders are collapsed into a single border */
+table, th, td {
+	border-collapse: collapse;
+}
+
+/* The width and height properties set width and height */
+table {
+	width: 100%;
+}
+th {
+	height: 50px;
+}
+
+/* The text-align property sets the horizontal aligment */
+th {
+	text-align: center;
+}
+td {
+	text-align: center;
+}
+
+/* The vertical-align property sets the vertical alignment */
+td {
+	vertical-align: center;
+}
+
+/* The padding property controls the space between the border and content */
+/* The padding property should be used on <td> and <th> elements */
+td {
+	padding: 15px;
+}
+th {
+	padding: 15px;
+}
+
+/* The background-color changes cell backgrounds; color changes the text color */
+th {
+	background-color: #ABCC47;
+	color: white;
+}
+
+/* This is how you can style the odd and even rows to be a different color */
+tr.odd {
+	background-color: #EBEBEB;
+}

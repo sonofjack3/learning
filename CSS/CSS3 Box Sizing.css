@@ -1,0 +1,27 @@
+/* The box-sizing property allows us to include the padding and border in an element's total width and height */
+/* The total width of an element is calculated: 
+	width + padding + border = total width
+   And the total height of an element is calculated:
+	height + padding + border = total height
+   So, two elements with the same height and width properties end up being different sizes */
+/* Setting box-sizing: border-box allows padding and border to be included in the width and height measurements */
+
+div#div01 {
+	width: 300px;
+	height: 100px;
+	border: 1px solid blue;
+	box-sizing: border-box;
+}
+
+div#div02 {
+	width: 300px;
+	height: 100px;
+	padding: 50px;
+	border: 1px solid red;
+	box-sizing: border-box;
+}
+
+/* A lot of the time, we'd want all elements to be like this, so we might just do this: */
+* {
+	box-sizing: border-box;
+}

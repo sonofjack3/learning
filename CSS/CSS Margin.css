@@ -1,0 +1,22 @@
+/* The margin clears an area around an element (outside the border) */
+/* The possible values for the margin are:
+	-auto (browser calculates margin)
+	-length (specifies the margin's size)
+	-% (specifies a margin in percent of the width of the containing element)
+	-inherit (specifies that the margin should be inherited from the parent element)
+*/
+p.auto-margin {
+	margin: auto;
+}
+
+/* Individual sides of a margin can also be set */
+p.individual-margin {
+	margin-bottom: 25px;
+	margin-top: 50px;
+	margin-right: 75px;
+	margin-left: 100px;
+}
+/* This can be shorthanded too (order is top, right, bottom, left) */
+p.shorthanded {
+	margin: 10px 20px 30px 40px;
+}

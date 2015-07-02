@@ -1,0 +1,46 @@
+/* HTML5 has 8 elements that define different parts of a web page:
+	-header (top)
+	-nav (container for navigation links)
+	-section (a section for the document)
+	-article (defines an independent self-contained article)
+	-aside (defines content aside from the section and article (like a sidebar))
+	-footer (bottom)
+	-details (additional details)
+	-summary (heading for the details elements)
+*/
+header {
+	background-color: black;
+	color: white;
+	padding: 5px;
+	text-align: center;
+}
+nav {
+	background-color: lightgrey;
+	float:left;
+	height: 300px;
+	width: 100px;
+	padding: 5px;
+	line-height: 30px;
+}
+section {
+	padding: 10px;
+	width: 700px;
+	float: left;
+}
+article {
+	padding: 10px;
+	width: 700px;
+	float: left;
+}
+footer {
+	background-color: black;
+	color: white;
+	text-align: center;
+	/* The clear property specifies whether any elements are allowed to float on either side*/
+	/* Setting clear to "both" means that nothing is allowed to float on either side */
+	clear: both;
+	padding: 5px;
+}
+p {
+	word-wrap: break-word;
+}

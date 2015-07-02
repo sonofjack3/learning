@@ -1,0 +1,77 @@
+/* Image sprites are collections of images put into a single image intended to reduce server requests */
+/* Values given to the background property can be used to specify which part of the sprite to use */
+
+img#home {
+	/* width and height define the size of the portion to use */
+	width: 46px;
+	height: 44px;
+	background: url("images/img_navsprites.gif") 0px 0px; /* defines where to find the portion (left 0px, top 0px) */	
+	border: none;
+}
+
+img#back {
+	width: 43px;
+	height: 44px;
+	background: url("images/img_navsprites.gif") -47px 0px;
+}
+
+img#forward {
+	width: 43px;
+	height: 44px;
+	background: url("images/img_navsprites.gif") -91px 0px;
+}
+
+/* HEY. Let's make a little nav bar */
+
+#navlist {
+	padding-left: 0;
+}
+
+#navlist li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#navlist li, #navlist a {
+	height: 44px;
+	display: block;
+	float: left;
+}
+
+.nav_img {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+/* Six images, but all from the same image sprite! So no loading on mouse hovers */
+
+img#nav_home {
+	width: 46px;
+	height: 44px;
+	background: url("images/img_navsprites_hover.gif") 0px 0px;
+}
+
+img#nav_home:hover {
+	background: url("images/img_navsprites_hover.gif") 0px 44px;
+}
+
+img#nav_back {
+	width: 43px;
+	height: 44px;
+	background: url("images/img_navsprites_hover.gif") -47px 0px;
+}
+
+img#nav_back:hover {
+	background: url("images/img_navsprites_hover.gif") -47px 44px;
+}
+
+img#nav_forward {
+	width: 43px;
+	height: 44px;
+	background: url("images/img_navsprites_hover.gif") -91px 0px;
+}
+
+img#nav_forward:hover {
+	background: url("images/img_navsprites_hover.gif") -91px 44px;
+}

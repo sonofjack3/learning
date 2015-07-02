@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<html>
+
+<!--The head contains metadata about this HTML file -->
+<head>
+	<title>This is an HTML5 document</title>
+	<meta charset="UTF-8">
+	<!-- A internal (or global) style element is used to define a common style for all HTML elements on the page -->
+	<style>
+		body {background-color: lightgrey}
+		h1 {color:blue}
+		p {color:green}
+	</style>
+</head>
+
+<!-- Use h1 through h6 for headings -->
+<h1>HTML</h1>
+<h2>only</h2>
+<h3>uses</h3>
+<h4>headings</h4>
+<h5>1 through</h5>
+<h6>6</h6>
+
+<!-- This changes the color and centers the text, and defines a title attribute (mouse hover-over) -->
+<p style="color:red;text-align:center" title='About my "dingaling"'>
+<b>This</b><br>
+<strong>is</strong><br>
+<i>a</i><br>
+<em>paragraph...</em>
+</p>
+
+<!-- Some formatting options -->
+<p><small>This text is small</small></p>
+<p><mark>This text is marked</mark></p>
+<p><del>This text is crossed out (deleted)</del></p>
+<p>Here's some <sub>subscripted</sub> and <sup>superscripted</sup> text</p>
+
+<!-- Use the <q> tag for quotes -->
+<p>Jon Jafari once said <q>All I ever wanted was a world without you.</q></p>
+
+<!-- Use the <blockquote> tag for blockquotes -->
+<p>Arin Hanson once said:</p>
+<blockquote cite="http://fuckyeaharinhanson.tumblr.com/post/64619223264/ladies-and-gentlemen-do-you-understand-the">
+Ladies and gentlemen, do you understand the implications of this? Hours, literally, hours of time, lost, to the constant flow of repeating and repeating, death, repeating. 
+Is there anything to gain from this?
+No.
+</blockquote>
+
+<!-- Use the <abbr> tag for abbreviations -->
+<p>Game Grumps is sometimes abbreviated as <abbr="Game Grumps">GG</abbr></p>
+
+<!-- Using the <address> tag will auto-italicize the info -->
+<address>
+You can reach me at:<br>
+666 River Styx<br>
+Hell, Arizona<br>
+Canada
+</address>
+
+<!-- The <cite> tag italices text -->
+<p><cite>The Scream</cite> by Edward Munch. Painted in 1893.</p>
+
+<!-- This flips text around, right to left; kinda stupid -->
+<bdo dir="rtl">Good job turning this around</bdo>
+
+<!-- The <pre> tag is used to keep formatting of text -->
+<pre style="color:blue;font-family:verdana;font-size:150%">
+	This is a pre-formatted paragraph.
+
+	It will preserve spaces and line breaks.
+
+	This paragraph has three lines with a space between each line and an indent at the beginning of each line.
+</pre>
+
+<!-- Use the <a> tag with an href attribute to create a link -->
+<a href="https://www.youtube.com/watch?v=zhyqkSj2Iag&ab_channel=GameGrumps">This is a link to two stupid idiots playing some dumb game</a>
+<br>
+<!-- href can also be used to jump to sections within the page -->
+<a href="#dang">Visit a Dang section</a>
+
+<!-- <br> makes a break -->
+<br>
+<!-- <hr> creates a horizontal line -->
+<hr></hr>
+<br>
+
+<!-- Use the <img> tag to post an image; the src attribute defines its location, the alt attribute defines alternate text (for screen readers) -->
+<img src="images/american-psycho.jpg" alt="Am I Right" width="300" height="170">
+<br>
+<!-- Hyperlinks can also be images -->
+<a href="http://www.rickjames.com"><img src="images/dave-chappelle-as-rick-james.jpg" alt="What did the five fingers say to the face?"></a>
+<br>
+<!-- Use the target attribute to specify where to open a link -->
+<a href="images/american-psycho.jpg" target="_blank">This link will open in a new tab</a>
+<br>
+<a href="images/american-psycho.jpg" target="_self">This link will open in the same "frame" as it was clicked</a>
+<br>
+<a href="images/american-psycho.jpg" target="_parent">This link will open in the parent's frame</a>
+<br>
+<a href="images/american-psycho.jpg" target="_top">This link will open in the full body of the window</a>
+<br>
+<a href="images/american-psycho.jpg" target="_framename">This link will open in a named frame</a>
+
+<!-- Use <kbd> to simulate keyboard input -->
+<p>To open a file, select:</p>
+<kbd>File | Open...</kbd>
+
+<br>
+<br>
+
+<!-- Use <samp> to simulate computer output -->
+<samp>
+demo.example.com login: Apr 12 09:10:17
+Linux 2.6.10-grsec+gg3+e+fhs6b+nfs+gr0501+++p3+c4a+gr2b-reslog-v6.189
+</samp>
+
+<br>
+<br>
+
+<!-- Use <code> to simulate computer code -->
+<code>
+<pre>
+var person = { 
+	firstName:"John", 
+	lastName:"Doe", 
+	age:50, 
+	eyeColor:"blue" 
+}
+</pre>
+</code>
+
+<br>
+<br>
+
+<!-- Use <var> to simulate mathematical equations -->
+<p>Einstein wrote:<br>
+<var>E = mc<sup>2</sup></var>
+</p>
+
+<!-- CSS stands for Cascading Style Sheets -->
+<!-- Styling can be done using:
+		Inline - using a style attribute 
+		Internal - using a <style> element in the <head> section
+		External - using one or more external CSS files (most common method)
+-->
+
+<!-- Use the id attribute to define bookmarks in a page -->
+<h2 id="dang">Dang Section</h2>
+<p>Welcome to this dang section.</p>
+
+<br>
+
+<!-- The CSS float property allows an image to float to the left or right of some text -->
+<p>
+<img src="images/mario-jackson.gif" alt="Mario Jackson" usemap="#mariomap" style="float:left;width:200px;height:200px;">Look at that sucker go
+</p>
+
+<!-- Use the <map> tag to define an image-map with clickable areas -->
+<map id="mariomap" name="mariomap">
+	<!-- The <area> tag defines the clickable areas within the image-map -->
+	<!-- The order of coords for a rectangle is left, top, right, bottom corners of the rectangle -->
+	<area shape="rect" coords="50,50,50,50" alt="The Middle" href="images/jon.jpg">
+</map>
+
+</body>
+</html>

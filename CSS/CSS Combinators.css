@@ -1,0 +1,26 @@
+/* Combinators explain the relationship between selectors */
+/* CSS3 has 4 different combinators */
+
+/* 1. Descendant selector - matches all elements that are descendants of a specified element. */
+/* The following selects all <p> elements inside <div> elements */
+div p {
+	background-color: yellow;
+}
+
+/* 2. Child selector - selects all elements that are immediate children of a specified element */
+/* The following selects all <p> elements that are immediate children of a <div> element */
+div > p {
+	background-color: blue;
+}
+
+/* 3. General sibling selector - selects all elements that are siblings of a specified element */
+/* The following selects all <h1> elements that are siblings of a <span> element */
+span ~ h1 {
+	background-color: red;
+}
+
+/* 4. Adjacent sibling selector - selects all elements that are adjacent siblings of a specified element */
+/* The following selects all <p> elements that are placed immediately after a <div> element */
+div + p {
+	background-color: orange;
+}

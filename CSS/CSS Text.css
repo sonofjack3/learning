@@ -1,0 +1,33 @@
+/* The color property sets text color in an HTML doc */
+body {
+	color: blue;
+	background-color: yellow;
+}
+
+/* The text-align property sets the horizontal alignment of text */
+h1 {
+	text-align: center;
+}
+
+/* The text-decoration property can be used to set/remove text decorations */
+h1 {
+	text-decoration: line-through;
+}
+
+/* The text-transform property is used to specify uppercase and lowercase letters in text */
+h1 {
+	text-transform: capitalize;
+}
+
+/* The text-indent property is used to specify the indentation of the first line of text */
+p {
+	text-indent: 50px;
+}
+
+/* And many moooooooooore */
+
+p {
+	text-shadow: 5px 5px black;
+}
+
+/* Use the properties font-style and font-size for changing text font */

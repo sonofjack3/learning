@@ -1,0 +1,35 @@
+/* The element "a" is used for links */
+/* Links can be styled using CSS; any CSS property can be used */
+a {
+	color: yellow;
+	background-color: black;
+	font-family: sans-serif;
+}
+
+/* Links can be styled differently depending on their state; the 4 states are:
+	-a:link (unvisited link)
+	-a:visited (visited link)
+	-a:hover (when the mouse is placed over this link)
+	-a:active (a link the moment it is clicked)
+*/
+
+a:link{
+	color:#0066FF
+}
+
+a:visited{
+	color:#660066;
+}
+
+a:hover{
+	color:#FFFFFF;
+}
+
+a:active{
+	color:#FFFF00;
+}
+
+/* The text-decoration property is mostly used to remove underlines from links */
+a:visited {
+	text-decoration: none;
+}
