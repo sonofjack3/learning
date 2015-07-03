@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Objects</title>
+</head>
+<body>
+
+<!-- JavaScript objects are essentially containers for named values (properties) and methods (functions) -->
+
+<p id="evan"></p>
+
+<script type="text/javascript">
+	var person = {
+		firstName:"Evan",
+		lastName:"Jackson",
+		age:23,
+		fullName:function () {
+			return this.firstName + " " + this.lastName;
+		}
+	};
+
+	document.getElementById("evan").innerHTML = person.fullName() + " is " + person.age + " years old.";
+</script>
+
+</body>
+</html>
