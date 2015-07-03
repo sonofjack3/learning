@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Errors</title>
+</head>
+<body>
+
+<!-- JavaScript throws errors that can be caught -->
+<!-- Custom exceptions can be thrown using the "throw" statement -->
+
+<p>Enter a number between 5 and 10</p>
+<input id="numb" type="text"></input>
+<button type="button" onclick="testInput(document.getElementById('numb').value)">Test Input</button>
+<br />
+<p id="message"></p>
+
+<script type="text/javascript">
+	/* Throws errors if given val is empty, lower than 5, greater than 10, empty, or not a number */
+	function testInput (val) {
+		document.getElementById("message").innerHTML = ""; //clear any previous messages
+		try {
+			if (val == "") {
+				throw "empty";
+			}
+			else if (isNaN(val)) {
+				throw "not a number.";
+			}
+			else if (Number(val) < 5)
+				throw "too small.";
+			else if (Number(val) > 10)
+				throw "too large.";
+		}
+		catch (err) {
+			document.getElementById("message").innerHTML = "Input is " + err;
+		}
+
+	}
+</script>
+
+</body>
+</html>
