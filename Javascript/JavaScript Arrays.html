@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Arrays</title>
+</head>
+<body>
+
+<!-- JavaScript arrays are objects that can hold different types of variables -->
+<!-- Arrays can hold variables, objects, functions and other arrays -->
+
+<p id="text"></p>
+
+<script type="text/javascript">
+	var cars = ["Honda", "Volkswagon", "Dodge"];
+	var length = cars.length; //The length property returns the number of elements in the array
+	var carsSorted = cars.sort(); //The sort() method sorts an array alphabetically (by default)
+	cars.push("Mazda"); //The simplest way to add elements to an array is to use the push method
+	var carsText = cars.toString(); //The toString() method produces a one-line description of an array, as does valueOf()
+	cars.pop(); //The pop() method pops the last element from an array (Mazda)
+	cars.shift(); //The shift() method removes the first element from an array and shifts all other elements down
+	cars.unshift("Chevrolet"); //The unshift() method adds a given element to the beginning of the array
+	cars[1] = "Pontiac"; //Doing this will replace the element at the given index
+	var carsTextWithSpaces = cars.join(" "); //The join(seperator) method produces a one-line description of an array with a given seperator between each element
+
+	/* Many more mehods exist... */
+
+	document.getElementById("text").innerHTML = carsText + "<br>" + carsTextWithSpaces;
+</script>
+
+
+
+</body>
+</html>
