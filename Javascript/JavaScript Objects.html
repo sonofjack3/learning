@@ -22,5 +22,67 @@
 	document.getElementById("evan").innerHTML = person.fullName() + " is " + person.age + " years old.";
 </script>
 
+<!-- The above method creates an object (person) via a literal -->
+<!-- If we wanted to create many objects of the same "type". we'd use an object constructor function to create an object "prototype", as shown below -->
+
+<p id="person1"></p>
+<p id="person2"></p>
+
+<script type="text/javascript">
+	/* Object constructor for a person -- this is the object's prototype */
+	function person (first, last, age) {
+		this.firstName = first;
+		this.lastName = last;
+		this.age = age;
+		this.fullName = function() {
+			return this.firstName + " " + this.lastName;
+		}
+	}
+
+	var evan = new person("Evan", "Jackson", 23);
+	var riley = new person("Riley", "Jackson", 18);
+
+	document.getElementById("person1").innerHTML = evan.fullName() + " is " + evan.age + " years old.";
+	document.getElementById("person2").innerHTML = riley.fullName() + " is " + riley.age + " years old.";
+</script>
+
+<!-- Object properties can be accessed in three ways: 
+		1. objectName.property (eg: person.firstName)
+		2. objectName["property"] (eg: person["age"])
+		3. objectName[expression] (eg: x = "age"; person[x])
+-->
+
+<!-- The for...in statement can be used to loop through the properties of an object -->
+
+<p id="person3"></p>
+
+<script type="text/javascript">
+	var text = "";
+	var person = {firstName:"Evan", lastName:"Jackson", age:"23"};
+
+	for (x in person) {
+		text += person[x] + " ";
+	}
+
+	document.getElementById("person3").innerHTML = text;
+</script>
+
+<!-- New properties and functions can be easily added to existing objects -->
+
+<p id="person4"></p>
+
+<script type="text/javascript">
+	var text = "";
+	var person = {firstName:"Evan", lastName:"Jackson", age:"23"};
+
+	person.eyeColor = "blue";
+	person.fullName = function () {
+		return this.firstName + " " + this.lastName;
+	}
+
+	document.getElementById("person4").innerHTML = person.fullName();
+</script>
+
+
 </body>
 </html>
