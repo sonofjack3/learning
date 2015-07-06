@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Closures</title>
+</head>
+<body>
+
+<!-- Global variables declared outside of functions can be accessed anywhere in the HTML doc -->
+<!-- Local variables declared inside of a function can only be accessed by that function -->
+
+<!-- JavaScript Closures allow functions to have "private" variables -->
+<!-- A Closure uses a self-invoking function that runs once and returns a function expression -->
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+	//Counter is protected by the scope of the outer function and can only be changed using the add function; it is thus a "private" variable
+	var add = (function(){
+		var counter = 0;
+		return function () {return counter += 1;}
+	})();
+
+	add();
+	add();
+	var x = add();
+	document.getElementById("demo").innerHTML = "The value of counter is " + x;
+</script>
+
+</body>
+</html>
