@@ -5,9 +5,9 @@
 </head>
 <body>
 
-<!-- JavaScript functions can take arguments, return values, and be called using HTML -->
+<!-- JavaScript functions can take arguments, return values, and be called -->
 
-<p id="text"></p>
+<p id="text1"></p>
 
 <script type="text/javascript">
 	/* Converts the given value (in Farenheit) to Celsius */
@@ -15,7 +15,42 @@
 		return (5/9) * (farenheit - 32);
 	}
 
-	document.getElementById("text").innerHTML = "32 degrees Farenheit is " + toCelsius(32) + " degrees Celsius.";
+	document.getElementById("text1").innerHTML = "32 degrees Farenheit is " + toCelsius(32) + " degrees Celsius.";
+</script>
+
+<!-- JavaScript function are "hoisted" (ie: they can be called before they are declared) -->
+<!-- JavaScript functions have a built-in object called the "arguments" object which can access arguments (and their properties) passed to the function -->
+
+<p id="text2"></p>
+
+<script type="text/javascript">
+	var x = findMax(1, 123, 500, 115, 44, 88);
+
+	function findMax() {
+		var i, max = 0;
+		for (i = 0; i < arguments.length; i++) {
+			if (arguments[i] > max) {
+				max = arguments[i];
+			}
+		}
+		return max;
+	}
+
+	document.getElementById("text2").innerHTML = "The max is: " + x;
+</script>
+
+<!-- Note that in JavaScript, arguments are passed by value while objects are passed by reference (ie: if a function changes an object's properties, those changes are reflected outside the function) -->
+
+<!-- When a function is part of an object, it is called a method (see JavaScript Objects) -->
+
+<!-- Functions can be made "self-invoking" -->
+<!-- A self-invoking expression is invoked automatically, without being called -->
+
+<script type="text/javascript">
+	//The following function will self-invoke
+	(function(){
+		alert("And you didn't even need to call me!");
+	})();
 </script>
 
 </body>
