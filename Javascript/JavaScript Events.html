@@ -15,5 +15,35 @@
 		-onload - the browser has finished loading the page
 -->
 
+<!-- The addEventListener() method can be used to attach an event handler to a specified element:
+	element.addEventListener(event, function, useCapture)
+	where:
+		-event is the type of event
+		-function is the function to be called when the event occurs
+		-useCapture is a boolean value specifying whether to use event bubbling or event capturing (optional)
+-->
+
+<button id="button1">Click me</button>
+<script>
+	document.getElementById("button1").addEventListener("click", function(){alert("T'anks")});
+	/* Note that multiple event listeners can be added to the same element */
+	document.getElementById("button1").addEventListener("click", changeBackground);
+
+	function changeBackground () {
+		document.getElementsByTagName("body")[0].style.background = "green";
+	}
+</script>
+
+<!-- Event handlers can also be added to the window itself -->
+<script>
+	window.addEventListener("resize", function () {document.getElementsByTagName("body")[0].style.background = "blue"});
+</script>
+<p>Try resizing the screen</p>
+
+<!-- There are two methods of event propagation:
+		1. bubbling - The innermost element's event is handled first, then the outer (set useCapture to false)
+		2. capturing - The outermost element's event is handled first, then the inner (set useCapture to true)
+-->
+
 </body>
 </html>
