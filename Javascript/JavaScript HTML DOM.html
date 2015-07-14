@@ -110,5 +110,43 @@
 		2. capturing - The outermost element's event is handled first, then the inner (set useCapture to true)
 -->
 
+<!-- According to the DOM standard, everything in an HTML document is a "node" (the entire document, every element, text inside elements, attributes and comments are all nodes) -->
+
+<!-- All nodes have a hierarchical relationship to one another. In a node tree (representing an HTML document):
+	-the top node is the root node (usually the <html> tag)
+	-every node has exactly one parent, except for the root node which has none
+	-a node can have any number of children
+	-sibling nodes are nodes with the same parent
+-->
+
+<!-- JavaScript can use the following properties to navigate between nodes:
+	-parentNode
+	-childNodes[nodeNumber]
+	-firstChild (same as using childNodes[0])
+	-lastChild
+	-nextSibling
+	-previousSibling
+-->
+
+<!-- The following properties are useful for getting information about nodes:
+	-nodeName (returns the name of a node)
+	-nodeValue (returns the value of a node)
+	-nodeType (returns the type of a node)
+-->
+
+<!-- The following properties allow access to the full document:
+	-document.body (the body of the document)
+	-document.documentElement (the full document)
+-->
+
+<!-- The following methods can be used to create, attach and delete HTML elements (nodes):
+	-createElement(elementType) - where elementType is the type of  HTML element in quotes (eg: "p")
+	-createTextNode(text) - where text is the actual text in quotes
+	-appendChild(child) - where child is the child to be appended (variable)
+	-insertBefore(para, child) - where para is the original node and child is the node to be inserted
+	-removeChild(child) - where child is the child to be removed (variable)
+	-replaceChild(para, child) - where para is the original node and child is the node to be inserted
+-->
+
 </body>
 </html>
