@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Popup Boxes</title>
+</head>
+<body>
+
+<!-- JavaScript has three types of popup boxes:
+	1. Alert boxes
+	2. Confirm boxes
+	3. Prompt boxes
+-->
+
+<!-- Alert box
+		Syntax: alert(message) 
+-->
+<button onclick="window.alert('This is an alert box')">Alert box</button>
+
+<!-- Confirm box 
+		Syntax: confirm(message)
+		Returns true if user clicks OK, false otherwise
+-->
+<br />
+<br />
+<button onclick="confirmBox()">Confirm Box</button>
+<p id="demo1"></p>
+<script>
+	function confirmBox() {
+		var confirm = window.confirm("Make a choice");
+		var choice;
+		if (confirm) {
+			choice = "User pressed OK";
+		}
+		else {
+			choice = "User pressed Cancel";
+		}
+		document.getElementById("demo1").innerHTML = choice;
+	}
+</script>
+
+<!-- Prompt box
+		Syntax: prompt(text, defaultValue)
+		Returns the user's input if OK is clicked, null if the user clicks Cancel
+-->
+<button onclick="promptBox()">Prompt Box</button>
+<p id="message"></p>
+<script>
+	function promptBox () {
+		var name = prompt("Enter your name", "Smith Smitherson");
+		if (name) {
+			document.getElementById("message").innerHTML = "Hello " + name;
+		}
+	}
+</script>
+
+</body>
+</html>
