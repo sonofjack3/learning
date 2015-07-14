@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Cookies</title>
+</head>
+<body>
+
+<!-- Cookies are data stored in small text files, stored locally on a user's computer. Cookies can be used so that websites "remember" a user. -->
+
+<!-- Cookies are saved in name-value pairs:
+		username=Evan Jackson
+-->
+
+<!-- JavaScript can create cookies like this: -->
+<script>
+	document.cookie = "username=Evan Jackson";
+</script>
+
+<!-- Cookies are deleted by default when the browser is closed, but their expiry date can be specified: -->
+<script>
+	document.cookie = "username=Evan Jackson; expires=Thu, 18 Dec 2013 12:00:00 UTC";
+</script>
+
+</body>
+</html>
