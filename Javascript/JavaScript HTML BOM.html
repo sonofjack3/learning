@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript HTML BOM</title>
+</head>
+<body>
+
+<!-- The Browser Object Model (BOM) allows JavaScript to "talk to" the browser itself -->
+
+<!-- The "window" object represents the browser's window -->
+
+<p id="demo1"></p>
+<button onclick="window.open('http://www.youtube.com')">Open a new tab</button>
+
+<script>
+	updateWindowDim();
+
+	window.addEventListener("resize", updateWindowDim);
+
+	function updateWindowDim() {
+		var width = window.innerWidth
+		|| document.documentElement.clientWidth
+		|| document.body.clientWidth;
+		var height = window.innerHeight
+		|| document.documentElement.clientHeight
+		|| document.body.clientHeight;
+		document.getElementById("demo1").innerHTML = "This browser's width is " + width + " pixels and its height is " + height + " pixels.";
+	}
+</script>
+
+<!-- The window.screen object contains information about the user's screen. It does not require the window prefix and can be written "screen.property" -->
+
+<p id="demo2"></p>
+
+<script>
+	displayScreenDim();
+
+	function displayScreenDim() {
+		var width = screen.width;
+		var height = screen.height;
+		document.getElementById("demo2").innerHTML = "This screen's width is " + width + " pixels and its height is " + height + " pixels.";
+	}
+</script>
+
+<!-- The window.location object can be used to get the current page address and to redirect the browser to a new page. It does not require the window prefix and can be written "location.property" -->
+
+<!-- The window.history object contain's the browser's history. It does not require the window prefix and can be written "history.property" -->
+
+<button onclick="history.back()">Go back</button>
+
+<!-- The window.navigator object contains information about the visitor's brwoser. It does not require the window prefvix and can be written "navigator.property". Some properties include:
+	-navigator.appName
+	-navigator.platform
+	-navigator.cookieEnabled (returns true if cookies are enabled, false otherwise)
+	-and more...
+-->
+
+</body>
+</html>
