@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Timing Events</title>
+</head>
+<body>
+
+<!-- It is possible to execute code at specified time intervals in JavaScript. The two key methods are:
+	-setInterval() - executes a function repeatedly at specified time intervals
+	-setTimeout() - execute a function once after waiting a specified number of milliseconds
+-->
+
+<!-- setInterval syntax:
+		window.setInterval(function, milliseconds)
+		OR
+		setInterval(function, milliseconds)
+-->
+<p id="time"></p>
+<script>
+	//Updates string every second
+	var time = setInterval(function() {timer()}, 1000);
+	function timer () {
+		var date = new Date();
+		document.getElementById("time").innerHTML = date.toLocaleTimeString();
+	}
+</script>
+
+<!-- The clearInterval() method stops an interval. Syntax:
+		window.clearInterval(var)
+		OR
+		clearInterval(var), 
+		where var is a global variable representing the interval
+-->
+<button onclick="clearInterval(time)">Stop time</button>
+
+<!-- setTimeout syntax:
+		window.setTimeout(function, milliseconds)
+		OR
+		setTimeout(function, milliseconds)
+-->
+<br />
+<br />
+<button onclick="timeout=setTimeout(function(){alert('Waited 5 seconds before alerting')}, 5000)">Alert</button>
+
+<!-- The clearTimeout() method stops an timeout. Syntax:
+		window.clearTimeout(var)
+		OR
+		clearTimeout(var), 
+		where var is a global variable representing the timeout
+-->
+<br />
+<br />
+<button onclick="clearTimeout(timeout)">Stop timeout</button>
+
+</body>
+</html>
