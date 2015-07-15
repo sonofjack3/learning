@@ -39,7 +39,9 @@ namespace DataTypes
 
             Strings();
 
-            Conversions();            
+            Conversions();
+
+            VariableTypes();
         }
 
         private static void PrimitiveDataTypes()
@@ -59,7 +61,7 @@ namespace DataTypes
             /*  C# supports enumerated types */
 
             Console.WriteLine("Possible colors: ");
- 
+
             //Use the Enum.GetNames method to return a string array of named constants for an enum
             foreach (string s in Enum.GetNames(typeof(Color)))
             {
@@ -99,5 +101,52 @@ namespace DataTypes
             int d = (int)c;
         }
 
-        private
+        private static void VariableTypes()
+        {
+            /*  C# supports two kinds of variable types:
+                1. Value types - built-in primitive types and user-defined structs
+                2. Reference types - Classes and other complex data types (variables of such types contain a reference to an instance)
+            */
+
+            int i = 10;
+            int j = 20;
+            // Since int is a value type, there is no connection between variables if one is assigned to another (assign-by-value) */ 
+            int k = i;
+            // A change made to i will not affect k
+            i = 30;
+            Console.WriteLine(i.ToString());
+            Console.WriteLine(k.ToString());
+
+            // Reference types on the other hand, point to memory addresses
+            Person person1 = new Person("Evan");
+            Person person2 = person1;
+            // person2 now points to the same memory address as person1, so a change made to either affects the other
+            person2.SetName("Riley");
+            Console.WriteLine(person1.ToString());
+
+            /*  The process of converting a value type to a reference type is called "boxing".
+                The process of converting a reference type to a value type is called "unboxing".
+                In Java, this is akin to creating a wrapper class for a primitive data type and converting.
+            */
+        }
+    }
+
+    public class Person
+    {
+        private string name;
+        public Person(string name)
+        {
+            this.name = name;
+        }
+
+        public void SetName(string name)
+        {
+            this.name = name;
+        }
+
+        override public string ToString()
+        {
+            return name;
+        }
+    }
 }
