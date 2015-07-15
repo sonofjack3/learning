@@ -18,6 +18,7 @@ namespace DataTypes
         /*  C# allows for contants using the "const" keyword (same as "final" keyword in Java).
             The "readonly" keyword allows a variable's value to never be changed.
             Readonly variables are useful when modules that share data need to be compiled separately.
+            Readonly variables can be set within a class constructor.
         */
         const int MAX = 20;
         readonly string WHATEVER = "Whatever";
