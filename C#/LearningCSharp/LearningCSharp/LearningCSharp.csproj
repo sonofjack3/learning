@@ -46,6 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties.cs" />
+    <Compile Include="IndeterminateParameters.cs" />
+    <Compile Include="Methods.cs" />
+    <Compile Include="FlowControl.cs" />
     <Compile Include="SourceFileConventions.cs" />
     <Compile Include="DataTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
