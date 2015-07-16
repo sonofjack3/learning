@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Arrays.Example</StartupObject>
+    <StartupObject>InheritanceAndImplementation.Example</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Arrays.cs" />
+    <Compile Include="InheritanceAndImplementation.cs" />
     <Compile Include="Structs.cs" />
     <Compile Include="Properties.cs" />
     <Compile Include="IndeterminateParameters.cs" />
