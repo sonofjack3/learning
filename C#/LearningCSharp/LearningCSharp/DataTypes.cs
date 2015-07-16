@@ -122,7 +122,7 @@ namespace DataTypes
             Person person1 = new Person("Evan");
             Person person2 = person1;
             // person2 now points to the same memory address as person1, so a change made to either affects the other
-            person2.SetName("Riley");
+            person2.Name = "Riley";
             Console.WriteLine(person1.ToString());
 
             /*  The process of converting a value type to a reference type is called "boxing".
@@ -140,9 +140,16 @@ namespace DataTypes
             this.name = name;
         }
 
-        public void SetName(string name)
+        public String Name
         {
-            this.name = name;
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
         }
 
         override public string ToString()
