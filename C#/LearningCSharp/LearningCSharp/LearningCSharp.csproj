@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Events.Example</StartupObject>
+    <StartupObject>Exceptions.Example</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Arrays.cs" />
+    <Compile Include="Exceptions.cs" />
     <Compile Include="Events.cs" />
     <Compile Include="InheritanceAndImplementation.cs" />
     <Compile Include="Structs.cs" />
