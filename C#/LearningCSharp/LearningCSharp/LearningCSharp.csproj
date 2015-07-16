@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Attributes.Example</StartupObject>
+    <StartupObject>Delegates.Example</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -51,6 +51,7 @@
     <Compile Include="Attributes.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Delegates.cs" />
     <Compile Include="Exceptions.cs" />
     <Compile Include="Events.cs" />
     <Compile Include="InheritanceAndImplementation.cs" />
