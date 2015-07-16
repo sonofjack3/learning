@@ -36,6 +36,12 @@ namespace InheritanceAndImplementation
             get { return age; }
             set { age = value; }
         }
+
+        /*  A method that is to be overriden in a derived class must be declared as virtual, abstract or override */
+        public virtual void Birthday()
+        {
+            Age++;
+        }
     }
 
     public class Student : Person
@@ -59,6 +65,12 @@ namespace InheritanceAndImplementation
             get { return grade; }
             set { grade = value; }
         }
+
+        public override void Birthday()
+        {
+            base.Birthday();
+            Console.WriteLine("Happy {0}th Birthday {1}!", Age, Name);
+        }
     }
 
     public class Example
@@ -67,6 +79,7 @@ namespace InheritanceAndImplementation
         {
             Student student = new Student("Jim", 17, 12);
             Console.WriteLine("{0} is {1} years old and is in grade {2}.", student.Name, student.Age, student.Grade);
+            student.Birthday();
         }
     }
 }
