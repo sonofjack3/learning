@@ -1,5 +1,7 @@
 ﻿using System;
 
+/*  4.  METHODS */
+
 /*  The C# convention is to capitalize methods (Java uses lowercase by convention) */
 
 /*  In C# and Java, method parameters that refer to an object are passed by reference.
