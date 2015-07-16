@@ -2,8 +2,12 @@
 
 /*  6.  PROPERTIES */
 
-/*  In C#, a property is a named member of a class, struct or interface. */
-/*  "get" and "set" are default accessor methods for accessing properties. */
+/*  In C#, a property is a named member of a class, struct or interface.
+    "get" and "set" are default accessor methods for accessing properties.
+    A property with only a "get" method is readonly.
+    A property with only a "set" method is writeonly.
+*/
+
 
 namespace Properties
 {
