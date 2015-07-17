@@ -1,1 +1,11 @@
 Followed tutorial here: https://msdn.microsoft.com/en-us/library/ms228602(v=vs.90).aspx
+
+All .cs files (except SourceFileConventions.cs) contain a main method and are compilable and runnable. To select the main method to be executed:
+	1.	Open Visual Studio
+	2.	Navigate to File->Open->Project/Solution
+	3.	Select LearningCSharp.sln in the explorer
+	4.	Navigate to Project->LearningCSharpProperties
+	5.	Under Application, select the class to be executed in the "Startup object" dropdown list
+	6.	Save the project
+	7.	Re-build the project (Build->Build Solution)
+	8.	Run the program in debugging mode (Ctrl+F5)
