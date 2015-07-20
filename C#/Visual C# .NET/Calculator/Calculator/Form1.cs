@@ -13,7 +13,7 @@ namespace Calculator
 {
     public partial class CalculatorForm : Form
     {
-        private double sum;
+        private double sum; //the current sum
 
         public CalculatorForm()
         {
@@ -81,7 +81,8 @@ namespace Calculator
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            sum += double.Parse(displayTextBox.Text);
+            sum += double.Parse(displayTextBox.Text); //add to current sum
+            displayTextBox.Clear(); //clear display
             Debug.WriteLine("Current sum: {0}", sum);
         }
     }
