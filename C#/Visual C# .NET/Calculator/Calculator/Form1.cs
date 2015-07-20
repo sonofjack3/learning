@@ -12,9 +12,12 @@ namespace Calculator
 {
     public partial class CalculatorForm : Form
     {
+        private double sum;
+
         public CalculatorForm()
         {
             InitializeComponent();
+            sum = 0;
         }
 
         private void button0_Click(object sender, EventArgs e)
@@ -73,6 +76,12 @@ namespace Calculator
             {
                 displayTextBox.Text += ".";
             }
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            sum += double.Parse(displayTextBox.Text);
+            Console.WriteLine(sum);
         }
     }
 }
