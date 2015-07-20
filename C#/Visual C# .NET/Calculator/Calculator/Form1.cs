@@ -102,15 +102,15 @@ namespace Calculator
             Debug.WriteLine("Final sum: {0}", sum);
         }
 
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            displayTextBox.Clear();
+        }
+
         /*  Adds value of the display box to the current sum */
         private void add()
         {
             sum += double.Parse(displayTextBox.Text);
-        }
-
-        private void buttonClear_Click(object sender, EventArgs e)
-        {
-            displayTextBox.Clear();
         }
     }
 }
