@@ -49,7 +49,7 @@
             // 
             this.displayTextBox.Location = new System.Drawing.Point(40, 36);
             this.displayTextBox.Name = "displayTextBox";
-            this.displayTextBox.Size = new System.Drawing.Size(141, 20);
+            this.displayTextBox.Size = new System.Drawing.Size(111, 20);
             this.displayTextBox.TabIndex = 0;
             // 
             // button1
