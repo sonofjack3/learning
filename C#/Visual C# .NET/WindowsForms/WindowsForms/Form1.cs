@@ -25,5 +25,10 @@ namespace WindowsForms
             /* The MessageBoxIcons class can be used to specify the icon to be displayed with the MessageBox */
             MessageBox.Show("This is a message", "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
