@@ -85,5 +85,14 @@ namespace Calculator
             displayTextBox.Clear(); //clear display
             Debug.WriteLine("Current sum: {0}", sum);
         }
+
+        private void buttonEquals_Click(object sender, EventArgs e)
+        {
+            if (displayTextBox.Text != "")
+            {
+                sum += double.Parse(displayTextBox.Text); //add to current sum
+            }
+            displayTextBox.Text = sum.ToString();
+        }
     }
 }

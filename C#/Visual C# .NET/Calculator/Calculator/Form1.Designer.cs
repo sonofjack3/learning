@@ -180,6 +180,7 @@
             this.buttonEquals.TabIndex = 13;
             this.buttonEquals.Text = "=";
             this.buttonEquals.UseVisualStyleBackColor = true;
+            this.buttonEquals.Click += new System.EventHandler(this.buttonEquals_Click);
             // 
             // buttonClear
             // 
