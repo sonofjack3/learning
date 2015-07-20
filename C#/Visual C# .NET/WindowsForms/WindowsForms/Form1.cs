@@ -16,5 +16,12 @@ namespace WindowsForms
         {
             InitializeComponent();
         }
+
+        /*  This method controls what happens when button1 is clicked. */
+        private void button1_Click(object sender, EventArgs e)
+        {
+            /* The MessageBox class can be used to display popup boxes with text */
+            MessageBox.Show("This is a message");
+        }
     }
 }
