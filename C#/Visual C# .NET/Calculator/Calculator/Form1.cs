@@ -81,7 +81,7 @@ namespace Calculator
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            sum += double.Parse(displayTextBox.Text); //add to current sum
+            add(); //add to current sum
             displayTextBox.Clear(); //clear display
             Debug.WriteLine("Current sum: {0}", sum);
         }
@@ -90,9 +90,17 @@ namespace Calculator
         {
             if (displayTextBox.Text != "")
             {
-                sum += double.Parse(displayTextBox.Text); //add to current sum
+                add(); //add to current sum
             }
-            displayTextBox.Text = sum.ToString();
+            displayTextBox.Text = sum.ToString(); //show sum in display
+            sum = 0; //reset sum to 0
+            Debug.WriteLine("Final sum: {0}", sum);
+        }
+
+        /*  Adds value of the display box to the current sum */
+        private void add()
+        {
+            sum += double.Parse(displayTextBox.Text);
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
