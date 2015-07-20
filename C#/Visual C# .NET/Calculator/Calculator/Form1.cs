@@ -23,59 +23,59 @@ namespace Calculator
 
         private void button0_Click(object sender, EventArgs e)
         {
-            displayTextBox.Text += "0";
+            displayTextBox.Text += button0.Text;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            displayTextBox.Text += "1";
+            displayTextBox.Text += button1.Text;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            displayTextBox.Text += "2";
+            displayTextBox.Text += button2.Text; ;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            displayTextBox.Text += "3";
+            displayTextBox.Text += button3.Text; ;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            displayTextBox.Text += "4";
+            displayTextBox.Text += button4.Text; ;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            displayTextBox.Text += "5";
+            displayTextBox.Text += button5.Text; ;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            displayTextBox.Text += "6";
+            displayTextBox.Text += button6.Text; ;
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            displayTextBox.Text += "7";
+            displayTextBox.Text += button7.Text; ;
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            displayTextBox.Text += "8";
+            displayTextBox.Text += button8.Text; ;
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            displayTextBox.Text += "9";
+            displayTextBox.Text += button9.Text; ;
         }
 
         private void buttonDecimal_Click(object sender, EventArgs e)
         {
             if (displayTextBox.Text.IndexOf('.', 0) < 0)
             {
-                displayTextBox.Text += ".";
+                displayTextBox.Text += buttonDecimal.Text; ;
             }
         }
 
