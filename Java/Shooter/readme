@@ -1,0 +1,9 @@
+Shooter
+
+Unfinished Java project started in Summer 2012.
+
+Working now:
+  -player ship can be moved using up/down arrow keys
+  -player ship can shoot bullet by clicking left mouse button
+  -enemy ship follows player ship's vertical position and moves to match it
+  -enemy ship attempts to move away from incoming bullet
