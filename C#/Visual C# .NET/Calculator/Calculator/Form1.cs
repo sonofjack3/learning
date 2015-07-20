@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Calculator
 {
@@ -81,7 +82,7 @@ namespace Calculator
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             sum += double.Parse(displayTextBox.Text);
-            Console.WriteLine(sum);
+            Debug.WriteLine("Current sum: {0}", sum);
         }
     }
 }
