@@ -21,6 +21,10 @@ namespace Calculator
             sum = 0;
         }
 
+        //************************************************************
+        //  Event handler methods for buttons
+        //***********************************************************
+
         private void button0_Click(object sender, EventArgs e)
         {
             displayTextBox.Text += button0.Text;
@@ -73,6 +77,7 @@ namespace Calculator
 
         private void buttonDecimal_Click(object sender, EventArgs e)
         {
+            //Only allow one decimal to be entered
             if (displayTextBox.Text.IndexOf('.', 0) < 0)
             {
                 displayTextBox.Text += buttonDecimal.Text; ;
