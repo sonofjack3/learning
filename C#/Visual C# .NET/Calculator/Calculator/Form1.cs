@@ -69,7 +69,10 @@ namespace Calculator
 
         private void buttonDecimal_Click(object sender, EventArgs e)
         {
-            displayTextBox.Text += ".";
+            if (displayTextBox.Text.IndexOf('.', 0) < 0)
+            {
+                displayTextBox.Text += ".";
+            }
         }
     }
 }
