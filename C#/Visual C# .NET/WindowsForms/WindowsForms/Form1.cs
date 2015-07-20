@@ -21,7 +21,9 @@ namespace WindowsForms
         private void button1_Click(object sender, EventArgs e)
         {
             /* The MessageBox class can be used to display popup boxes with text */
-            MessageBox.Show("This is a message");
+            /* The MessageBoxButtons class can be used to specify what buttons appear in a MessageBox */
+            /* The MessageBoxIcons class can be used to specify the icon to be displayed with the MessageBox */
+            MessageBox.Show("This is a message", "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
         }
     }
 }
