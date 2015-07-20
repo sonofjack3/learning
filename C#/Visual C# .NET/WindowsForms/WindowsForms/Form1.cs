@@ -26,9 +26,11 @@ namespace WindowsForms
             MessageBox.Show("This is a message", "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void getDataButton_Click(object sender, EventArgs e)
         {
-
+            string name;
+            name = nameTextBox.Text;
+            MessageBox.Show(name);
         }
     }
 }
