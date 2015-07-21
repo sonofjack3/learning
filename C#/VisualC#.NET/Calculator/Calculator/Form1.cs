@@ -101,49 +101,49 @@ namespace Calculator
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             buffer = double.Parse(displayTextBox.Text); //store display value in buffer
-            calculate(); //perform calculation
+            Calculate(); //perform calculation
             lastOp = Operation.Add; //update most recent operation
             displayTextBox.Clear(); //clear display
-            debug();
+            WriteToDebug();
         }
 
         private void buttonMinus_Click(object sender, EventArgs e)
         {
             buffer = double.Parse(displayTextBox.Text); //store display value in buffer
-            calculate(); //perform calculation
+            Calculate(); //perform calculation
             lastOp = Operation.Subtract; //update most recent operation
             displayTextBox.Clear(); //clear display
-            debug();
+            WriteToDebug();
         }
 
         private void buttonMultiply_Click(object sender, EventArgs e)
         {
             buffer = double.Parse(displayTextBox.Text); //store display value in buffer
-            calculate(); //perform calculation
+            Calculate(); //perform calculation
             lastOp = Operation.Multiply; //update most recent operation
             displayTextBox.Clear(); //clear display
-            debug();
+            WriteToDebug();
         }
 
         private void buttonDivide_Click(object sender, EventArgs e)
         {
             buffer = double.Parse(displayTextBox.Text); //store display value in buffer
-            calculate(); //perform calculation
+            Calculate(); //perform calculation
             lastOp = Operation.Divide; //update most recent operation
             displayTextBox.Clear(); //clear display
-            debug();
+            WriteToDebug();
         }
 
         private void buttonEquals_Click(object sender, EventArgs e)
         {
             buffer = double.Parse(displayTextBox.Text); //store display value in buffer
-            calculate(); //perform calculation
+            Calculate(); //perform calculation
             displayTextBox.Text = result.ToString(); //show sum in display
-            debug();
+            WriteToDebug();
             result = 0; //reset result to 0
             buffer = 0; //reset buffer to 0
             lastOp = Operation.None; //reset most recent operation
-            debug();
+            WriteToDebug();
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
@@ -152,7 +152,7 @@ namespace Calculator
         }
 
         /*  Calculate new result using the buffer, the current result and the most recent operation entered */
-        private void calculate()
+        private void Calculate()
         {
             switch (lastOp)
             {
@@ -170,19 +170,19 @@ namespace Calculator
                     break;
                 //In this case, lastOp is set to None, so simply set the value of result to the buffer
                 default:
-                    setResult();
+                    SetResult();
                     break;
             }
         }
 
         /*  Sets the value of result to the value of the buffer */
-        private void setResult()
+        private void SetResult()
         {
             result = buffer;
         }
 
         /*  Write to debug window */
-        private void debug()
+        private void WriteToDebug()
         {
             Debug.WriteLine("Most recent operation: {0}", lastOp);
             Debug.WriteLine("Current result: {0}", result);
