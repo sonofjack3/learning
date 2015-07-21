@@ -68,11 +68,13 @@ namespace Menus
             {
                 textBox1.Show();
                 textBox2.Show();
+                richTextBox1.Show();
             }
             else
             {
                 textBox1.Hide();
                 textBox2.Hide();
+                richTextBox1.Hide();
             }
         }
 
