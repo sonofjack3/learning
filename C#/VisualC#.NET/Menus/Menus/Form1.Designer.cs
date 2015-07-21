@@ -44,11 +44,12 @@
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewTextBoxesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewLabelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -170,7 +171,6 @@
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewTextBoxesToolStripMenuItem,
-            this.viewLabelsToolStripMenuItem,
             this.viewImagesToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
@@ -178,7 +178,9 @@
             // 
             // viewTextBoxesToolStripMenuItem
             // 
+            this.viewTextBoxesToolStripMenuItem.Checked = true;
             this.viewTextBoxesToolStripMenuItem.CheckOnClick = true;
+            this.viewTextBoxesToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.viewTextBoxesToolStripMenuItem.Name = "viewTextBoxesToolStripMenuItem";
             this.viewTextBoxesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.T)));
@@ -186,17 +188,11 @@
             this.viewTextBoxesToolStripMenuItem.Text = "View Text &Boxes";
             this.viewTextBoxesToolStripMenuItem.Click += new System.EventHandler(this.viewTextBoxesToolStripMenuItem_Click);
             // 
-            // viewLabelsToolStripMenuItem
-            // 
-            this.viewLabelsToolStripMenuItem.CheckOnClick = true;
-            this.viewLabelsToolStripMenuItem.Name = "viewLabelsToolStripMenuItem";
-            this.viewLabelsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.L)));
-            this.viewLabelsToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
-            this.viewLabelsToolStripMenuItem.Text = "View &Labels";
-            // 
             // viewImagesToolStripMenuItem
             // 
+            this.viewImagesToolStripMenuItem.Checked = true;
+            this.viewImagesToolStripMenuItem.CheckOnClick = true;
+            this.viewImagesToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.viewImagesToolStripMenuItem.Name = "viewImagesToolStripMenuItem";
             this.viewImagesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.I)));
@@ -219,11 +215,23 @@
             this.textBox2.Size = new System.Drawing.Size(96, 92);
             this.textBox2.TabIndex = 2;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Image = global::Menus.Properties.Resources.Alison_Gold___Chinese_Food;
+            this.pictureBox1.Location = new System.Drawing.Point(24, 159);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(218, 83);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.menuStrip1);
@@ -232,6 +240,7 @@
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,10 +264,10 @@
         private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewTextBoxesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewLabelsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewImagesToolStripMenuItem;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
