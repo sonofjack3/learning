@@ -14,10 +14,12 @@ namespace Calculator
     public partial class CalculatorForm : Form
     {
         private double result; //the current result
+        private double buffer; //stores the previous value of the display
 
         // Enumerated type for calculator operations
         private enum Operation
         {
+            None,
             Add,
             Subtract,
             Multiply,
@@ -30,6 +32,7 @@ namespace Calculator
         {
             InitializeComponent();
             result = 0;
+            lastOp = Operation.None;
         }
 
         //************************************************************
@@ -97,7 +100,8 @@ namespace Calculator
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            add(); //add display value to current result
+            calculate(); //perform calculation
+            buffer = double.Parse(displayTextBox.Text); //store current value of display
             lastOp = Operation.Add; //update most recent operation
             displayTextBox.Clear(); //clear display
             Debug.WriteLine("Current result: {0}", result);
@@ -106,7 +110,8 @@ namespace Calculator
 
         private void buttonMinus_Click(object sender, EventArgs e)
         {
-            subtract(); //subtract display value from current result
+            calculate(); //perform calculation
+            buffer = double.Parse(displayTextBox.Text);
             lastOp = Operation.Subtract;
             displayTextBox.Clear(); //clear display
             Debug.WriteLine("Current result: {0}", result);
@@ -139,16 +144,31 @@ namespace Calculator
             displayTextBox.Clear();
         }
 
+        private void calculate()
+        {
+            switch (lastOp)
+            {
+                case Operation.Add:
+                    add();
+                    break;
+                case Operation.Subtract:
+                    subtract();
+                    break;
+                default:
+                    break;
+            }
+        }
+
         /*  Adds value of the display box to the current result */
         private void add()
         {
-            result += double.Parse(displayTextBox.Text);
+            result += buffer;
         }
 
         /*  Subtracts value of the display box from the current result */
         private void subtract()
         {
-            result -= double.Parse(displayTextBox.Text);
+            result -= buffer;
         }
     }
 }
