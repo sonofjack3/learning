@@ -100,50 +100,105 @@ namespace Calculator
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            buffer = double.Parse(displayTextBox.Text); //store display value in buffer
-            Calculate(); //perform calculation
-            lastOp = Operation.Add; //update most recent operation
-            displayTextBox.Clear(); //clear display
-            WriteToDebug();
+            try
+            {
+                buffer = double.Parse(displayTextBox.Text); //store display value in buffer
+                Calculate(); //perform calculation
+                lastOp = Operation.Add; //update most recent operation
+                displayTextBox.Clear(); //clear display
+                WriteToDebug();
+            }
+            catch (FormatException fe)
+            {
+                Debug.WriteLine(fe);
+                displayTextBox.Text = ("Error");
+                result = 0; //reset result
+                buffer = 0; //reset buffer
+                lastOp = Operation.None; //reset last operation value
+            }
         }
 
         private void buttonMinus_Click(object sender, EventArgs e)
         {
-            buffer = double.Parse(displayTextBox.Text); //store display value in buffer
-            Calculate(); //perform calculation
-            lastOp = Operation.Subtract; //update most recent operation
-            displayTextBox.Clear(); //clear display
-            WriteToDebug();
+            try
+            {
+                buffer = double.Parse(displayTextBox.Text); //store display value in buffer
+                Calculate(); //perform calculation
+                lastOp = Operation.Subtract; //update most recent operation
+                displayTextBox.Clear(); //clear display
+                WriteToDebug();
+            }
+            catch (FormatException fe)
+            {
+                Debug.WriteLine(fe);
+                displayTextBox.Text = ("Error");
+                result = 0; //reset result
+                buffer = 0; //reset buffer
+                lastOp = Operation.None; //reset last operation value
+            }
         }
 
         private void buttonMultiply_Click(object sender, EventArgs e)
         {
-            buffer = double.Parse(displayTextBox.Text); //store display value in buffer
-            Calculate(); //perform calculation
-            lastOp = Operation.Multiply; //update most recent operation
-            displayTextBox.Clear(); //clear display
-            WriteToDebug();
+            try
+            {
+                buffer = double.Parse(displayTextBox.Text); //store display value in buffer
+                Calculate(); //perform calculation
+                lastOp = Operation.Multiply; //update most recent operation
+                displayTextBox.Clear(); //clear display
+                WriteToDebug();
+            }
+            catch (FormatException fe)
+            {
+                Debug.WriteLine(fe);
+                displayTextBox.Text = ("Error");
+                result = 0; //reset result
+                buffer = 0; //reset buffer
+                lastOp = Operation.None; //reset last operation value
+            }
         }
 
         private void buttonDivide_Click(object sender, EventArgs e)
         {
-            buffer = double.Parse(displayTextBox.Text); //store display value in buffer
-            Calculate(); //perform calculation
-            lastOp = Operation.Divide; //update most recent operation
-            displayTextBox.Clear(); //clear display
-            WriteToDebug();
+            try
+            {
+                buffer = double.Parse(displayTextBox.Text); //store display value in buffer
+                Calculate(); //perform calculation
+                lastOp = Operation.Divide; //update most recent operation
+                displayTextBox.Clear(); //clear display
+                WriteToDebug();
+            }
+            catch (FormatException fe)
+            {
+                Debug.WriteLine(fe);
+                displayTextBox.Text = ("Error");
+                result = 0; //reset result
+                buffer = 0; //reset buffer
+                lastOp = Operation.None; //reset last operation value
+            }
         }
 
         private void buttonEquals_Click(object sender, EventArgs e)
         {
-            buffer = double.Parse(displayTextBox.Text); //store display value in buffer
-            Calculate(); //perform calculation
-            displayTextBox.Text = result.ToString(); //show sum in display
-            WriteToDebug();
-            result = 0; //reset result to 0
-            buffer = 0; //reset buffer to 0
-            lastOp = Operation.None; //reset most recent operation
-            WriteToDebug();
+            try
+            {
+                buffer = double.Parse(displayTextBox.Text); //store display value in buffer
+                Calculate(); //perform calculation
+                displayTextBox.Text = result.ToString(); //show sum in display
+                WriteToDebug();
+                result = 0; //reset result to 0
+                buffer = 0; //reset buffer to 0
+                lastOp = Operation.None; //reset most recent operation
+                WriteToDebug();
+            }
+            catch (FormatException fe)
+            {
+                Debug.WriteLine(fe);
+                displayTextBox.Text = ("Error");
+                result = 0; //reset result
+                buffer = 0; //reset buffer
+                lastOp = Operation.None; //reset last operation value
+            }
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
