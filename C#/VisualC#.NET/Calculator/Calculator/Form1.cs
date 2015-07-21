@@ -97,7 +97,7 @@ namespace Calculator
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            add(); //add to current result
+            add(); //add display value to current result
             lastOp = Operation.Add; //update most recent operation
             displayTextBox.Clear(); //clear display
             Debug.WriteLine("Current result: {0}", result);
@@ -106,7 +106,11 @@ namespace Calculator
 
         private void buttonMinus_Click(object sender, EventArgs e)
         {
-
+            subtract(); //subtract display value from current result
+            lastOp = Operation.Subtract;
+            displayTextBox.Clear(); //clear display
+            Debug.WriteLine("Current result: {0}", result);
+            Debug.WriteLine("Most recent operation: {0}", lastOp);
         }
 
         private void buttonMultiply_Click(object sender, EventArgs e)
@@ -135,10 +139,16 @@ namespace Calculator
             displayTextBox.Clear();
         }
 
-        /*  Adds value of the display box to the current sum */
+        /*  Adds value of the display box to the current result */
         private void add()
         {
             result += double.Parse(displayTextBox.Text);
+        }
+
+        /*  Subtracts value of the display box from the current result */
+        private void subtract()
+        {
+            result -= double.Parse(displayTextBox.Text);
         }
     }
 }
