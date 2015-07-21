@@ -73,5 +73,17 @@ namespace Menus
                 textBox2.Hide();
             }
         }
+
+        private void viewImagesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (viewImagesToolStripMenuItem.Checked)
+            {
+                pictureBox1.Show();
+            }
+            else
+            {
+                pictureBox1.Hide();
+            }
+        }
     }
 }

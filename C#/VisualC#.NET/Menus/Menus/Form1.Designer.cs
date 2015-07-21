@@ -198,6 +198,7 @@
             | System.Windows.Forms.Keys.I)));
             this.viewImagesToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.viewImagesToolStripMenuItem.Text = "View &Images";
+            this.viewImagesToolStripMenuItem.Click += new System.EventHandler(this.viewImagesToolStripMenuItem_Click);
             // 
             // textBox1
             // 
