@@ -88,7 +88,7 @@ namespace Menus
             }
         }
 
-        private void insertImageToolStripMenuItem_Click(object sender, EventArgs e)
+        private void openImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Display open file dialog
             openFileDialog1.ShowDialog();
