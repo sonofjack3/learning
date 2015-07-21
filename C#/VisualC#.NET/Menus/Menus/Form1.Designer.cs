@@ -47,11 +47,12 @@
             this.viewImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialogImage = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.openImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openTextFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialogText = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -87,7 +88,7 @@
             this.newFileToolStripMenuItem});
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newToolStripMenuItem.Text = "&New";
             // 
             // newProjectToolStripMenuItem
@@ -116,18 +117,18 @@
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveToolStripMenuItem.Text = "&Save";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(143, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
             // 
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.quitToolStripMenuItem.Text = "&Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
@@ -223,11 +224,10 @@
             this.textBox2.Size = new System.Drawing.Size(96, 92);
             this.textBox2.TabIndex = 2;
             // 
-            // openFileDialog1
+            // openFileDialogImage
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.Filter = "All files|*.*|JPEG|*.jpg|PNG|*.png|GIF|*.gif";
-            this.openFileDialog1.Title = "Insert an image";
+            this.openFileDialogImage.Filter = "JPEG|*.jpg|PNG|*.png|GIF|*.gif";
+            this.openFileDialogImage.Title = "Insert an image";
             // 
             // pictureBox1
             // 
@@ -261,6 +261,11 @@
             this.openTextFileToolStripMenuItem.Name = "openTextFileToolStripMenuItem";
             this.openTextFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openTextFileToolStripMenuItem.Text = "Open Text File";
+            this.openTextFileToolStripMenuItem.Click += new System.EventHandler(this.openTextFileToolStripMenuItem_Click);
+            // 
+            // openFileDialogText
+            // 
+            this.openFileDialogText.Filter = "Text files|*.txt";
             // 
             // Form1
             // 
@@ -305,10 +310,11 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialogImage;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.ToolStripMenuItem openImageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openTextFileToolStripMenuItem;
+        private System.Windows.Forms.OpenFileDialog openFileDialogText;
     }
 }
 

@@ -91,12 +91,12 @@ namespace Menus
         private void openImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Display open file dialog
-            openFileDialog1.ShowDialog();
+            openFileDialogImage.ShowDialog();
             //Set default location to look for files
-            openFileDialog1.InitialDirectory = System.Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+            openFileDialogImage.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
             //Get name of file
             string fileName = "";
-            fileName = openFileDialog1.FileName;
+            fileName = openFileDialogImage.FileName;
             //Display image in picture box
             try
             {
@@ -107,6 +107,28 @@ namespace Menus
             {
                 //Access resource files using the following
                 pictureBox1.Image = Properties.Resources.maxresdefault;
+                Debug.WriteLine(fe);
+            }
+        }
+
+        private void openTextFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Display open file dialog
+            openFileDialogText.ShowDialog();
+            //Set default location to look for files
+            openFileDialogText.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            //Get name of file
+            string fileName = "";
+            fileName = openFileDialogText.FileName;
+            //Show text in rich text box
+            try
+            {
+                //Use the LoadFile() method from the RichTextBox class to load from a text file
+                richTextBox1.LoadFile(fileName, RichTextBoxStreamType.PlainText);
+            }
+            catch (FileNotFoundException fe)
+            {
+                Debug.WriteLine(fe);
             }
         }
     }
