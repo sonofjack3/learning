@@ -22,7 +22,16 @@ namespace Menus
             DialogResult dialogRes = MessageBox.Show("Really quit?", "Quit", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dialogRes == DialogResult.OK)
             {
+                //Use Application.Exit() to close the program
                 Application.Exit();
+            }
+        }
+
+        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (textBox1.SelectedText != "")
+            {
+                textBox1.Cut();
             }
         }
     }
