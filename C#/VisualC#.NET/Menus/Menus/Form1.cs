@@ -53,5 +53,25 @@ namespace Menus
                 textBox1.Copy();
             }
         }
+
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Paste text into textBox2
+            textBox2.Paste();
+        }
+
+        private void viewTextBoxesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (viewTextBoxesToolStripMenuItem.Checked)
+            {
+                textBox1.Show();
+                textBox2.Show();
+            }
+            else
+            {
+                textBox1.Hide();
+                textBox2.Hide();
+            }
+        }
     }
 }

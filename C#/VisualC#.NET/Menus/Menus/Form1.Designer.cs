@@ -164,6 +164,7 @@
             this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
             this.pasteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pasteToolStripMenuItem.Text = "&Paste";
+            this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
@@ -177,14 +178,17 @@
             // 
             // viewTextBoxesToolStripMenuItem
             // 
+            this.viewTextBoxesToolStripMenuItem.CheckOnClick = true;
             this.viewTextBoxesToolStripMenuItem.Name = "viewTextBoxesToolStripMenuItem";
             this.viewTextBoxesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.T)));
             this.viewTextBoxesToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.viewTextBoxesToolStripMenuItem.Text = "View Text &Boxes";
+            this.viewTextBoxesToolStripMenuItem.Click += new System.EventHandler(this.viewTextBoxesToolStripMenuItem_Click);
             // 
             // viewLabelsToolStripMenuItem
             // 
+            this.viewLabelsToolStripMenuItem.CheckOnClick = true;
             this.viewLabelsToolStripMenuItem.Name = "viewLabelsToolStripMenuItem";
             this.viewLabelsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.L)));
