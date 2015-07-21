@@ -100,7 +100,7 @@ namespace Calculator
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            buffer = double.Parse(displayTextBox.Text); //store current value of display
+            buffer = double.Parse(displayTextBox.Text); //store display value in buffer
             calculate(); //perform calculation
             lastOp = Operation.Add; //update most recent operation
             displayTextBox.Clear(); //clear display
@@ -109,31 +109,35 @@ namespace Calculator
 
         private void buttonMinus_Click(object sender, EventArgs e)
         {
-            buffer = double.Parse(displayTextBox.Text);
+            buffer = double.Parse(displayTextBox.Text); //store display value in buffer
             calculate(); //perform calculation
-            lastOp = Operation.Subtract;
+            lastOp = Operation.Subtract; //update most recent operation
             displayTextBox.Clear(); //clear display
             debug();
         }
 
         private void buttonMultiply_Click(object sender, EventArgs e)
         {
-            buffer = double.Parse(displayTextBox.Text);
+            buffer = double.Parse(displayTextBox.Text); //store display value in buffer
             calculate(); //perform calculation
-            lastOp = Operation.Multiply;
+            lastOp = Operation.Multiply; //update most recent operation
             displayTextBox.Clear(); //clear display
             debug();
         }
 
         private void buttonDivide_Click(object sender, EventArgs e)
         {
-
+            buffer = double.Parse(displayTextBox.Text); //store display value in buffer
+            calculate(); //perform calculation
+            lastOp = Operation.Divide; //update most recent operation
+            displayTextBox.Clear(); //clear display
+            debug();
         }
 
         private void buttonEquals_Click(object sender, EventArgs e)
         {
-            buffer = double.Parse(displayTextBox.Text);
-            calculate();
+            buffer = double.Parse(displayTextBox.Text); //store display value in buffer
+            calculate(); //perform calculation
             displayTextBox.Text = result.ToString(); //show sum in display
             debug();
             result = 0; //reset result to 0
@@ -147,42 +151,28 @@ namespace Calculator
             displayTextBox.Clear();
         }
 
+        /*  Calculate new result using the buffer, the current result and the most recent operation entered */
         private void calculate()
         {
             switch (lastOp)
             {
                 case Operation.Add:
-                    add();
+                    result += buffer;
                     break;
                 case Operation.Subtract:
-                    subtract();
+                    result -= buffer;
                     break;
                 case Operation.Multiply:
-                    multiply();
+                    result *= buffer;
+                    break;
+                case Operation.Divide:
+                    result /= buffer;
                     break;
                 //In this case, lastOp is set to None, so simply set the value of result to the buffer
                 default:
                     setResult();
                     break;
             }
-        }
-
-        /*  Adds value of the buffer to the current result */
-        private void add()
-        {
-            result += buffer;
-        }
-
-        /*  Subtracts value of the buffer from the current result */
-        private void subtract()
-        {
-            result -= buffer;
-        }
-
-        /*  Multiplies value of the buffer with the current result */
-        private void multiply()
-        {
-            result *= buffer;
         }
 
         /*  Sets the value of result to the value of the buffer */
