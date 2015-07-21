@@ -13,7 +13,7 @@ namespace Calculator
 {
     public partial class CalculatorForm : Form
     {
-        private double sum; //the current sum
+        private double result; //the current result
 
         // Enumerated type for tracking the most recent operation performed
         private enum Operation
@@ -27,7 +27,7 @@ namespace Calculator
         public CalculatorForm()
         {
             InitializeComponent();
-            sum = 0;
+            result = 0;
         }
 
         //************************************************************
@@ -97,7 +97,7 @@ namespace Calculator
         {
             add(); //add to current sum
             displayTextBox.Clear(); //clear display
-            Debug.WriteLine("Current sum: {0}", sum);
+            Debug.WriteLine("Current result: {0}", result);
         }
 
         private void buttonMinus_Click(object sender, EventArgs e)
@@ -121,9 +121,9 @@ namespace Calculator
             {
                 add(); //add to current sum
             }
-            displayTextBox.Text = sum.ToString(); //show sum in display
-            sum = 0; //reset sum to 0
-            Debug.WriteLine("Final sum: {0}", sum);
+            displayTextBox.Text = result.ToString(); //show sum in display
+            result = 0; //reset sum to 0
+            Debug.WriteLine("Final sum: {0}", result);
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
@@ -134,7 +134,7 @@ namespace Calculator
         /*  Adds value of the display box to the current sum */
         private void add()
         {
-            sum += double.Parse(displayTextBox.Text);
+            result += double.Parse(displayTextBox.Text);
         }
     }
 }
