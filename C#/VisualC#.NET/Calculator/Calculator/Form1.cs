@@ -91,6 +91,21 @@ namespace Calculator
             Debug.WriteLine("Current sum: {0}", sum);
         }
 
+        private void buttonMinus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonMultiply_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonDivide_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void buttonEquals_Click(object sender, EventArgs e)
         {
             if (displayTextBox.Text != "")
