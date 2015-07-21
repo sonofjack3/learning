@@ -15,7 +15,7 @@ namespace Calculator
     {
         private double result; //the current result
 
-        // Enumerated type for tracking the most recent operation performed
+        // Enumerated type for calculator operations
         private enum Operation
         {
             Add,
@@ -23,6 +23,8 @@ namespace Calculator
             Multiply,
             Divide
         }
+
+        private Operation mostRecentOp; //the most recent operation that has been performed;
 
         public CalculatorForm()
         {
