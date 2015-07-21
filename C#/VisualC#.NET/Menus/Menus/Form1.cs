@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Diagnostics;
 
 namespace Menus
 {
@@ -83,6 +85,26 @@ namespace Menus
             else
             {
                 pictureBox1.Hide();
+            }
+        }
+
+        private void insertImageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Display open file dialog
+            openFileDialog1.ShowDialog();
+            //Get name of file
+            string fileName = "";
+            fileName = openFileDialog1.FileName;
+            //Display image in picture box
+            try
+            {
+                //Create an image from a filename using the following
+                pictureBox1.Image = Image.FromFile(fileName);
+            }
+            catch (FileNotFoundException fe)
+            {
+                //Access resource files using the following
+                pictureBox1.Image = Properties.Resources.maxresdefault;
             }
         }
     }
