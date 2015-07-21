@@ -17,15 +17,20 @@ namespace ListBoxes
             InitializeComponent();
         }
 
-        /* Event handler called when Loop button is clicked */
+        /*  Event handler called when Loop button is clicked.
+            When the button is clicked, this method calculates and displays the results of multiplying
+            all the numbers from "start" to "end" by the "multiplicand" specified by the user.
+        */ 
         private void buttonLoop_Click(object sender, EventArgs e)
         {
+
             int start = int.Parse(textBoxStart.Text);
             int end = int.Parse(textBoxEnd.Text);
+            int multiplicand = int.Parse(textBoxMultiplicand.Text);
             string line;
             for (int i = start; i <= end; i++)
             {
-                line = String.Format("{0} times 10 is {1}", i, i * 10);
+                line = String.Format("{0} times {1} is {2}", i, multiplicand, i * multiplicand);
                 listBoxResults.Items.Add(line);
             }
         }
