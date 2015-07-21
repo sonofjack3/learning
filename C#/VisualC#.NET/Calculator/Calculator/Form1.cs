@@ -118,7 +118,11 @@ namespace Calculator
 
         private void buttonMultiply_Click(object sender, EventArgs e)
         {
-
+            buffer = double.Parse(displayTextBox.Text);
+            calculate(); //perform calculation
+            lastOp = Operation.Multiply;
+            displayTextBox.Clear(); //clear display
+            debug();
         }
 
         private void buttonDivide_Click(object sender, EventArgs e)
@@ -153,6 +157,9 @@ namespace Calculator
                 case Operation.Subtract:
                     subtract();
                     break;
+                case Operation.Multiply:
+                    multiply();
+                    break;
                 //In this case, lastOp is set to None, so simply set the value of result to the buffer
                 default:
                     setResult();
@@ -160,16 +167,22 @@ namespace Calculator
             }
         }
 
-        /*  Adds value of the display box to the current result */
+        /*  Adds value of the buffer to the current result */
         private void add()
         {
             result += buffer;
         }
 
-        /*  Subtracts value of the display box from the current result */
+        /*  Subtracts value of the buffer from the current result */
         private void subtract()
         {
             result -= buffer;
+        }
+
+        /*  Multiplies value of the buffer with the current result */
+        private void multiply()
+        {
+            result *= buffer;
         }
 
         /*  Sets the value of result to the value of the buffer */
