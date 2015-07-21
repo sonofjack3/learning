@@ -24,7 +24,7 @@ namespace Calculator
             Divide
         }
 
-        private Operation mostRecentOp; //the most recent operation that has been performed;
+        private Operation lastOp; //the most recent operation that has been performed
 
         public CalculatorForm()
         {
@@ -98,10 +98,10 @@ namespace Calculator
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             add(); //add to current result
-            mostRecentOp = Operation.Add; //update most recent operation
+            lastOp = Operation.Add; //update most recent operation
             displayTextBox.Clear(); //clear display
             Debug.WriteLine("Current result: {0}", result);
-            Debug.WriteLine("Most recent operation: {0}", mostRecentOp);
+            Debug.WriteLine("Most recent operation: {0}", lastOp);
         }
 
         private void buttonMinus_Click(object sender, EventArgs e)
