@@ -43,13 +43,16 @@
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonEquals = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
+            this.buttonMinus = new System.Windows.Forms.Button();
+            this.buttonMultiply = new System.Windows.Forms.Button();
+            this.buttonDivide = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // displayTextBox
             // 
             this.displayTextBox.Location = new System.Drawing.Point(40, 36);
             this.displayTextBox.Name = "displayTextBox";
-            this.displayTextBox.Size = new System.Drawing.Size(157, 20);
+            this.displayTextBox.Size = new System.Drawing.Size(203, 20);
             this.displayTextBox.TabIndex = 0;
             // 
             // button1
@@ -174,7 +177,7 @@
             // 
             // buttonEquals
             // 
-            this.buttonEquals.Location = new System.Drawing.Point(157, 122);
+            this.buttonEquals.Location = new System.Drawing.Point(157, 159);
             this.buttonEquals.Name = "buttonEquals";
             this.buttonEquals.Size = new System.Drawing.Size(40, 31);
             this.buttonEquals.TabIndex = 13;
@@ -184,7 +187,7 @@
             // 
             // buttonClear
             // 
-            this.buttonClear.Location = new System.Drawing.Point(157, 159);
+            this.buttonClear.Location = new System.Drawing.Point(203, 159);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(40, 31);
             this.buttonClear.TabIndex = 14;
@@ -192,11 +195,41 @@
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
+            // buttonMinus
+            // 
+            this.buttonMinus.Location = new System.Drawing.Point(203, 85);
+            this.buttonMinus.Name = "buttonMinus";
+            this.buttonMinus.Size = new System.Drawing.Size(40, 31);
+            this.buttonMinus.TabIndex = 15;
+            this.buttonMinus.Text = "-";
+            this.buttonMinus.UseVisualStyleBackColor = true;
+            // 
+            // buttonMultiply
+            // 
+            this.buttonMultiply.Location = new System.Drawing.Point(157, 122);
+            this.buttonMultiply.Name = "buttonMultiply";
+            this.buttonMultiply.Size = new System.Drawing.Size(40, 31);
+            this.buttonMultiply.TabIndex = 16;
+            this.buttonMultiply.Text = "*";
+            this.buttonMultiply.UseVisualStyleBackColor = true;
+            // 
+            // buttonDivide
+            // 
+            this.buttonDivide.Location = new System.Drawing.Point(203, 122);
+            this.buttonDivide.Name = "buttonDivide";
+            this.buttonDivide.Size = new System.Drawing.Size(40, 31);
+            this.buttonDivide.TabIndex = 17;
+            this.buttonDivide.Text = "/";
+            this.buttonDivide.UseVisualStyleBackColor = true;
+            // 
             // CalculatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(239, 272);
+            this.ClientSize = new System.Drawing.Size(283, 272);
+            this.Controls.Add(this.buttonDivide);
+            this.Controls.Add(this.buttonMultiply);
+            this.Controls.Add(this.buttonMinus);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonEquals);
             this.Controls.Add(this.buttonAdd);
@@ -236,6 +269,9 @@
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonEquals;
         private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Button buttonMinus;
+        private System.Windows.Forms.Button buttonMultiply;
+        private System.Windows.Forms.Button buttonDivide;
     }
 }
 
