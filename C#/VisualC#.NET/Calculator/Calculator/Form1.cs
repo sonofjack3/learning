@@ -15,6 +15,15 @@ namespace Calculator
     {
         private double sum; //the current sum
 
+        // Enumerated type for tracking the most recent operation performed
+        private enum Operation
+        {
+            Add,
+            Subtract,
+            Multiply,
+            Divide
+        }
+
         public CalculatorForm()
         {
             InitializeComponent();
