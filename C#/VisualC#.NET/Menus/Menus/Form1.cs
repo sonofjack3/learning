@@ -92,6 +92,8 @@ namespace Menus
         {
             //Display open file dialog
             openFileDialog1.ShowDialog();
+            //Set default location to look for files
+            openFileDialog1.InitialDirectory = System.Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
             //Get name of file
             string fileName = "";
             fileName = openFileDialog1.FileName;
