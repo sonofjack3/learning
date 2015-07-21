@@ -42,6 +42,10 @@
             this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewTextBoxesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewLabelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +53,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.editToolStripMenuItem});
+            this.editToolStripMenuItem,
+            this.viewToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(284, 24);
@@ -102,6 +107,7 @@
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
             this.quitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.quitToolStripMenuItem.Text = "&Quit";
+            this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
             // newProjectToolStripMenuItem
             // 
@@ -154,6 +160,40 @@
             this.pasteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pasteToolStripMenuItem.Text = "&Paste";
             // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewTextBoxesToolStripMenuItem,
+            this.viewLabelsToolStripMenuItem,
+            this.viewImagesToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "&View";
+            // 
+            // viewTextBoxesToolStripMenuItem
+            // 
+            this.viewTextBoxesToolStripMenuItem.Name = "viewTextBoxesToolStripMenuItem";
+            this.viewTextBoxesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.T)));
+            this.viewTextBoxesToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.viewTextBoxesToolStripMenuItem.Text = "View Text &Boxes";
+            // 
+            // viewLabelsToolStripMenuItem
+            // 
+            this.viewLabelsToolStripMenuItem.Name = "viewLabelsToolStripMenuItem";
+            this.viewLabelsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.L)));
+            this.viewLabelsToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.viewLabelsToolStripMenuItem.Text = "View &Labels";
+            // 
+            // viewImagesToolStripMenuItem
+            // 
+            this.viewImagesToolStripMenuItem.Name = "viewImagesToolStripMenuItem";
+            this.viewImagesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.I)));
+            this.viewImagesToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.viewImagesToolStripMenuItem.Text = "View &Images";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,6 +226,10 @@
         private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewTextBoxesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewLabelsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewImagesToolStripMenuItem;
     }
 }
 

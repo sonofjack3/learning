@@ -16,5 +16,14 @@ namespace Menus
         {
             InitializeComponent();
         }
+
+        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogRes = MessageBox.Show("Really quit?", "Quit", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dialogRes == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
     }
 }
