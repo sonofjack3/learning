@@ -100,22 +100,20 @@ namespace Calculator
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            calculate(); //perform calculation
             buffer = double.Parse(displayTextBox.Text); //store current value of display
+            calculate(); //perform calculation
             lastOp = Operation.Add; //update most recent operation
             displayTextBox.Clear(); //clear display
-            Debug.WriteLine("Current result: {0}", result);
-            Debug.WriteLine("Most recent operation: {0}", lastOp);
+            debug();
         }
 
         private void buttonMinus_Click(object sender, EventArgs e)
         {
-            calculate(); //perform calculation
             buffer = double.Parse(displayTextBox.Text);
+            calculate(); //perform calculation
             lastOp = Operation.Subtract;
             displayTextBox.Clear(); //clear display
-            Debug.WriteLine("Current result: {0}", result);
-            Debug.WriteLine("Most recent operation: {0}", lastOp);
+            debug();
         }
 
         private void buttonMultiply_Click(object sender, EventArgs e)
@@ -130,13 +128,14 @@ namespace Calculator
 
         private void buttonEquals_Click(object sender, EventArgs e)
         {
-            if (displayTextBox.Text != "")
-            {
-                add(); //add to current sum
-            }
+            buffer = double.Parse(displayTextBox.Text);
+            calculate();
             displayTextBox.Text = result.ToString(); //show sum in display
-            result = 0; //reset sum to 0
-            Debug.WriteLine("Final sum: {0}", result);
+            debug();
+            result = 0; //reset result to 0
+            buffer = 0; //reset buffer to 0
+            lastOp = Operation.None; //reset most recent operation
+            debug();
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
@@ -154,7 +153,9 @@ namespace Calculator
                 case Operation.Subtract:
                     subtract();
                     break;
+                //In this case, lastOp is set to None, so simply set the value of result to the buffer
                 default:
+                    setResult();
                     break;
             }
         }
@@ -169,6 +170,20 @@ namespace Calculator
         private void subtract()
         {
             result -= buffer;
+        }
+
+        /*  Sets the value of result to the value of the buffer */
+        private void setResult()
+        {
+            result = buffer;
+        }
+
+        /*  Write to debug window */
+        private void debug()
+        {
+            Debug.WriteLine("Most recent operation: {0}", lastOp);
+            Debug.WriteLine("Current result: {0}", result);
+            Debug.WriteLine("Current buffer value: {0}", buffer);
         }
     }
 }
