@@ -51,6 +51,7 @@
             this.insertImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +65,7 @@
             this.insertToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(284, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(263, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -247,25 +248,34 @@
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.ErrorImage = global::Menus.Properties.Resources.maxresdefault;
             this.pictureBox1.Image = global::Menus.Properties.Resources.Alison_Gold___Chinese_Food;
-            this.pictureBox1.Location = new System.Drawing.Point(24, 159);
+            this.pictureBox1.Location = new System.Drawing.Point(24, 246);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(218, 83);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(24, 160);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(218, 80);
+            this.richTextBox1.TabIndex = 4;
+            this.richTextBox1.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(263, 341);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "s";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -299,6 +309,7 @@
         private System.Windows.Forms.ToolStripMenuItem insertToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem insertImageToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 
