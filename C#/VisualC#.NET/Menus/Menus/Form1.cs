@@ -31,7 +31,17 @@ namespace Menus
         {
             if (textBox1.SelectedText != "")
             {
+                //Use the Cut() method of the TextBox class to cut selected text from a text box
                 textBox1.Cut();
+            }
+        }
+
+        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (textBox1.CanUndo)
+            {
+                //Use the Undo() method of the TextBox class to undo changes made to the text box
+                textBox1.Undo();
             }
         }
     }
