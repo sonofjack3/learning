@@ -97,9 +97,11 @@ namespace Calculator
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            add(); //add to current sum
+            add(); //add to current result
+            mostRecentOp = Operation.Add; //update most recent operation
             displayTextBox.Clear(); //clear display
             Debug.WriteLine("Current result: {0}", result);
+            Debug.WriteLine("Most recent operation: {0}", mostRecentOp);
         }
 
         private void buttonMinus_Click(object sender, EventArgs e)
