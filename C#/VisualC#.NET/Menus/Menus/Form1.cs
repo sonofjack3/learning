@@ -44,5 +44,14 @@ namespace Menus
                 textBox1.Undo();
             }
         }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (textBox1.SelectedText != "")
+            {
+                //Use the Copy() method of the TextBox class to copy selected text from a text box
+                textBox1.Copy();
+            }
+        }
     }
 }
