@@ -35,7 +35,7 @@
             this.textBoxEnd = new System.Windows.Forms.TextBox();
             this.buttonLoop = new System.Windows.Forms.Button();
             this.labelMultiplicand = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxMultiplicand = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // listBoxResults
@@ -97,19 +97,19 @@
             this.labelMultiplicand.TabIndex = 6;
             this.labelMultiplicand.Text = "Multiply By";
             // 
-            // textBox1
+            // textBoxMultiplicand
             // 
-            this.textBox1.Location = new System.Drawing.Point(87, 82);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(114, 20);
-            this.textBox1.TabIndex = 7;
+            this.textBoxMultiplicand.Location = new System.Drawing.Point(87, 82);
+            this.textBoxMultiplicand.Name = "textBoxMultiplicand";
+            this.textBoxMultiplicand.Size = new System.Drawing.Size(114, 20);
+            this.textBoxMultiplicand.TabIndex = 7;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxMultiplicand);
             this.Controls.Add(this.labelMultiplicand);
             this.Controls.Add(this.buttonLoop);
             this.Controls.Add(this.textBoxEnd);
@@ -133,7 +133,7 @@
         private System.Windows.Forms.TextBox textBoxEnd;
         private System.Windows.Forms.Button buttonLoop;
         private System.Windows.Forms.Label labelMultiplicand;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxMultiplicand;
     }
 }
 
