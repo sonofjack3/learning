@@ -53,6 +53,7 @@
             this.openImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openTextFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialogText = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -119,6 +120,7 @@
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveToolStripMenuItem.Text = "&Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -267,6 +269,10 @@
             // 
             this.openFileDialogText.Filter = "Text files|*.txt";
             // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "Text files|*.txt";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -315,6 +321,7 @@
         private System.Windows.Forms.ToolStripMenuItem openImageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openTextFileToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialogText;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

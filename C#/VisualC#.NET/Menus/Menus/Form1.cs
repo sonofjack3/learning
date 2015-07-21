@@ -131,5 +131,19 @@ namespace Menus
                 Debug.WriteLine(fe);
             }
         }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Set default location to save files
+            openFileDialogText.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string fileName = "";
+            //Save the file
+            if (saveFileDialog1.ShowDialog() != DialogResult.Cancel)
+            {
+                fileName = saveFileDialog1.FileName;
+                //The SaveFile() method of the RichTextBox class does the actual saving
+                richTextBox1.SaveFile(fileName, RichTextBoxStreamType.PlainText);
+            }
+        }
     }
 }
