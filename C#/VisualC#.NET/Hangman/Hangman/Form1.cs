@@ -17,160 +17,165 @@ namespace Hangman
         private string[] words; //words to be used in the game
         private int[] used; //tracks used words
         private Random random; //Random object for generating next word
+        private string currentWord; //tracks the current word being used (hidden from user)
+        private int currentWordLength;
+        private string hiddenWord; //the hidden word displayed to the user
 
         public Form1()
         {
             InitializeComponent();
             words = new string[NUM_WORDS]
             {
-                "Elephant",
-                "Basket",
-                "Shirt",
-                "Antidisestablishmentarianism",
-                "To",
-                "Poster",
-                "Dragon",
-                "Beach",
-                "Heaven",
-                "Guitar"
+                "ELEPHANT",
+                "BASKET",
+                "SHIRT",
+                "ANTIDISESTABLISHMENTARIANISM",
+                "TO",
+                "POSTER",
+                "DRAGON",
+                "BEACH",
+                "HECK",
+                "GUITAR"
             };
             used = new int[NUM_WORDS];
             random = new Random();
+            currentWordLength = 0;
+            currentWord = "";
+            hiddenWord = "";
         }
 
         private void buttonA_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonA.Text[0]);
         }
 
         private void buttonB_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonB.Text[0]);
         }
 
         private void buttonC_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonC.Text[0]);
         }
 
         private void buttonD_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonD.Text[0]);
         }
 
         private void buttonE_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonE.Text[0]);
         }
 
         private void buttonF_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonF.Text[0]);
         }
 
         private void buttonG_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonG.Text[0]);
         }
 
         private void buttonH_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonH.Text[0]);
         }
 
         private void buttonI_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonI.Text[0]);
         }
 
         private void buttonJ_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonJ.Text[0]);
         }
 
         private void buttonK_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonK.Text[0]);
         }
 
         private void buttonL_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonL.Text[0]);
         }
 
         private void buttonM_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonM.Text[0]);
         }
 
         private void buttonN_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonN.Text[0]);
         }
 
         private void buttonO_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonO.Text[0]);
         }
 
         private void buttonP_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonP.Text[0]);
         }
 
         private void buttonQ_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonQ.Text[0]);
         }
 
         private void buttonR_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonR.Text[0]);
         }
 
         private void buttonS_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonS.Text[0]);
         }
 
         private void buttonT_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonT.Text[0]);
         }
 
         private void buttonU_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonU.Text[0]);
         }
 
         private void buttonV_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonV.Text[0]);
         }
 
         private void buttonW_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonW.Text[0]);
         }
 
         private void buttonX_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonX.Text[0]);
         }
 
         private void buttonY_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonY.Text[0]);
         }
 
         private void buttonZ_Click(object sender, EventArgs e)
         {
-
+            checkLetter(buttonZ.Text[0]);
         }
 
         private void buttonNewWord_Click(object sender, EventArgs e)
         {
-            string newWord;
             int index = random.Next(0, NUM_WORDS - 1); //generate an index for the new word
             Debug.WriteLine(index);
             int count = 0; //track how many times a random number has been generated (don't exceed NUM_WORDS)
@@ -186,10 +191,38 @@ namespace Hangman
             else //otherwise, show the new word and start the game
             {
                 used[index] = 1; //mark this index as used
-                newWord = words[index]; //save the new word
-                int newWordLength = newWord.Length;
-                string hiddenWord = new string('*', newWordLength); //construct a hidden version of the new word using asterisks
+                currentWord = words[index]; //save the new word
+                currentWordLength = currentWord.Length;
+                hiddenWord = new string('*', currentWordLength); //construct a hidden version of the new word using asterisks
                 textBoxWord.Text = hiddenWord; //display the (hidden) word
+                Debug.WriteLine("Current word: {0}", currentWord);
+                Debug.WriteLine("Current word length: {0}", currentWordLength);
+                Debug.WriteLine("Current hidden word: {0}", hiddenWord);
+            }
+        }
+
+        private void checkLetter(char letter)
+        {
+            letter = Char.ToUpper(letter); //convert letter to uppercase
+            List<int> foundIndexes = new List<int>();
+            //Search for instances of the given letter in the current word
+            for (int i = 0; i < currentWordLength; i++)
+            {
+                if (currentWord[i] == letter)
+                {
+                    foundIndexes.Add(i);
+                }
+            }
+            if (foundIndexes.Count > 0) //if any instances of the letter were found
+            {
+                //Construct new hidden word with guessed letter exposed
+                StringBuilder sb = new StringBuilder(hiddenWord);
+                foreach (int i in foundIndexes)
+                {
+                    sb[i] = letter;
+                }
+                hiddenWord = sb.ToString(); //store the new hidden word with exposed letters
+                textBoxWord.Text = hiddenWord; //display the new hidden word with exposed letters
             }
         }
     }
