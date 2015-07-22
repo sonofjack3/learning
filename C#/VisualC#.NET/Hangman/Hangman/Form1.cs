@@ -45,8 +45,8 @@ namespace Hangman
             hiddenWord = "";
 
             /*  Disable all controls on the form except the "New Word" button */
-            //disableAllButtons();
-            //buttonNewWord.Enabled = true;
+            disableAllButtons();
+            buttonNewWord.Enabled = true;
         }
 
         private void buttonA_Click(object sender, EventArgs e)
