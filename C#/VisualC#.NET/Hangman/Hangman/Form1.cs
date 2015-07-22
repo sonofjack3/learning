@@ -194,10 +194,7 @@ namespace Hangman
                 currentWord = words[index]; //save the new word
                 currentWordLength = currentWord.Length;
                 hiddenWord = new string('*', currentWordLength); //construct a hidden version of the new word using asterisks
-                textBoxWord.Text = hiddenWord; //display the (hidden) word
-                Debug.WriteLine("Current word: {0}", currentWord);
-                Debug.WriteLine("Current word length: {0}", currentWordLength);
-                Debug.WriteLine("Current hidden word: {0}", hiddenWord);
+                updateDisplay();
             }
         }
 
@@ -222,7 +219,17 @@ namespace Hangman
                     sb[i] = letter;
                 }
                 hiddenWord = sb.ToString(); //store the new hidden word with exposed letters
-                textBoxWord.Text = hiddenWord; //display the new hidden word with exposed letters
+                updateDisplay();
+            }
+        }
+
+        /*  Updates the display with the most recent hidden word */
+        private void updateDisplay()
+        {
+            textBoxWord.Text = hiddenWord;
+            if (hiddenWord == currentWord) //the hidden word is fully exposed and the user has won the game
+            {
+                MessageBox.Show("You Win!", "Congrats", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
