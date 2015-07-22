@@ -198,6 +198,7 @@
             this.buttonSelectedMovies.TabIndex = 2;
             this.buttonSelectedMovies.Text = "Selected Movies";
             this.buttonSelectedMovies.UseVisualStyleBackColor = true;
+            this.buttonSelectedMovies.Click += new System.EventHandler(this.buttonSelectedMovies_Click);
             // 
             // buttonFavoriteGenre
             // 
