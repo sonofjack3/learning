@@ -7,28 +7,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Hangman
 {
     public partial class Form1 : Form
     {
-        private string[] words =
-        {
-            "Elephant",
-            "Basket",
-            "Shirt",
-            "Antidisestablishmentarianism",
-            "To",
-            "Poster",
-            "Dragon",
-            "Beach",
-            "Heaven",
-            "Guitar"
-        };
+        private const int NUM_WORDS = 10; //number of possible words in this game
+        private string[] words; //words to be used in the game
+        private int[] used; //tracks used words
+        private Random random; //Random object for generating next word
 
         public Form1()
         {
             InitializeComponent();
+            words = new string[NUM_WORDS]
+            {
+                "Elephant",
+                "Basket",
+                "Shirt",
+                "Antidisestablishmentarianism",
+                "To",
+                "Poster",
+                "Dragon",
+                "Beach",
+                "Heaven",
+                "Guitar"
+            };
+            used = new int[NUM_WORDS];
+            random = new Random();
         }
 
         private void buttonA_Click(object sender, EventArgs e)
@@ -163,7 +170,27 @@ namespace Hangman
 
         private void buttonNewWord_Click(object sender, EventArgs e)
         {
-            
+            string newWord;
+            int index = random.Next(0, NUM_WORDS - 1); //generate an index for the new word
+            Debug.WriteLine(index);
+            int count = 0; //track how many times a random number has been generated (don't exceed NUM_WORDS)
+            while (used[index] > 0 && count < NUM_WORDS) //look for an unused index
+            {
+                index = random.Next(0, NUM_WORDS - 1);
+                count++;
+            }
+            if (count == 10) //if a random number has been generated NUM_WORDS times, we're out of words
+            {
+                MessageBox.Show("No more words!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else //otherwise, show the new word and start the game
+            {
+                used[index] = 1; //mark this index as used
+                newWord = words[index]; //save the new word
+                int newWordLength = newWord.Length;
+                string hiddenWord = new string('*', newWordLength); //construct a hidden version of the new word using asterisks
+                textBoxWord.Text = hiddenWord; //display the (hidden) word
+            }
         }
     }
 }
