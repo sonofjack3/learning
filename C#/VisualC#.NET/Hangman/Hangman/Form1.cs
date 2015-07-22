@@ -14,13 +14,16 @@ namespace Hangman
 {
     public partial class Form1 : Form
     {
-        private const int NUM_WORDS = 10; //number of possible words in this game
+        private const int NUM_WORDS = 10; //number of possible words
+        private const int MAX_GUESSES = 5; //maximum number of allowed guesses per game
+        private const string BASE_GUESS_LABEL = "Remaining Guess: ";
         private string[] words; //words to be used in the game
         private int[] used; //tracks used words
         private Random random; //Random object for generating next word
         private string currentWord; //tracks the current word being used (hidden from user)
         private int currentWordLength;
         private string hiddenWord; //the hidden word displayed to the user
+        private int remainingGuesses; //track the number of remaining guesses for the user 
 
         public Form1()
         {
@@ -223,6 +226,7 @@ namespace Hangman
             else //otherwise, show the new word and start the game
             {
                 enableAllButtons();
+                remainingGuesses = MAX_GUESSES;
                 used[index] = 1; //mark this index as used
                 currentWord = words[index]; //save the new word
                 currentWordLength = currentWord.Length;
@@ -257,18 +261,28 @@ namespace Hangman
 
                 return true;
             }
-            else
+            else //otherwise, the word does not contain the given letter
             {
+                remainingGuesses--; //decrement number of remaining guesses
+                updateDisplay();
                 return false;
             }
         }
 
-        /*  Updates the display with the most recent hidden word.
-            Checks whether the user has won the game. */
+        /*  Updates the display.
+            Checks whether the user has lost or won the game. */
         private void updateDisplay()
         {
             textBoxWord.Text = hiddenWord;
-            if (hiddenWord == currentWord) //the hidden word is fully exposed and the user has won the game
+            labelGuesses.Text = BASE_GUESS_LABEL + remainingGuesses;
+            if (remainingGuesses == 0)
+            {
+                MessageBox.Show("Game Over", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                disableAllButtons();
+                //Enable New Word Button
+                buttonNewWord.Enabled = true;
+            }
+            else if (hiddenWord == currentWord) //the hidden word is fully exposed and the user has won the game
             {
                 MessageBox.Show("You Win!", "Congrats", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

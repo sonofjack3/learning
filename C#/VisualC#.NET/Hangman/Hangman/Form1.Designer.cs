@@ -57,11 +57,13 @@
             this.buttonN = new System.Windows.Forms.Button();
             this.buttonL = new System.Windows.Forms.Button();
             this.buttonM = new System.Windows.Forms.Button();
+            this.labelGuesses = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.labelGuesses);
             this.panel1.Controls.Add(this.buttonNewWord);
             this.panel1.Controls.Add(this.buttonZ);
             this.panel1.Controls.Add(this.textBoxWord);
@@ -373,6 +375,15 @@
             this.buttonM.UseVisualStyleBackColor = true;
             this.buttonM.Click += new System.EventHandler(this.buttonM_Click);
             // 
+            // labelGuesses
+            // 
+            this.labelGuesses.AutoSize = true;
+            this.labelGuesses.Location = new System.Drawing.Point(110, 239);
+            this.labelGuesses.Name = "labelGuesses";
+            this.labelGuesses.Size = new System.Drawing.Size(113, 13);
+            this.labelGuesses.TabIndex = 56;
+            this.labelGuesses.Text = "Remaining Guesses: 5";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -417,6 +428,7 @@
         private System.Windows.Forms.Button buttonN;
         private System.Windows.Forms.Button buttonL;
         private System.Windows.Forms.Button buttonM;
+        private System.Windows.Forms.Label labelGuesses;
     }
 }
 
