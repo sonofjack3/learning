@@ -40,6 +40,8 @@
             this.radioButtonDrama = new System.Windows.Forms.RadioButton();
             this.radioButtonFantasy = new System.Windows.Forms.RadioButton();
             this.radioButtonHorror = new System.Windows.Forms.RadioButton();
+            this.buttonSelectedMovies = new System.Windows.Forms.Button();
+            this.buttonFavoriteGenre = new System.Windows.Forms.Button();
             this.groupBoxCheckboxes.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -187,11 +189,33 @@
             this.radioButtonHorror.Text = "Horror";
             this.radioButtonHorror.UseVisualStyleBackColor = true;
             // 
+            // buttonSelectedMovies
+            // 
+            this.buttonSelectedMovies.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSelectedMovies.Location = new System.Drawing.Point(12, 160);
+            this.buttonSelectedMovies.Name = "buttonSelectedMovies";
+            this.buttonSelectedMovies.Size = new System.Drawing.Size(200, 23);
+            this.buttonSelectedMovies.TabIndex = 2;
+            this.buttonSelectedMovies.Text = "Selected Movies";
+            this.buttonSelectedMovies.UseVisualStyleBackColor = true;
+            // 
+            // buttonFavoriteGenre
+            // 
+            this.buttonFavoriteGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFavoriteGenre.Location = new System.Drawing.Point(218, 160);
+            this.buttonFavoriteGenre.Name = "buttonFavoriteGenre";
+            this.buttonFavoriteGenre.Size = new System.Drawing.Size(200, 23);
+            this.buttonFavoriteGenre.TabIndex = 3;
+            this.buttonFavoriteGenre.Text = "Favorite Genre";
+            this.buttonFavoriteGenre.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(431, 261);
+            this.Controls.Add(this.buttonFavoriteGenre);
+            this.Controls.Add(this.buttonSelectedMovies);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBoxCheckboxes);
             this.Name = "Form1";
@@ -218,6 +242,8 @@
         private System.Windows.Forms.RadioButton radioButtonDrama;
         private System.Windows.Forms.RadioButton radioButtonAction;
         private System.Windows.Forms.RadioButton radioButtonComedy;
+        private System.Windows.Forms.Button buttonSelectedMovies;
+        private System.Windows.Forms.Button buttonFavoriteGenre;
     }
 }
 
