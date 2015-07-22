@@ -54,6 +54,8 @@
             this.buttonX = new System.Windows.Forms.Button();
             this.buttonY = new System.Windows.Forms.Button();
             this.buttonZ = new System.Windows.Forms.Button();
+            this.textBoxWord = new System.Windows.Forms.TextBox();
+            this.buttonNewWord = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonA
@@ -291,11 +293,30 @@
             this.buttonZ.Text = "Z";
             this.buttonZ.UseVisualStyleBackColor = true;
             // 
+            // textBoxWord
+            // 
+            this.textBoxWord.Location = new System.Drawing.Point(12, 38);
+            this.textBoxWord.Name = "textBoxWord";
+            this.textBoxWord.Size = new System.Drawing.Size(269, 20);
+            this.textBoxWord.TabIndex = 26;
+            this.textBoxWord.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // buttonNewWord
+            // 
+            this.buttonNewWord.Location = new System.Drawing.Point(58, 9);
+            this.buttonNewWord.Name = "buttonNewWord";
+            this.buttonNewWord.Size = new System.Drawing.Size(178, 23);
+            this.buttonNewWord.TabIndex = 27;
+            this.buttonNewWord.Text = "New Word";
+            this.buttonNewWord.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(293, 261);
+            this.Controls.Add(this.buttonNewWord);
+            this.Controls.Add(this.textBoxWord);
             this.Controls.Add(this.buttonZ);
             this.Controls.Add(this.buttonY);
             this.Controls.Add(this.buttonX);
@@ -325,6 +346,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -356,6 +378,8 @@
         private System.Windows.Forms.Button buttonX;
         private System.Windows.Forms.Button buttonY;
         private System.Windows.Forms.Button buttonZ;
+        private System.Windows.Forms.TextBox textBoxWord;
+        private System.Windows.Forms.Button buttonNewWord;
     }
 }
 
