@@ -28,27 +28,164 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxCheckboxes = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkBoxComedy = new System.Windows.Forms.CheckBox();
+            this.checkBoxAction = new System.Windows.Forms.CheckBox();
+            this.checkBoxDrama = new System.Windows.Forms.CheckBox();
+            this.checkBoxFantasy = new System.Windows.Forms.CheckBox();
+            this.checkBoxHorror = new System.Windows.Forms.CheckBox();
+            this.radioButtonComedy = new System.Windows.Forms.RadioButton();
+            this.radioButtonAction = new System.Windows.Forms.RadioButton();
+            this.radioButtonDrama = new System.Windows.Forms.RadioButton();
+            this.radioButtonFantasy = new System.Windows.Forms.RadioButton();
+            this.radioButtonHorror = new System.Windows.Forms.RadioButton();
+            this.groupBoxCheckboxes.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupBoxCheckboxes
             // 
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "What genres of movies do you like?";
+            this.groupBoxCheckboxes.Controls.Add(this.checkBoxHorror);
+            this.groupBoxCheckboxes.Controls.Add(this.checkBoxFantasy);
+            this.groupBoxCheckboxes.Controls.Add(this.checkBoxDrama);
+            this.groupBoxCheckboxes.Controls.Add(this.checkBoxAction);
+            this.groupBoxCheckboxes.Controls.Add(this.checkBoxComedy);
+            this.groupBoxCheckboxes.Location = new System.Drawing.Point(12, 12);
+            this.groupBoxCheckboxes.Name = "groupBoxCheckboxes";
+            this.groupBoxCheckboxes.Size = new System.Drawing.Size(200, 141);
+            this.groupBoxCheckboxes.TabIndex = 0;
+            this.groupBoxCheckboxes.TabStop = false;
+            this.groupBoxCheckboxes.Text = "What genres of movies do you like?";
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.radioButtonHorror);
+            this.groupBox2.Controls.Add(this.radioButtonFantasy);
+            this.groupBox2.Controls.Add(this.radioButtonDrama);
+            this.groupBox2.Controls.Add(this.radioButtonAction);
+            this.groupBox2.Controls.Add(this.radioButtonComedy);
             this.groupBox2.Location = new System.Drawing.Point(218, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 100);
+            this.groupBox2.Size = new System.Drawing.Size(200, 141);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "What is your favorite movie genre?";
+            // 
+            // checkBoxComedy
+            // 
+            this.checkBoxComedy.AutoSize = true;
+            this.checkBoxComedy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxComedy.Location = new System.Drawing.Point(7, 20);
+            this.checkBoxComedy.Name = "checkBoxComedy";
+            this.checkBoxComedy.Size = new System.Drawing.Size(70, 17);
+            this.checkBoxComedy.TabIndex = 0;
+            this.checkBoxComedy.Text = "Comedy";
+            this.checkBoxComedy.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxAction
+            // 
+            this.checkBoxAction.AutoSize = true;
+            this.checkBoxAction.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxAction.Location = new System.Drawing.Point(6, 43);
+            this.checkBoxAction.Name = "checkBoxAction";
+            this.checkBoxAction.Size = new System.Drawing.Size(62, 17);
+            this.checkBoxAction.TabIndex = 1;
+            this.checkBoxAction.Text = "Action";
+            this.checkBoxAction.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxDrama
+            // 
+            this.checkBoxDrama.AutoSize = true;
+            this.checkBoxDrama.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxDrama.Location = new System.Drawing.Point(6, 66);
+            this.checkBoxDrama.Name = "checkBoxDrama";
+            this.checkBoxDrama.Size = new System.Drawing.Size(62, 17);
+            this.checkBoxDrama.TabIndex = 2;
+            this.checkBoxDrama.Text = "Drama";
+            this.checkBoxDrama.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxFantasy
+            // 
+            this.checkBoxFantasy.AutoSize = true;
+            this.checkBoxFantasy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxFantasy.Location = new System.Drawing.Point(6, 89);
+            this.checkBoxFantasy.Name = "checkBoxFantasy";
+            this.checkBoxFantasy.Size = new System.Drawing.Size(70, 17);
+            this.checkBoxFantasy.TabIndex = 3;
+            this.checkBoxFantasy.Text = "Fantasy";
+            this.checkBoxFantasy.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxHorror
+            // 
+            this.checkBoxHorror.AutoSize = true;
+            this.checkBoxHorror.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxHorror.Location = new System.Drawing.Point(6, 112);
+            this.checkBoxHorror.Name = "checkBoxHorror";
+            this.checkBoxHorror.Size = new System.Drawing.Size(61, 17);
+            this.checkBoxHorror.TabIndex = 4;
+            this.checkBoxHorror.Text = "Horror";
+            this.checkBoxHorror.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonComedy
+            // 
+            this.radioButtonComedy.AutoSize = true;
+            this.radioButtonComedy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonComedy.Location = new System.Drawing.Point(6, 19);
+            this.radioButtonComedy.Name = "radioButtonComedy";
+            this.radioButtonComedy.Size = new System.Drawing.Size(69, 17);
+            this.radioButtonComedy.TabIndex = 0;
+            this.radioButtonComedy.TabStop = true;
+            this.radioButtonComedy.Text = "Comedy";
+            this.radioButtonComedy.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonAction
+            // 
+            this.radioButtonAction.AutoSize = true;
+            this.radioButtonAction.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonAction.Location = new System.Drawing.Point(6, 42);
+            this.radioButtonAction.Name = "radioButtonAction";
+            this.radioButtonAction.Size = new System.Drawing.Size(61, 17);
+            this.radioButtonAction.TabIndex = 1;
+            this.radioButtonAction.TabStop = true;
+            this.radioButtonAction.Text = "Action";
+            this.radioButtonAction.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonDrama
+            // 
+            this.radioButtonDrama.AutoSize = true;
+            this.radioButtonDrama.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonDrama.Location = new System.Drawing.Point(6, 65);
+            this.radioButtonDrama.Name = "radioButtonDrama";
+            this.radioButtonDrama.Size = new System.Drawing.Size(61, 17);
+            this.radioButtonDrama.TabIndex = 2;
+            this.radioButtonDrama.TabStop = true;
+            this.radioButtonDrama.Text = "Drama";
+            this.radioButtonDrama.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonFantasy
+            // 
+            this.radioButtonFantasy.AutoSize = true;
+            this.radioButtonFantasy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonFantasy.Location = new System.Drawing.Point(6, 88);
+            this.radioButtonFantasy.Name = "radioButtonFantasy";
+            this.radioButtonFantasy.Size = new System.Drawing.Size(69, 17);
+            this.radioButtonFantasy.TabIndex = 3;
+            this.radioButtonFantasy.TabStop = true;
+            this.radioButtonFantasy.Text = "Fantasy";
+            this.radioButtonFantasy.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonHorror
+            // 
+            this.radioButtonHorror.AutoSize = true;
+            this.radioButtonHorror.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonHorror.Location = new System.Drawing.Point(6, 111);
+            this.radioButtonHorror.Name = "radioButtonHorror";
+            this.radioButtonHorror.Size = new System.Drawing.Size(60, 17);
+            this.radioButtonHorror.TabIndex = 4;
+            this.radioButtonHorror.TabStop = true;
+            this.radioButtonHorror.Text = "Horror";
+            this.radioButtonHorror.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -56,17 +193,31 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(431, 261);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxCheckboxes);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.groupBoxCheckboxes.ResumeLayout(false);
+            this.groupBoxCheckboxes.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxCheckboxes;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.CheckBox checkBoxHorror;
+        private System.Windows.Forms.CheckBox checkBoxFantasy;
+        private System.Windows.Forms.CheckBox checkBoxDrama;
+        private System.Windows.Forms.CheckBox checkBoxAction;
+        private System.Windows.Forms.CheckBox checkBoxComedy;
+        private System.Windows.Forms.RadioButton radioButtonHorror;
+        private System.Windows.Forms.RadioButton radioButtonFantasy;
+        private System.Windows.Forms.RadioButton radioButtonDrama;
+        private System.Windows.Forms.RadioButton radioButtonAction;
+        private System.Windows.Forms.RadioButton radioButtonComedy;
     }
 }
 
