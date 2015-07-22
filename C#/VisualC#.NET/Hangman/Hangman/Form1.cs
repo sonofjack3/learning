@@ -146,5 +146,10 @@ namespace Hangman
         {
 
         }
+
+        private void buttonNewWord_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

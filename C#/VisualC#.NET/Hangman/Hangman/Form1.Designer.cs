@@ -334,6 +334,7 @@
             this.buttonNewWord.TabIndex = 27;
             this.buttonNewWord.Text = "New Word";
             this.buttonNewWord.UseVisualStyleBackColor = true;
+            this.buttonNewWord.Click += new System.EventHandler(this.buttonNewWord_Click);
             // 
             // Form1
             // 
