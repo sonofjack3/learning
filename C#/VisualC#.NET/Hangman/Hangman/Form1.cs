@@ -47,131 +47,157 @@ namespace Hangman
         private void buttonA_Click(object sender, EventArgs e)
         {
             checkLetter(buttonA.Text[0]);
+            buttonA.Enabled = false;
         }
 
         private void buttonB_Click(object sender, EventArgs e)
         {
             checkLetter(buttonB.Text[0]);
+            buttonB.Enabled = false;
         }
 
         private void buttonC_Click(object sender, EventArgs e)
         {
             checkLetter(buttonC.Text[0]);
+            buttonC.Enabled = false;
         }
 
         private void buttonD_Click(object sender, EventArgs e)
         {
             checkLetter(buttonD.Text[0]);
+            buttonD.Enabled = false;
         }
 
         private void buttonE_Click(object sender, EventArgs e)
         {
             checkLetter(buttonE.Text[0]);
+            buttonE.Enabled = false;
         }
 
         private void buttonF_Click(object sender, EventArgs e)
         {
             checkLetter(buttonF.Text[0]);
+            buttonF.Enabled = false;
         }
 
         private void buttonG_Click(object sender, EventArgs e)
         {
             checkLetter(buttonG.Text[0]);
+            buttonG.Enabled = false;
         }
 
         private void buttonH_Click(object sender, EventArgs e)
         {
             checkLetter(buttonH.Text[0]);
+            buttonH.Enabled = false;
         }
 
         private void buttonI_Click(object sender, EventArgs e)
         {
             checkLetter(buttonI.Text[0]);
+            buttonI.Enabled = false;
         }
 
         private void buttonJ_Click(object sender, EventArgs e)
         {
             checkLetter(buttonJ.Text[0]);
+            buttonJ.Enabled = false;
         }
 
         private void buttonK_Click(object sender, EventArgs e)
         {
             checkLetter(buttonK.Text[0]);
+            buttonK.Enabled = false;
         }
 
         private void buttonL_Click(object sender, EventArgs e)
         {
             checkLetter(buttonL.Text[0]);
+            buttonL.Enabled = false;
         }
 
         private void buttonM_Click(object sender, EventArgs e)
         {
             checkLetter(buttonM.Text[0]);
+            buttonM.Enabled = false;
         }
 
         private void buttonN_Click(object sender, EventArgs e)
         {
             checkLetter(buttonN.Text[0]);
+            buttonN.Enabled = false;
         }
 
         private void buttonO_Click(object sender, EventArgs e)
         {
             checkLetter(buttonO.Text[0]);
+            buttonO.Enabled = false;
         }
 
         private void buttonP_Click(object sender, EventArgs e)
         {
             checkLetter(buttonP.Text[0]);
+            buttonP.Enabled = false;
         }
 
         private void buttonQ_Click(object sender, EventArgs e)
         {
             checkLetter(buttonQ.Text[0]);
+            buttonQ.Enabled = false;
         }
 
         private void buttonR_Click(object sender, EventArgs e)
         {
             checkLetter(buttonR.Text[0]);
+            buttonR.Enabled = false;
         }
 
         private void buttonS_Click(object sender, EventArgs e)
         {
             checkLetter(buttonS.Text[0]);
+            buttonS.Enabled = false;
         }
 
         private void buttonT_Click(object sender, EventArgs e)
         {
             checkLetter(buttonT.Text[0]);
+            buttonT.Enabled = false;
         }
 
         private void buttonU_Click(object sender, EventArgs e)
         {
             checkLetter(buttonU.Text[0]);
+            buttonU.Enabled = false;
         }
 
         private void buttonV_Click(object sender, EventArgs e)
         {
             checkLetter(buttonV.Text[0]);
+            buttonV.Enabled = false;
         }
 
         private void buttonW_Click(object sender, EventArgs e)
         {
             checkLetter(buttonW.Text[0]);
+            buttonW.Enabled = false;
         }
 
         private void buttonX_Click(object sender, EventArgs e)
         {
             checkLetter(buttonX.Text[0]);
+            buttonX.Enabled = false;
         }
 
         private void buttonY_Click(object sender, EventArgs e)
         {
             checkLetter(buttonY.Text[0]);
+            buttonY.Enabled = false;
         }
 
         private void buttonZ_Click(object sender, EventArgs e)
         {
             checkLetter(buttonZ.Text[0]);
+            buttonZ.Enabled = false;
         }
 
         private void buttonNewWord_Click(object sender, EventArgs e)
@@ -198,7 +224,7 @@ namespace Hangman
             }
         }
 
-        private void checkLetter(char letter)
+        private bool checkLetter(char letter)
         {
             letter = Char.ToUpper(letter); //convert letter to uppercase
             List<int> foundIndexes = new List<int>();
@@ -220,10 +246,17 @@ namespace Hangman
                 }
                 hiddenWord = sb.ToString(); //store the new hidden word with exposed letters
                 updateDisplay();
+
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
-        /*  Updates the display with the most recent hidden word */
+        /*  Updates the display with the most recent hidden word.
+            Checks whether the user has won the game. */
         private void updateDisplay()
         {
             textBoxWord.Text = hiddenWord;
