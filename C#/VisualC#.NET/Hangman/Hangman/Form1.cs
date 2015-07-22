@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using Hangman.Properties;
 
 namespace Hangman
 {
@@ -42,6 +43,10 @@ namespace Hangman
             currentWordLength = 0;
             currentWord = "";
             hiddenWord = "";
+
+            /*  Disable all controls on the form except the "New Word" button */
+            //disableAllButtons();
+            //buttonNewWord.Enabled = true;
         }
 
         private void buttonA_Click(object sender, EventArgs e)
@@ -213,13 +218,16 @@ namespace Hangman
             if (count == 10) //if a random number has been generated NUM_WORDS times, we're out of words
             {
                 MessageBox.Show("No more words!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                disableAllButtons();
             }
             else //otherwise, show the new word and start the game
             {
+                enableAllButtons();
                 used[index] = 1; //mark this index as used
                 currentWord = words[index]; //save the new word
                 currentWordLength = currentWord.Length;
                 hiddenWord = new string('*', currentWordLength); //construct a hidden version of the new word using asterisks
+                WriteToDebug();
                 updateDisplay();
             }
         }
@@ -264,6 +272,31 @@ namespace Hangman
             {
                 MessageBox.Show("You Win!", "Congrats", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        /*  Disables all controls in the panel */
+        private void disableAllButtons()
+        {
+            foreach (Control c in panel1.Controls)
+            {
+                c.Enabled = false;
+            }
+        }
+
+
+        /*  Enables all controls in the panel */
+        private void enableAllButtons()
+        {
+            foreach (Control c in panel1.Controls)
+            {
+                c.Enabled = true;
+            }
+        }
+
+        private void WriteToDebug()
+        {
+            Debug.WriteLine("Current word: " + currentWord);
+            Debug.WriteLine("Current hidden word: " + hiddenWord);
         }
     }
 }
