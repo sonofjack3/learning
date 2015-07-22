@@ -12,6 +12,20 @@ namespace Hangman
 {
     public partial class Form1 : Form
     {
+        private string[] words =
+        {
+            "Elephant",
+            "Basket",
+            "Shirt",
+            "Antidisestablishmentarianism",
+            "To",
+            "Poster",
+            "Dragon",
+            "Beach",
+            "Heaven",
+            "Guitar"
+        };
+
         public Form1()
         {
             InitializeComponent();
@@ -149,7 +163,7 @@ namespace Hangman
 
         private void buttonNewWord_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
