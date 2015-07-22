@@ -42,5 +42,31 @@ namespace CheckboxesAndRadioButtons
             }
             MessageBox.Show(userGenres, "Favorite genres");
         }
+
+        private void buttonFavoriteGenre_Click(object sender, EventArgs e)
+        {
+            string favoriteGenre = "Your favorite genre is: ";
+            if (radioButtonComedy.Checked)
+            {
+                favoriteGenre += "Comedy";
+            }
+            else if (radioButtonAction.Checked)
+            {
+                favoriteGenre += "Action";
+            }
+            else if (radioButtonDrama.Checked)
+            {
+                favoriteGenre += "Drama";
+            }
+            else if (radioButtonFantasy.Checked)
+            {
+                favoriteGenre += "Fantasy";
+            }
+            else if (radioButtonHorror.Checked)
+            {
+                favoriteGenre += "Horror";
+            }
+            MessageBox.Show(favoriteGenre, "Favorite genre");
+        }
     }
 }

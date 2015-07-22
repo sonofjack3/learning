@@ -209,6 +209,7 @@
             this.buttonFavoriteGenre.TabIndex = 3;
             this.buttonFavoriteGenre.Text = "Favorite Genre";
             this.buttonFavoriteGenre.UseVisualStyleBackColor = true;
+            this.buttonFavoriteGenre.Click += new System.EventHandler(this.buttonFavoriteGenre_Click);
             // 
             // Form1
             // 
