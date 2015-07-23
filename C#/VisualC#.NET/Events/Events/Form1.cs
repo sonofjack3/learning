@@ -12,9 +12,37 @@ namespace Events
 {
     public partial class Form1 : Form
     {
+        private string[] paymentOptions;
+        private string[] chequeOptions;
+        private string[] creditCardOptions;
+
         public Form1()
         {
             InitializeComponent();
+
+            paymentOptions = new string[]
+            {
+                "Cheque",
+                "Credit Card",
+                "PayPal"
+            };
+
+            chequeOptions = new string[]
+            {
+                "Business Cheque",
+                "eCheque",
+                "Personal Cheque"
+            };
+
+            creditCardOptions = new string[]
+            {
+                "American Express",
+                "Discover",
+                "Mastercard",
+                "Visa"
+            };
+
+            LoadPaymentOptions();
         }
 
         /*  This method handles the event of button1 being clicked */
@@ -50,5 +78,12 @@ namespace Events
                 textBox1.Focus(); //bring user back to the text box
             }
         }
+
+        private void LoadPaymentOptions()
+        {
+            listBox1.Items.Add(paymentOptions);
+        }
+
+
     }
 }
