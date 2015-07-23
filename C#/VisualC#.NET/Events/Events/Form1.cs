@@ -12,37 +12,32 @@ namespace Events
 {
     public partial class Form1 : Form
     {
-        private string[] paymentOptions;
-        private string[] chequeOptions;
-        private string[] creditCardOptions;
+        private readonly string[] PAYMENT_OPTIONS = new string[]
+        {
+            "Cheque",
+            "Credit Card",
+            "PayPal"
+        };
+        private readonly string[] CHEQUE_OPTIONS = new string[]
+        {
+            "Business Cheque",
+            "eCheque",
+            "Personal Cheque"
+        };
+        private readonly string[] CREDIT_CARD_OPTIONS = new string[]
+        {
+            "American Express",
+            "Discover",
+            "Mastercard",
+            "Visa"
+        };
 
         public Form1()
         {
             InitializeComponent();
 
-            paymentOptions = new string[]
-            {
-                "Cheque",
-                "Credit Card",
-                "PayPal"
-            };
-
-            chequeOptions = new string[]
-            {
-                "Business Cheque",
-                "eCheque",
-                "Personal Cheque"
-            };
-
-            creditCardOptions = new string[]
-            {
-                "American Express",
-                "Discover",
-                "Mastercard",
-                "Visa"
-            };
-
-            LoadPaymentOptions();
+            /* Load listBox1 with payment options initially */
+            listBox1.Items.AddRange(PAYMENT_OPTIONS);
         }
 
         /*  This method handles the event of button1 being clicked */
@@ -79,11 +74,21 @@ namespace Events
             }
         }
 
-        private void LoadPaymentOptions()
+        /*  The SelectIndexChanged event is useful for ListBoxes especially */
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listBox1.Items.Add(paymentOptions);
+            listBox2.Items.Clear();
+            switch (listBox1.SelectedIndex)
+            {
+                case 0: //Cheque
+                    listBox2.Items.AddRange(CHEQUE_OPTIONS);
+                    break;
+                case 1: //Credit Card
+                    listBox2.Items.AddRange(CREDIT_CARD_OPTIONS);
+                    break;
+                default:
+                    break;
+            }
         }
-
-
     }
 }
