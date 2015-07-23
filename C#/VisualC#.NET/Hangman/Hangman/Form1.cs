@@ -285,6 +285,9 @@ namespace Hangman
             else if (hiddenWord == currentWord) //the hidden word is fully exposed and the user has won the game
             {
                 MessageBox.Show("You Win!", "Congrats", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                disableAllButtons();
+                //Enable New Word Button
+                buttonNewWord.Enabled = true;
             }
         }
 
