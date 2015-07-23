@@ -16,5 +16,11 @@ namespace CustomWebBrowser
         {
             InitializeComponent();
         }
+
+        private void buttonGo_Click(object sender, EventArgs e)
+        {
+            string address = textBoxAddress.Text.Trim();
+            webBrowser1.Navigate(address);
+        }
     }
 }
