@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelGuesses = new System.Windows.Forms.Label();
             this.buttonNewWord = new System.Windows.Forms.Button();
             this.buttonZ = new System.Windows.Forms.Button();
             this.textBoxWord = new System.Windows.Forms.TextBox();
@@ -57,7 +58,6 @@
             this.buttonN = new System.Windows.Forms.Button();
             this.buttonL = new System.Windows.Forms.Button();
             this.buttonM = new System.Windows.Forms.Button();
-            this.labelGuesses = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,6 +97,15 @@
             this.panel1.Size = new System.Drawing.Size(335, 260);
             this.panel1.TabIndex = 28;
             // 
+            // labelGuesses
+            // 
+            this.labelGuesses.AutoSize = true;
+            this.labelGuesses.Location = new System.Drawing.Point(110, 239);
+            this.labelGuesses.Name = "labelGuesses";
+            this.labelGuesses.Size = new System.Drawing.Size(113, 13);
+            this.labelGuesses.TabIndex = 56;
+            this.labelGuesses.Text = "Remaining Guesses: 5";
+            // 
             // buttonNewWord
             // 
             this.buttonNewWord.Location = new System.Drawing.Point(78, 33);
@@ -119,8 +128,10 @@
             // 
             // textBoxWord
             // 
+            this.textBoxWord.BackColor = System.Drawing.SystemColors.Window;
             this.textBoxWord.Location = new System.Drawing.Point(32, 62);
             this.textBoxWord.Name = "textBoxWord";
+            this.textBoxWord.ReadOnly = true;
             this.textBoxWord.Size = new System.Drawing.Size(269, 20);
             this.textBoxWord.TabIndex = 54;
             this.textBoxWord.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -374,15 +385,6 @@
             this.buttonM.Text = "M";
             this.buttonM.UseVisualStyleBackColor = true;
             this.buttonM.Click += new System.EventHandler(this.buttonM_Click);
-            // 
-            // labelGuesses
-            // 
-            this.labelGuesses.AutoSize = true;
-            this.labelGuesses.Location = new System.Drawing.Point(110, 239);
-            this.labelGuesses.Name = "labelGuesses";
-            this.labelGuesses.Size = new System.Drawing.Size(113, 13);
-            this.labelGuesses.TabIndex = 56;
-            this.labelGuesses.Text = "Remaining Guesses: 5";
             // 
             // Form1
             // 
