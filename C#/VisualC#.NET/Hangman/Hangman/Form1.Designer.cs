@@ -393,7 +393,7 @@
             this.ClientSize = new System.Drawing.Size(359, 281);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "HANGMAN";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
