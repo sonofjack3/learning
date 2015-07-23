@@ -17,7 +17,7 @@ namespace Events
             InitializeComponent();
         }
 
-        /*  This method is an event handler and handles the event of button1 being clicked */
+        /*  This method handles the event of button1 being clicked */
         private void button1_Click(object sender, EventArgs e)
         {
             /*  "sender" indicates which object sent the event */
@@ -26,12 +26,19 @@ namespace Events
             MessageBox.Show("EventArgs: " + e.ToString());
         }
 
-        /*  This method is an event handler and handles the MouseDown event being performed on Form1 */
+        /*  This method handles the MouseDown event being performed on Form1 */
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
             /* Several methods and properties are available to a MouseEventArgs object */
             MessageBox.Show("Mouse button pressed: " + e.Button.ToString()); //will display "Left", "Right", or "Middle" depending on mouse button clicked
             MessageBox.Show("Number of clicks: " + e.Clicks.ToString()); //displays number of clicks
+        }
+
+        /*  This method handles the KeyDown event being performed on textBox1 */
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            /* Several methods and properties are available to a KeyEventArgs object */
+            MessageBox.Show("Key pressed: " + e.KeyData);
         }
     }
 }
