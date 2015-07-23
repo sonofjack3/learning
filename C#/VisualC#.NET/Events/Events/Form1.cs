@@ -40,5 +40,15 @@ namespace Events
             /* Several methods and properties are available to a KeyEventArgs object */
             MessageBox.Show("Key pressed: " + e.KeyData);
         }
+
+        /*  This method handles the Leave event being performed on textBox1 (sent when user attempts to Tab away) */
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("This text box can't be left empty");
+                textBox1.Focus(); //bring user back to the text box
+            }
+        }
     }
 }
