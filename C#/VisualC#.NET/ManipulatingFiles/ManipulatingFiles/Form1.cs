@@ -20,20 +20,43 @@ namespace ManipulatingFiles
 
         private void buttonOpen_Click(object sender, EventArgs e)
         {
+            //An object of the StreamReader class can be used to read from a text file
+            StreamReader reader1, reader2;
             //This assumes there is a file on the computer Desktop called "test1.txt"
-            string fileName = "\\test1.txt";
-            fileName = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + fileName;
+            string fileName1 = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\test1.txt";
             try {
-                //An object of the StreamReader class can be used to read from a text file
-                StreamReader reader = new StreamReader(fileName);
+                reader1 = new StreamReader(fileName1);
                 //The ReadToEnd() method of a StreamReader object reads all contents of a file
-                textBox1.Text = reader.ReadToEnd();
+                textBox1.Text = reader1.ReadToEnd();
                 //Remember to always close the stream (also don't cross them)
-                reader.Close();
+                reader1.Close();
             }
             catch (FileNotFoundException fe)
             {
                 textBox1.Text = "No file test1.txt on Desktop!";
+            }
+
+            //This assumes there is a file on the computer Desktop called "test2.txt"
+            string fileName2 = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\test2.txt";
+            try
+            {
+                reader2 = new StreamReader(fileName2);
+                string textLine = "";
+                int lineCount = 0;
+                //The Peek() method of StreamReader checks one character at a time and returns -1 when no new character is found
+                while (reader2.Peek() != -1)
+                {
+                    //The ReadLine() method of StreamReader reads a file one line at a time
+                    textLine += reader2.ReadLine() + "\r\n";
+                    lineCount++;
+                }
+                textLine += "The file has " + lineCount + " lines";
+                textBox2.Text = textLine;
+                reader2.Close();
+            }
+            catch (FileNotFoundException fe)
+            {
+                textBox2.Text = "No file test2.txt on Desktop!";
             }
         }
     }
