@@ -20,7 +20,7 @@ namespace ManipulatingFiles
 
         private void buttonOpen_Click(object sender, EventArgs e)
         {
-            //An object of the StreamReader class can be used to read from a text file
+            //An object of the StreamReader class can be used to read from a file
             StreamReader reader1, reader2;
             //This assumes there is a file on the computer Desktop called "test1.txt"
             string fileName1 = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\test1.txt";
@@ -58,6 +58,19 @@ namespace ManipulatingFiles
             {
                 textBox2.Text = "No file test2.txt on Desktop!";
             }
+        }
+
+        private void buttonWrite_Click(object sender, EventArgs e)
+        {
+            //An object of the StreamWriter class can be used to write to a file
+            StreamWriter writer1;
+            //We will write to a text file on the user's desktop
+            string fileName1 = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\test3.txt";
+            writer1 = new StreamWriter(fileName1);
+            //Take the text from textBox3 and write it to the file
+            writer1.Write(textBox3.Text);
+            //Remember to close the stream
+            writer1.Close();
         }
     }
 }
