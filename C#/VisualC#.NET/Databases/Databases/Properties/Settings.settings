@@ -3,9 +3,6 @@
   <Profiles />
   <Settings>
     <Setting Name="SQL" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="Setting" Type="System.String" Scope="User">
       <Value Profile="(Default)">SELECT * FROM tbl_employees</Value>
     </Setting>
     <Setting Name="EmployeesConnectionString" Type="(Connection string)" Scope="Application">
