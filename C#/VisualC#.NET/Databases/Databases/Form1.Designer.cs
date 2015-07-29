@@ -37,6 +37,7 @@
             this.textBoxDepartment = new System.Windows.Forms.TextBox();
             this.textBoxJobTitle = new System.Windows.Forms.TextBox();
             this.buttonNext = new System.Windows.Forms.Button();
+            this.buttonPrevious = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelFirstName
@@ -105,19 +106,30 @@
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(175, 192);
+            this.buttonNext.Location = new System.Drawing.Point(228, 192);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(75, 23);
             this.buttonNext.TabIndex = 8;
-            this.buttonNext.Text = "Next Record";
+            this.buttonNext.Text = "Next Row";
             this.buttonNext.UseVisualStyleBackColor = true;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
+            // 
+            // buttonPrevious
+            // 
+            this.buttonPrevious.Location = new System.Drawing.Point(113, 192);
+            this.buttonPrevious.Name = "buttonPrevious";
+            this.buttonPrevious.Size = new System.Drawing.Size(87, 23);
+            this.buttonPrevious.TabIndex = 9;
+            this.buttonPrevious.Text = "Previous Row";
+            this.buttonPrevious.UseVisualStyleBackColor = true;
+            this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(438, 305);
+            this.Controls.Add(this.buttonPrevious);
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.textBoxJobTitle);
             this.Controls.Add(this.textBoxDepartment);
@@ -146,6 +158,7 @@
         private System.Windows.Forms.TextBox textBoxDepartment;
         private System.Windows.Forms.TextBox textBoxJobTitle;
         private System.Windows.Forms.Button buttonNext;
+        private System.Windows.Forms.Button buttonPrevious;
     }
 }
 

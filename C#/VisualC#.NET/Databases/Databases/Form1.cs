@@ -60,9 +60,14 @@ namespace Databases
                 inc++;
                 NavigateRecords();
             }
-            else
+        }
+
+        private void buttonPrevious_Click(object sender, EventArgs e)
+        {
+            if (inc > 0)
             {
-                MessageBox.Show("No more records");
+                inc--;
+                NavigateRecords();
             }
         }
     }
