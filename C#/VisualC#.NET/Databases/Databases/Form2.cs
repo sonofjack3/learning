@@ -38,6 +38,7 @@ namespace Databases
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             Close();
         }
 
@@ -59,6 +60,7 @@ namespace Databases
             try
             {
                 databaseConn.UpdateDatabase(dataSet);
+                this.DialogResult = DialogResult.OK;
                 Close();
             }
             catch (Exception ex)

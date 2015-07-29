@@ -81,8 +81,10 @@ namespace Databases
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             Form2 formAdd = new Form2();
-            formAdd.ShowDialog();
-            DatabaseConnect();
+            if (formAdd.ShowDialog() == DialogResult.OK)
+            {
+                DatabaseConnect();
+            }
         }
 
         private void DatabaseConnect()
