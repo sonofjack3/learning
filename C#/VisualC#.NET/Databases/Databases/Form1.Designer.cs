@@ -61,7 +61,7 @@
             // labelJobTitle
             // 
             this.labelJobTitle.AutoSize = true;
-            this.labelJobTitle.Location = new System.Drawing.Point(37, 123);
+            this.labelJobTitle.Location = new System.Drawing.Point(37, 67);
             this.labelJobTitle.Name = "labelJobTitle";
             this.labelJobTitle.Size = new System.Drawing.Size(47, 13);
             this.labelJobTitle.TabIndex = 2;
@@ -70,7 +70,7 @@
             // labelDepartment
             // 
             this.labelDepartment.AutoSize = true;
-            this.labelDepartment.Location = new System.Drawing.Point(225, 126);
+            this.labelDepartment.Location = new System.Drawing.Point(225, 70);
             this.labelDepartment.Name = "labelDepartment";
             this.labelDepartment.Size = new System.Drawing.Size(62, 13);
             this.labelDepartment.TabIndex = 3;
@@ -92,21 +92,21 @@
             // 
             // textBoxDepartment
             // 
-            this.textBoxDepartment.Location = new System.Drawing.Point(293, 123);
+            this.textBoxDepartment.Location = new System.Drawing.Point(293, 63);
             this.textBoxDepartment.Name = "textBoxDepartment";
             this.textBoxDepartment.Size = new System.Drawing.Size(100, 20);
             this.textBoxDepartment.TabIndex = 6;
             // 
             // textBoxJobTitle
             // 
-            this.textBoxJobTitle.Location = new System.Drawing.Point(100, 120);
+            this.textBoxJobTitle.Location = new System.Drawing.Point(100, 60);
             this.textBoxJobTitle.Name = "textBoxJobTitle";
             this.textBoxJobTitle.Size = new System.Drawing.Size(100, 20);
             this.textBoxJobTitle.TabIndex = 7;
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(228, 192);
+            this.buttonNext.Location = new System.Drawing.Point(228, 96);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(75, 23);
             this.buttonNext.TabIndex = 8;
@@ -116,7 +116,7 @@
             // 
             // buttonPrevious
             // 
-            this.buttonPrevious.Location = new System.Drawing.Point(113, 192);
+            this.buttonPrevious.Location = new System.Drawing.Point(113, 96);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(87, 23);
             this.buttonPrevious.TabIndex = 9;
