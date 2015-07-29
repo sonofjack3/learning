@@ -36,6 +36,7 @@
             this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.textBoxDepartment = new System.Windows.Forms.TextBox();
             this.textBoxJobTitle = new System.Windows.Forms.TextBox();
+            this.buttonNext = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelFirstName
@@ -102,11 +103,22 @@
             this.textBoxJobTitle.Size = new System.Drawing.Size(100, 20);
             this.textBoxJobTitle.TabIndex = 7;
             // 
+            // buttonNext
+            // 
+            this.buttonNext.Location = new System.Drawing.Point(175, 192);
+            this.buttonNext.Name = "buttonNext";
+            this.buttonNext.Size = new System.Drawing.Size(75, 23);
+            this.buttonNext.TabIndex = 8;
+            this.buttonNext.Text = "Next Record";
+            this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(438, 305);
+            this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.textBoxJobTitle);
             this.Controls.Add(this.textBoxDepartment);
             this.Controls.Add(this.textBoxLastName);
@@ -133,6 +145,7 @@
         private System.Windows.Forms.TextBox textBoxLastName;
         private System.Windows.Forms.TextBox textBoxDepartment;
         private System.Windows.Forms.TextBox textBoxJobTitle;
+        private System.Windows.Forms.Button buttonNext;
     }
 }
 

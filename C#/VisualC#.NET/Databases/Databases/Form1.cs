@@ -52,5 +52,18 @@ namespace Databases
             textBoxJobTitle.Text = dataRow.ItemArray.GetValue(3).ToString();
             textBoxDepartment.Text = dataRow.ItemArray.GetValue(4).ToString();
         }
+
+        private void buttonNext_Click(object sender, EventArgs e)
+        {
+            if (inc < maxRows - 1)
+            {
+                inc++;
+                NavigateRecords();
+            }
+            else
+            {
+                MessageBox.Show("No more records");
+            }
+        }
     }
 }
