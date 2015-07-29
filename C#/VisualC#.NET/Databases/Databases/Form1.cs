@@ -89,5 +89,11 @@ namespace Databases
                 buttonNext.Enabled = false;
             }
         }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            Form2 formAdd = new Form2();
+            formAdd.Show();
+        }
     }
 }
