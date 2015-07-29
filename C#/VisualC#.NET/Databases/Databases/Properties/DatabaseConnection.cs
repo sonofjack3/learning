@@ -10,7 +10,7 @@ namespace Databases.Properties
     {
         private string sql_string;
         private string strCon;
-        System.Data.SqlClient.SqlDataAdapter da_1;
+        private System.Data.SqlClient.SqlDataAdapter da_1;
 
         public string Sql
         {
@@ -20,6 +20,11 @@ namespace Databases.Properties
         public string connection_string
         {
             set { strCon = value; }
+        }
+
+        public System.Data.SqlClient.SqlDataAdapter adapter
+        {
+            get { return da_1; }
         }
 
         public System.Data.DataSet GetConnection
@@ -36,6 +41,12 @@ namespace Databases.Properties
             da_1.Fill(dat_set, "Table_Data_1");
             con.Close();
             return dat_set;
+        }
+
+        public void UpdateDatabase(System.Data.DataSet ds)
+        {
+            System.Data.SqlClient.SqlCommandBuilder cb = new System.Data.SqlClient.SqlCommandBuilder(da_1);
+            cb.DataAdapter.Update(ds.Tables[0]);
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Databases
 {
@@ -27,20 +28,7 @@ namespace Databases
         //Called when the form is loaded
         private void Form1_Load(object sender, EventArgs e)
         {
-            try
-            {
-                databaseConn = new Properties.DatabaseConnection();
-                connString = Properties.Settings.Default.EmployeesConnectionString;
-                databaseConn.connection_string = connString;
-                databaseConn.Sql = Properties.Settings.Default.SQL;
-                dataSet = databaseConn.GetConnection;
-                maxRows = dataSet.Tables[0].Rows.Count;
-                NavigateRecords();
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
+            DatabaseConnect();
         }
 
         private void NavigateRecords()
@@ -93,7 +81,28 @@ namespace Databases
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             Form2 formAdd = new Form2();
-            formAdd.Show();
+            formAdd.ShowDialog();
+            DatabaseConnect();
+        }
+
+        private void DatabaseConnect()
+        {
+            try
+            {
+                databaseConn = new Properties.DatabaseConnection();
+                connString = Properties.Settings.Default.EmployeesConnectionString;
+                databaseConn.connection_string = connString;
+                databaseConn.Sql = Properties.Settings.Default.SQL;
+                dataSet = databaseConn.GetConnection;
+                maxRows = dataSet.Tables[0].Rows.Count;
+                NavigateRecords();
+                Debug.WriteLine("Max rows " + maxRows);
+                
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
     }
 }

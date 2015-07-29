@@ -42,14 +42,14 @@
             // 
             // textBoxJobTitle
             // 
-            this.textBoxJobTitle.Location = new System.Drawing.Point(93, 57);
+            this.textBoxJobTitle.Location = new System.Drawing.Point(286, 58);
             this.textBoxJobTitle.Name = "textBoxJobTitle";
             this.textBoxJobTitle.Size = new System.Drawing.Size(100, 20);
             this.textBoxJobTitle.TabIndex = 15;
             // 
             // textBoxDepartment
             // 
-            this.textBoxDepartment.Location = new System.Drawing.Point(286, 60);
+            this.textBoxDepartment.Location = new System.Drawing.Point(93, 58);
             this.textBoxDepartment.Name = "textBoxDepartment";
             this.textBoxDepartment.Size = new System.Drawing.Size(100, 20);
             this.textBoxDepartment.TabIndex = 14;
@@ -67,12 +67,11 @@
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(100, 20);
             this.textBoxFirstName.TabIndex = 12;
-            this.textBoxFirstName.TextChanged += new System.EventHandler(this.textBoxFirstName_TextChanged);
             // 
             // labelDepartment
             // 
             this.labelDepartment.AutoSize = true;
-            this.labelDepartment.Location = new System.Drawing.Point(218, 67);
+            this.labelDepartment.Location = new System.Drawing.Point(25, 61);
             this.labelDepartment.Name = "labelDepartment";
             this.labelDepartment.Size = new System.Drawing.Size(62, 13);
             this.labelDepartment.TabIndex = 11;
@@ -81,7 +80,7 @@
             // labelJobTitle
             // 
             this.labelJobTitle.AutoSize = true;
-            this.labelJobTitle.Location = new System.Drawing.Point(30, 64);
+            this.labelJobTitle.Location = new System.Drawing.Point(218, 61);
             this.labelJobTitle.Name = "labelJobTitle";
             this.labelJobTitle.Size = new System.Drawing.Size(47, 13);
             this.labelJobTitle.TabIndex = 10;
@@ -99,12 +98,11 @@
             // labelFirstName
             // 
             this.labelFirstName.AutoSize = true;
-            this.labelFirstName.Location = new System.Drawing.Point(30, 27);
+            this.labelFirstName.Location = new System.Drawing.Point(25, 27);
             this.labelFirstName.Name = "labelFirstName";
             this.labelFirstName.Size = new System.Drawing.Size(57, 13);
             this.labelFirstName.TabIndex = 8;
             this.labelFirstName.Text = "First Name";
-            this.labelFirstName.Click += new System.EventHandler(this.labelFirstName_Click);
             // 
             // buttonSave
             // 
@@ -114,6 +112,7 @@
             this.buttonSave.TabIndex = 16;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonCancel
             // 
@@ -123,6 +122,7 @@
             this.buttonCancel.TabIndex = 17;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // Form2
             // 
