@@ -51,6 +51,8 @@ namespace Databases
             textBoxLastName.Text = dataRow.ItemArray.GetValue(2).ToString();
             textBoxJobTitle.Text = dataRow.ItemArray.GetValue(3).ToString();
             textBoxDepartment.Text = dataRow.ItemArray.GetValue(4).ToString();
+
+            EnableDisableButtons();
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
@@ -68,6 +70,23 @@ namespace Databases
             {
                 inc--;
                 NavigateRecords();
+            }
+        }
+
+        private void EnableDisableButtons()
+        {
+            if (inc == 0)
+            {
+                buttonPrevious.Enabled = false;
+            }
+            else if (inc > 0 && inc < maxRows - 1)
+            {
+                buttonPrevious.Enabled = true;
+                buttonNext.Enabled = true;
+            }
+            else
+            {
+                buttonNext.Enabled = false;
             }
         }
     }
