@@ -83,7 +83,23 @@ namespace Databases
             Form2 formAdd = new Form2();
             if (formAdd.ShowDialog() == DialogResult.OK)
             {
-                DatabaseConnect();
+                dataRow = dataSet.Tables[0].NewRow();
+                dataRow[1] = formAdd.FirstName;
+                dataRow[2] = formAdd.LastName;
+                dataRow[3] = formAdd.JobTitle;
+                dataRow[4] = formAdd.Department;
+
+                dataSet.Tables[0].Rows.Add(dataRow);
+
+                try
+                {
+                    databaseConn.UpdateDatabase(dataSet);
+                    maxRows++;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

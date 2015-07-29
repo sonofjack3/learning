@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
+using System.Threading;
 
 namespace Databases
 {
@@ -19,21 +21,24 @@ namespace Databases
         private DataRow dataRow;
         private int maxRows;
 
-        private void Form2_Load(object sender, EventArgs e)
+        public string FirstName
         {
-            try
-            {
-                databaseConn = new Properties.DatabaseConnection();
-                connString = Properties.Settings.Default.EmployeesConnectionString;
-                databaseConn.connection_string = connString;
-                databaseConn.Sql = Properties.Settings.Default.SQL;
-                dataSet = databaseConn.GetConnection;
-                maxRows = dataSet.Tables[0].Rows.Count;
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
+            get { return firstName; }
+        }
+
+        public string LastName
+        {
+            get { return lastName; }
+        }
+
+        public string Department
+        {
+            get { return department; }
+        }
+
+        public string JobTitle
+        {
+            get { return jobTitle; }
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -48,25 +53,7 @@ namespace Databases
             lastName = textBoxLastName.Text.ToString();
             department = textBoxDepartment.Text.ToString();
             jobTitle = textBoxJobTitle.Text.ToString();
-
-            dataRow = dataSet.Tables[0].NewRow();
-            dataRow[1] = firstName;
-            dataRow[2] = lastName;
-            dataRow[3] = jobTitle;
-            dataRow[4] = department;
-
-            dataSet.Tables[0].Rows.Add(dataRow);
-
-            try
-            {
-                databaseConn.UpdateDatabase(dataSet);
-                this.DialogResult = DialogResult.OK;
-                Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            this.DialogResult = DialogResult.OK;
         }
 
         public Form2()
