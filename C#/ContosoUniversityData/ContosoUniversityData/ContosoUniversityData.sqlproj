@@ -61,5 +61,6 @@
   <ItemGroup>
     <Build Include="Student.sql" />
     <Build Include="Course.sql" />
+    <Build Include="Enrollment.sql" />
   </ItemGroup>
 </Project>
