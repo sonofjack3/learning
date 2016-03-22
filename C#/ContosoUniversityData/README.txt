@@ -1,0 +1,1 @@
+Followed tutorial here: https://www.asp.net/mvc/overview/getting-started/database-first-development/setting-up-database
