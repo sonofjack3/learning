@@ -49,13 +49,20 @@ namespace ContosoSite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EnrollmentID,Grade,CourseID,StudentID")] Enrollment enrollment)
+        public ActionResult Create([Bind(Include = "Grade,CourseID,StudentID")] Enrollment enrollment)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Enrollments.Add(enrollment);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.Enrollments.Add(enrollment);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (DataException)
+            {
+                ModelState.AddModelError("", "Unable to save changes.");
             }
 
             ViewBag.CourseID = new SelectList(db.Courses, "CourseID", "Title", enrollment.CourseID);
