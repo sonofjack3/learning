@@ -119,11 +119,15 @@ namespace ContosoSite.Controllers
         }
 
         // GET: Enrollments/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int? id, bool? saveChangesError = false)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            if (saveChangesError.GetValueOrDefault())
+            {
+                ViewBag.ErrorMessage = "Delete failed. Try again.";
             }
             Enrollment enrollment = db.Enrollments.Find(id);
             if (enrollment == null)
@@ -133,14 +137,22 @@ namespace ContosoSite.Controllers
             return View(enrollment);
         }
 
-        // POST: Enrollments/Delete/5
-        [HttpPost, ActionName("Delete")]
+        // POST: Students/Delete/5
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult Delete(int id)
         {
-            Enrollment enrollment = db.Enrollments.Find(id);
-            db.Enrollments.Remove(enrollment);
-            db.SaveChanges();
+            try
+            {
+                Enrollment enrollment = db.Enrollments.Find(id);
+                db.Enrollments.Remove(enrollment);
+                db.SaveChanges();
+            }
+            catch (DataException/* dex */)
+            {
+                //Log the error (uncomment dex variable name and add a line here to write a log.
+                return RedirectToAction("Delete", new { id = id, saveChangesError = true });
+            }
             return RedirectToAction("Index");
         }
 
