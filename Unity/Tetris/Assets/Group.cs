@@ -9,8 +9,10 @@ public class Group : MonoBehaviour {
     // Time since the last automatic movement down
     private float lastFall = 0;
 
+    private int count = 0;
+
     // Use this for initialization
-    void Start() {
+    public void Start() {
         // If the default position is not valid, the grid is full (Game Over)
         if (!isValidGridPos()) {
             Debug.Log("GAME OVER");
@@ -19,84 +21,110 @@ public class Group : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    public void Update() {
         // Move tetromino left
         if (Input.GetKeyDown(KeyCode.LeftArrow)) {
-            // Modify the position
-            transform.position += new Vector3(-1, 0, 0);
-
-            // If the new position is valid, update the grid
-            if (isValidGridPos()) {
-                updateGrid();
-            }
-            // Otherwise, revert the change in position
-            else {
-                transform.position += new Vector3(1, 0, 0);
-            }
+            moveLeft();
         }
         // Move tetromino right
         else if (Input.GetKeyDown(KeyCode.RightArrow)) {
-            // Modify the position
-            transform.position += new Vector3(1, 0, 0);
-
-            // If the new position is valid, update the grid
-            if (isValidGridPos()) {
-                updateGrid();
-            }
-            // Otherwise, revert the change in position
-            else {
-                transform.position += new Vector3(-1, 0, 0);
-            }
+            moveRight();
         }
         // Rotate the tetromino
         else if (Input.GetKeyDown(KeyCode.UpArrow)) {
-            // Do not rotate the box-shaped tetromino
-            if (this.name.Contains("GroupO")) {
-                return;
-            }
-
-            // Modify the position
-            transform.Rotate(0, 0, -90);
-
-            // If the new position is valid, update the grid
-            if (isValidGridPos()) {
-                updateGrid();
-            // Otherwise, revert the change in position
-            }
-            else {
-                transform.Rotate(0, 0, 90);
-            }
+            rotate();
         }
         // Move the tetromino downwards (using down key and automatically each time tick)
         else if (Input.GetKeyDown(KeyCode.DownArrow) ||
+                 Input.GetKey(KeyCode.DownArrow) ||
                  Time.time - lastFall >= 0.25) {
-            // Modify the position
-            transform.position += new Vector3(0, -1, 0);
-
-            // If the new position is valid, update the grid
-            if (isValidGridPos()) {
-                updateGrid();
+            if (Input.GetKey(KeyCode.DownArrow)) {
+                count++;
+                if (count == 3) {
+                    count = 0;
+                    moveDown();
+                }
             }
-            // Otherwise, revert the change in position
             else {
-                transform.position += new Vector3(0, 1, 0);
-
-                /* If the new position is invalid, the tetromino has hit the bottom and 
-                 * needs to stop moving.
-                 */
-
-                // Clear any filled rows
-                Grid.deleteFullRows();
-
-                // Spawn next tetromino
-                FindObjectOfType<Spawner>().spawnNext();
-
-                // Disable this script
-                enabled = false;
+                moveDown();
             }
 
             // Update the time tracker
             lastFall = Time.time;
+        }
+    }
+
+    private void moveLeft() {
+        // Modify the position
+        transform.position += new Vector3(-1, 0, 0);
+
+        // If the new position is valid, update the grid
+        if (isValidGridPos()) {
+            updateGrid();
+        }
+        // Otherwise, revert the change in position
+        else {
+            transform.position += new Vector3(1, 0, 0);
+        }
+    }
+
+    private void moveRight() {
+        // Modify the position
+        transform.position += new Vector3(1, 0, 0);
+
+        // If the new position is valid, update the grid
+        if (isValidGridPos()) {
+            updateGrid();
+        }
+        // Otherwise, revert the change in position
+        else {
+            transform.position += new Vector3(-1, 0, 0);
+        }
+    }
+
+    private void rotate() {
+        // Do not rotate the box-shaped tetromino
+        if (this.name.Contains("GroupO")) {
+            return;
+        }
+
+        // Modify the position
+        transform.Rotate(0, 0, -90);
+
+        // If the new position is valid, update the grid
+        if (isValidGridPos()) {
+            updateGrid();
+            // Otherwise, revert the change in position
+        }
+        else {
+            transform.Rotate(0, 0, 90);
+        }
+    }
+
+    private void moveDown() {
+        // Modify the position
+        transform.position += new Vector3(0, -1, 0);
+
+        // If the new position is valid, update the grid
+        if (isValidGridPos()) {
+            updateGrid();
+        }
+        // Otherwise, revert the change in position
+        else {
+            transform.position += new Vector3(0, 1, 0);
+
+            /* If the new position is invalid, the tetromino has hit the bottom and 
+             * needs to stop moving.
+             */
+
+            // Clear any filled rows
+            Grid.deleteFullRows();
+
+            // Spawn next tetromino
+            FindObjectOfType<Spawner>().spawnNext();
+
+            // Disable this script
+            enabled = false;
         }
     }
 
