@@ -31,7 +31,7 @@ public class Grid : MonoBehaviour {
 	/**
 	 * Returns true if the given position is within the border of the grid, false otherwise.
 	 */
-	public static bool instideBorder(Vector2 pos) {
+	public static bool insideBorder(Vector2 pos) {
 		// pos is inside grid border if its x component is greater than 0 and less than the grid width
 		// "pos.y < h" is not checked since groups don't move upwards
 		return ((int)pos.x >= 0 &&

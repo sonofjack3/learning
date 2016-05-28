@@ -138,7 +138,7 @@ public class Group : MonoBehaviour {
             Vector2 v = Grid.roundVec2(block.position);
 
             // If the current block is not inside the grid's borders, return false
-            if (!Grid.instideBorder(v))
+            if (!Grid.insideBorder(v))
                 return false;
 
             /* If there is an intersection between the current block and another
