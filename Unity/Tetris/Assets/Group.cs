@@ -50,6 +50,11 @@ public class Group : MonoBehaviour {
         }
         // Rotate the tetromino
         else if (Input.GetKeyDown(KeyCode.UpArrow)) {
+            // Do not rotate the box-shaped tetromino
+            if (this.name.Contains("GroupO")) {
+                return;
+            }
+
             // Modify the position
             transform.Rotate(0, 0, -90);
 
