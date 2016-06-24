@@ -2,16 +2,24 @@
 using System.Collections;
 
 /**
- * Represents a single tetromino.
+ * Represents the behavior of a single tetromino.
  */
-public class Group : MonoBehaviour {
+public class GroupBehavior : MonoBehaviour {
 
+    private const float QuarterSecond = 0.25f;
+    
+    // When the down arrow is held, wait this many frames before moving the tetromino down
+    private const int FramesWaitBeforeDown = 3;
+    
     // Time since the last automatic movement down
     private float lastFall = 0;
 
-    private int count = 0;
+    // Tracks the number of frames the down arrow has been held for
+    private int framesDownHeld = 0;
 
-    // Use this for initialization
+    /**
+     * Initialization.
+     */
     public void Start() {
         // If the default position is not valid, the grid is full (Game Over)
         if (!isValidGridPos()) {
@@ -20,7 +28,9 @@ public class Group : MonoBehaviour {
         }
     }
 
-    // Update is called once per frame
+    /**
+     * Called once per frame.
+     */
     public void Update() {
         // Move tetromino left
         if (Input.GetKeyDown(KeyCode.LeftArrow)) {
@@ -34,18 +44,29 @@ public class Group : MonoBehaviour {
         else if (Input.GetKeyDown(KeyCode.UpArrow)) {
             rotate();
         }
-        // Move the tetromino downwards (using down key and automatically each time tick)
+        /* Move the tetromino downwards when:
+         *  1. The down key is pressed, or
+         *  2. A quarter of a second has passed since the last time the tetromino moved down.
+         */
         else if (Input.GetKeyDown(KeyCode.DownArrow) ||
-                 Input.GetKey(KeyCode.DownArrow) ||
-                 Time.time - lastFall >= 0.25) {
-            if (Input.GetKey(KeyCode.DownArrow)) {
-                count++;
-                if (count == 3) {
-                    count = 0;
-                    moveDown();
-                }
-            }
-            else {
+                 Time.time - lastFall >= QuarterSecond) {
+            moveDown();
+
+            // Update the time tracker
+            lastFall = Time.time;
+        }
+        // Move the tetromino downwards when holding the down key
+        else if (Input.GetKey(KeyCode.DownArrow))
+        {
+            framesDownHeld++;
+
+            /* While holding the down arrow, only move down once
+             * FramesWaitBeforeDown number of frames have passed.
+             */
+            if (framesDownHeld == FramesWaitBeforeDown)
+            {
+                // Reset counter
+                framesDownHeld = 0;
                 moveDown();
             }
 
@@ -54,6 +75,9 @@ public class Group : MonoBehaviour {
         }
     }
 
+    /**
+     * Move the tetromino left one unit.
+     */
     private void moveLeft() {
         // Modify the position
         transform.position += new Vector3(-1, 0, 0);
@@ -68,6 +92,9 @@ public class Group : MonoBehaviour {
         }
     }
 
+    /**
+     * Move the tetromino right one unit.
+     */
     private void moveRight() {
         // Modify the position
         transform.position += new Vector3(1, 0, 0);
@@ -82,9 +109,12 @@ public class Group : MonoBehaviour {
         }
     }
 
+    /**
+     * Rotate the tetromino.
+     */
     private void rotate() {
-        // Do not rotate the box-shaped tetromino
-        if (this.name.Contains("GroupO")) {
+        // Do not rotate the box-shaped tetromino (Group O)
+        if (this.name.Contains(Constants.GroupOName)) {
             return;
         }
 
@@ -94,13 +124,17 @@ public class Group : MonoBehaviour {
         // If the new position is valid, update the grid
         if (isValidGridPos()) {
             updateGrid();
-            // Otherwise, revert the change in position
         }
-        else {
+        // Otherwise, revert the change in position
+        else
+        {
             transform.Rotate(0, 0, 90);
         }
     }
 
+    /**
+     * Move the tetromino down one unit.
+     */
     private void moveDown() {
         // Modify the position
         transform.position += new Vector3(0, -1, 0);
@@ -113,17 +147,15 @@ public class Group : MonoBehaviour {
         else {
             transform.position += new Vector3(0, 1, 0);
 
-            /* If the new position is invalid, the tetromino has hit the bottom and 
-             * needs to stop moving.
-             */
-
             // Clear any filled rows
             Grid.deleteFullRows();
 
             // Spawn next tetromino
             FindObjectOfType<Spawner>().spawnNext();
 
-            // Disable this script
+            /* If the new position is invalid, the tetromino has hit the bottom and 
+             * needs to stop moving.
+             */
             enabled = false;
         }
     }
