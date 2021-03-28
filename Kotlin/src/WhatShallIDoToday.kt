@@ -9,7 +9,7 @@ fun whatShouldIDoToday(mood : String,
     return when {
         happySunny(mood, weather) -> "Go to the damn beach"
         sadSunny(mood, weather) -> "Read a damn book"
-        else -> "Jerkit?"
+        else -> "Idunno?"
     }
 }
 
