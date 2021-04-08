@@ -451,3 +451,5 @@ console.log('App');
 
 // In tsconfig.json - noEmitOnError means that no JS files will be created if there are errors during compilation
 
+// Demonstrating emitting of source maps
+// In tsconfig.json - sourceMap set to true will create a .map file alongside the JS file that assists with finding the original TypeScript file that a JavaScript file was generated from
