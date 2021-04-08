@@ -1,6 +1,7 @@
 {
     "extends": "../tsconfig-base",
     "compilerOptions": {
-        "noImplicitAny": true
+        "noImplicitAny": true,
+        "noEmitOnError": true
     }
 }

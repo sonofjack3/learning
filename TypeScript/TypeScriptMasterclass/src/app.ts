@@ -445,3 +445,9 @@ function log(message: any): void {
 
 }
 
+// Demonstrating output locations
+// In tsconfig.json, outDir is set to dist. This will mirror the src directory exactly (notice how there is a dist/foo/index.js file matching with src/foo/index.ts)
+console.log('App');
+
+// In tsconfig.json - noEmitOnError means that no JS files will be created if there are errors during compilation
+
