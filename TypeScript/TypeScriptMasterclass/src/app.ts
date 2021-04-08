@@ -413,3 +413,8 @@ function updateColor(color: Color): void {
 updateColor(Color.Green);
 console.log(selected);
 
+// Demonstrating declaration files
+import * as _ from 'lodash';
+// chunk is a vanilla JavaScript function, not TypeScript, so doesn't have any type information. We can create a custom "declaration" file (see index.d.ts) to provide
+// the IDE with that information
+_.chunk([1,2,3,4], 2);
