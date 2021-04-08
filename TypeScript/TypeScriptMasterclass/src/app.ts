@@ -418,3 +418,30 @@ import * as _ from 'lodash';
 // chunk is a vanilla JavaScript function, not TypeScript, so doesn't have any type information. We can create a custom "declaration" file (see index.d.ts) to provide
 // the IDE with that information
 _.chunk([1,2,3,4], 2);
+
+// Demonstrating "augmenting" modules with declarations
+_.mixin({
+    log(item: string) {
+        console.log(':::', item);
+    }
+});
+
+// We've augmented the type information for log in index.d.ts
+_.log('Hello');
+
+// Demonstrating emitting declaration files
+// Setting declaration: true in tsconfig will automatically create declaration files when compiled (run tsc and see app.d.ts under @types)
+export class Foo {
+    constructor(public name: string) {}
+    bar(age: number) {}
+}
+
+// Demonstrating include, exclude and file options in tsconfig.json
+// See tsconfig-base.json - include is what is included during a compile, exclude is what is excluded
+
+// Demonstrating configuration inheritance with "extends"
+// See tsconfig.json in src, which now extends from tsconfig-base.json. The settings in src/tsconfig.json now only applies to things in this directory.
+function log(message: any): void {
+
+}
+
