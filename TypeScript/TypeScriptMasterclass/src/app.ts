@@ -453,3 +453,18 @@ console.log('App');
 
 // Demonstrating emitting of source maps
 // In tsconfig.json - sourceMap set to true will create a .map file alongside the JS file that assists with finding the original TypeScript file that a JavaScript file was generated from
+
+// Demonstrating transpiling
+// In tsconfig.json - under compilerOptions, the "target" field will set the ECMAScript version. Setting a more up-to-date value actually results in a smaller
+// output, because there is less code required for supporting older browser types. 
+
+// Demonstrating experimental features
+// In tsconfig.json - we can specify experimentalDecorators to be "true" to allow decorators to be enabled. Angular actually requires this setting as well as the 
+// "emitDecoratorMetadata" setting set to true.
+
+// Demonstrating "lib"
+// In tsconfig.json - the "lib" setting allows us to use features from other versions of ECMAScript without changing the "target" version.
+
+// Demonstrating strict flags
+// The "strict" flag is a shorthand for several flags (noImplicitAny, strictNullChecks, etc) that sets them all to true. It's possible to set strict to "true"
+// and also set one of the other flags to "false".
