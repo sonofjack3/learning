@@ -30,11 +30,11 @@ const subscriber = {
 };
 
 // subscribe hooks the observer/subscriber to the observable and triggers the observable to emit its events
-observable.subscribe(observable);
+observable.subscribe(subscriber);
 
 // It's also possible to directly pass the required functions instead of an object
 observable.subscribe(
-  (value) => console.log("next", value),
-  (error) => console.log("error", error),
-  () => console.log("complete!")
+  (value) => console.log("next2", value),
+  (error) => console.log("error2", error),
+  () => console.log("complete2!")
 );
