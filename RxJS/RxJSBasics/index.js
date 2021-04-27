@@ -1,5 +1,5 @@
 // Demonstrating how Observables work
-import { Observable } from "rxjs";
+import { async, Observable } from "rxjs";
 
 // Observables provide the ability to asynchronously "emit" or "push" events to items that need to react to those events
 
@@ -38,3 +38,40 @@ observable.subscribe(
   (error) => console.log("error2", error),
   () => console.log("complete2!")
 );
+
+// Demonstrating how Observables can delivery values asynchronously
+const asynchronousObservable = new Observable((subscriber) => {
+  let count = 0;
+
+  // setInterval is a standard JavaScript function that accepts a function which will execute in a loop on a given delay (in this case 1000ms)
+  const id = setInterval(() => {
+    subscriber.next(count);
+    count += 1;
+  }, 1000);
+
+  // We can return a "clean-up" function from this function that will be called whenever a subscriber unsubscribes from an observable (see below)
+  return () => {
+    console.log("clean-up function called");
+    clearInterval(id);
+  };
+});
+
+console.log("before");
+
+// Calling subscribe actually returns a "subscription" object, which allows the observable to be cancelled by calling "unsubscribe".
+// Unsubscribe calls the function that is "returned" in the function passed to the Observable constructor.
+const subscription = asynchronousObservable.subscribe(subscriber);
+setTimeout(() => {
+  subscription.unsubscribe();
+}, 3500);
+
+// This will be printed before anything in the observable is emitted, because the call to "subscribe" is asynchronous, and we introduced a delay
+console.log("after");
+
+// Subscriptions can also be "added" together and cleaned up all at once
+const subscription2 = asynchronousObservable.subscribe(subscriber);
+const subscription3 = asynchronousObservable.subscribe(subscriber);
+subscription2.add(subscription3);
+setTimeout(() => {
+  subscription2.unsubscribe();
+}, 2000);
