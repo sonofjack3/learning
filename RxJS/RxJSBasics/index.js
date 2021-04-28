@@ -1,5 +1,5 @@
 // Demonstrating how Observables work
-import { async, Observable } from "rxjs";
+import { Observable } from "rxjs";
 
 // Observables provide the ability to asynchronously "emit" or "push" events to items that need to react to those events
 
