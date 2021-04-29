@@ -39,7 +39,7 @@ observable.subscribe(
   () => console.log("complete2!")
 );
 
-// Demonstrating how Observables can delivery values asynchronously
+// Demonstrating how Observables can deliver values asynchronously
 const asynchronousObservable = new Observable((subscriber) => {
   let count = 0;
 
@@ -65,7 +65,7 @@ setTimeout(() => {
   subscription.unsubscribe();
 }, 3500);
 
-// This will be printed before anything in the observable is emitted, because the call to "subscribe" is asynchronous, and we introduced a delay
+// This will be printed before anything in the observable is emitted, because the call to "subscribe" is asynchronous, and we introduced a delay in the observable
 console.log("after");
 
 // Subscriptions can also be "added" together and cleaned up all at once
