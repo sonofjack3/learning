@@ -59,7 +59,7 @@ const asynchronousObservable = new Observable((subscriber) => {
 console.log("before");
 
 // Calling subscribe actually returns a "subscription" object, which allows the observable to be cancelled by calling "unsubscribe".
-// Unsubscribe calls the function that is "returned" in the function passed to the Observable constructor.
+// Unsubscribe calls the function that is "returned" in the function passed to the Observable constructor (the "clean up" function we defined above).
 const subscription = asynchronousObservable.subscribe(subscriber);
 setTimeout(() => {
   subscription.unsubscribe();
