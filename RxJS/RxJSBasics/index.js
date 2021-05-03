@@ -148,3 +148,5 @@ fromEvent(document, "keyup")
 fromEvent(document, "keyup")
   .pipe(filter((event) => event.code === "Enter"))
   .subscribe(() => console.log("Enter pushed!"));
+
+// See scroll-progress for a more involved example of pipeable operators
