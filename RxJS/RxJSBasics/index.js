@@ -1,5 +1,5 @@
 // Demonstrating how Observables work
-import { Observable } from "rxjs";
+import { Observable, fromEvent } from "rxjs";
 
 // Observables provide the ability to asynchronously "emit" or "push" events to items that need to react to those events
 
@@ -76,3 +76,24 @@ subscription2.add(subscription3);
 setTimeout(() => {
   subscription2.unsubscribe();
 }, 2000);
+
+// Demonstrating "creation operators" for Observables. These are standalone functions that create Observables from a "producer" of data (aka a "source").
+// These operators allow us to not have to manually call the Observable constructor and manage it as we did above.
+
+// The "fromEvent" creation operator creates an observable from some DOM event, such as a mouse click on an element
+const source = fromEvent(document, "click");
+
+// The value pushed to the observer in this case will be the details of the mouse click event
+const observer = {
+  next: (val) => console.log("next", val),
+  error: (err) => console.log("error", err),
+  complete: () => console.log("complete!"),
+};
+
+const subOne = source.subscribe(observer);
+
+// It's very important to clean up subscriptions to prevent memory leaks. There are ways to automate we will see later on.
+setTimeout(() => {
+  console.log("unsubscribing");
+  subOne.unsubscribe();
+}, 3000);
