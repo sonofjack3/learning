@@ -1,5 +1,6 @@
 // Demonstrating how Observables work
 import { Observable, fromEvent, of, range, from, interval } from "rxjs";
+import { map } from "rxjs/operators";
 
 // Observables provide the ability to asynchronously "emit" or "push" events to items that need to react to those events
 
@@ -117,3 +118,29 @@ from([1, 2, 3, 4, 5]);
 // emit once a response is received for the request
 const source3 = from(fetch("https://api.github.com/users/octocat"));
 source3.subscribe(observer);
+
+// Demonstrating the "internal" operator.
+// interval accepts a duration in milliseconds that will control how often a value is emitted. The values emitted are simply numbers in a sequence.
+const timer$ = interval(1000);
+// Remember - any function we supply to "subscribe" will simply become the "next" callback for the observable.
+const subscriptionToTimer = timer$.subscribe(console.log);
+
+setTimeout(() => {
+  subscriptionToTimer.unsubscribe();
+}, 10000);
+
+// Demonstrating pipeable operators
+// Operators can perform operations on data in observable streams
+// Operators are like members of an assembly line - each item makes its way through each piped operator before getting to the observer(s)
+// Each operator called on an observable itself returns an observable, with its items manipulated or transformed in some way. This allows
+// the original observable to remain unchanged.
+
+// The "map" operator transforms each item by applying some function to each
+of(1, 2, 3, 4, 5)
+  .pipe(map((value) => value * 10))
+  .subscribe(console.log);
+
+// Typically, this would be done on some dynamic stream, such as DOM events
+fromEvent(document, "keyup")
+  .pipe(map((event) => event.code))
+  .subscribe(console.log);
