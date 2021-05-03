@@ -29,7 +29,8 @@ const subscriber = {
   complete: () => console.log("complete!"),
 };
 
-// subscribe hooks the observer/subscriber to the observable and triggers the observable to emit its events
+// subscribe hooks the observer/subscriber to the observable and triggers the observable to emit its events.
+// Observables are "cold" and won't do anything until subscribe is called.
 observable.subscribe(subscriber);
 
 // It's also possible to directly pass the required functions instead of an object
