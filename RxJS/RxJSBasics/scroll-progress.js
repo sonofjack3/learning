@@ -10,9 +10,13 @@ function calculateScrollPercentage(element) {
 }
 
 const scrollStream = fromEvent(document, "scroll");
+
 const progressStream = scrollStream.pipe(
+  // Again, need to use object destructuring to get the target from the scroll event
   map(({ target }) => calculateScrollPercentage(target.scrollingElement))
 );
+
+// Update the progress bar element with the percentage obtained from the progress stream above
 progressStream.subscribe(
   (percent) =>
     (document.querySelector(".progress-bar").style.width = `${percent}%`)
