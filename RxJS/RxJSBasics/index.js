@@ -1,8 +1,7 @@
-// Demonstrating how Observables work
 import { Observable, fromEvent, of, range, from, interval } from "rxjs";
-import { map } from "rxjs/operators";
+import { map, filter } from "rxjs/operators";
 
-// Observables provide the ability to asynchronously "emit" or "push" events to items that need to react to those events
+// Observables are "streams" of data. They provide the ability to asynchronously "emit" or "push" events to items that need to react to those events.
 
 // A new Observable accepts a function which accepts a subscriber, which it will call when it has completed its operation.
 // The "subscriber", then, is an object that "observes" the observer and reacts to its events.
@@ -144,3 +143,8 @@ of(1, 2, 3, 4, 5)
 fromEvent(document, "keyup")
   .pipe(map((event) => event.code))
   .subscribe(console.log);
+
+// Demonstrating the filter operator, which will limit the values emitted from an observable based on some conditional function
+fromEvent(document, "keyup")
+  .pipe(filter((event) => event.code === "Enter"))
+  .subscribe(() => console.log("Enter pushed!"));
