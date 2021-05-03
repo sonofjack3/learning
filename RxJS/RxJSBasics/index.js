@@ -1,5 +1,5 @@
 // Demonstrating how Observables work
-import { Observable, fromEvent, of, range } from "rxjs";
+import { Observable, fromEvent, of, range, from, interval } from "rxjs";
 
 // Observables provide the ability to asynchronously "emit" or "push" events to items that need to react to those events
 
@@ -98,7 +98,7 @@ setTimeout(() => {
   subOne.unsubscribe();
 }, 3000);
 
-// The "of" creation operator crates an observable from some data source
+// The "of" creation operator crates an observable from some a comma-separated list of data
 const source2 = of(1, 2, 3, 4, 5);
 source2.subscribe(observer);
 // "of" is synchronous (i.e. Hello will be printed after the observable is finished)
@@ -106,3 +106,14 @@ console.log("Hello");
 
 // The equivalent behavior with the "range" operator would be:
 range(1, 5);
+
+// Demonstrating the "from" creation operator
+// from is a "more intelligent" version of "of" that accepts lists, iterators, promises, etc.
+
+// This has the same behavior as the "of" call above
+from([1, 2, 3, 4, 5]);
+
+// "fetch" does an HTTP request and returns a Promise, which we can pass to the from operator. This will operate asynchronously and will only
+// emit once a response is received for the request
+const source3 = from(fetch("https://api.github.com/users/octocat"));
+source3.subscribe(observer);
