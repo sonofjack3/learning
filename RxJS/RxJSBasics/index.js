@@ -1,5 +1,5 @@
 // Demonstrating how Observables work
-import { Observable, fromEvent } from "rxjs";
+import { Observable, fromEvent, of, range } from "rxjs";
 
 // Observables provide the ability to asynchronously "emit" or "push" events to items that need to react to those events
 
@@ -97,3 +97,12 @@ setTimeout(() => {
   console.log("unsubscribing");
   subOne.unsubscribe();
 }, 3000);
+
+// The "of" creation operator crates an observable from some data source
+const source2 = of(1, 2, 3, 4, 5);
+source2.subscribe(observer);
+// "of" is synchronous (i.e. Hello will be printed after the observable is finished)
+console.log("Hello");
+
+// The equivalent behavior with the "range" operator would be:
+range(1, 5);
