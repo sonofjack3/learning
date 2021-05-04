@@ -191,3 +191,5 @@ from(userState)
     }, {}) // for non-trivial-type items, we need to supply a "seed" value to the scan (and reduce) operators so that the "previousValue" has an initial value
   )
   .subscribe(console.log);
+
+// See countdown.js for a more involved example of scan and filter
