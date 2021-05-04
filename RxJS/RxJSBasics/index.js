@@ -1,5 +1,5 @@
 import { Observable, fromEvent, of, range, from, interval } from "rxjs";
-import { map, filter, reduce, scan } from "rxjs/operators";
+import { map, filter, reduce, scan, tap } from "rxjs/operators";
 
 // Observables are "streams" of data. They provide the ability to asynchronously "emit" or "push" events to items that need to react to those events.
 
@@ -193,3 +193,14 @@ from(userState)
   .subscribe(console.log);
 
 // See countdown.js for a more involved example of scan and filter
+
+// Demonstrating the "tap" operator
+// tap allows us to "spy" on a stream
+const anotherNumbersStream = of(1, 2, 3, 4, 5);
+anotherNumbersStream
+  .pipe(
+    tap((value) => console.log("before mapping: " + value)),
+    map((value) => value * 10),
+    tap((value) => console.log("after mapping: " + value))
+  )
+  .subscribe();
