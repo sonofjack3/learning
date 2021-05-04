@@ -1,5 +1,5 @@
 import { Observable, fromEvent, of, range, from, interval } from "rxjs";
-import { map, filter, reduce } from "rxjs/operators";
+import { map, filter, reduce, scan } from "rxjs/operators";
 
 // Observables are "streams" of data. They provide the ability to asynchronously "emit" or "push" events to items that need to react to those events.
 
@@ -153,17 +153,41 @@ fromEvent(document, "keyup")
 // See scroll-progress.js for a more involved example of pipeable operators
 
 // Demonstrating the "reduce" operator
-// Reduce can accumulate data in a stream in various ways
+// Reduce can accumulate data in a stream in various ways.
 const numbers = [1, 2, 3, 4, 5];
 const numbersStream = from(numbers);
 
 // reduce accepts a function which accepts two values. The first value is the "previous" value; i.e. the value returned by the function the last time it was
 // called (obviously on the first call this will be "empty"). The "current" value is simply substituted with each value in the stream.
-const sumReducer = (previousValue, currentValue) => {
+const sumFunction = (previousValue, currentValue) => {
   console.log({ previousValue, currentValue });
   return previousValue + currentValue;
 };
 
 numbersStream
-  .pipe(reduce(sumReducer))
-  .subscribe((sum) => console.log("Total: " + sum));
+  // In this scenario, reduce will emit the sum of the numbers in the stream
+  .pipe(reduce(sumFunction))
+  .subscribe((sum) => console.log("Reduced sum: " + sum));
+
+// Demonstrating the "scan" operator
+// scan is similar to reduce, except that it emits after each call is made to its callback, rather than waiting till the end of the stream like reduce
+numbersStream
+  .pipe(scan(sumFunction))
+  .subscribe((sum) => console.log("Scanned sum: " + sum));
+
+// scan can be used to monitor the "state" of some data over time
+
+// Think of this like the state of the Brian user over time
+const userState = [
+  { name: "Brian", loggedIn: false, token: null },
+  { name: "Brian", loggedIn: true, token: null },
+  { name: "Brian", loggedIn: true, token: "123" },
+];
+from(userState)
+  .pipe(
+    scan((previousValue, currentValue) => {
+      // Using the "spread" operator to update the object's values
+      return { ...previousValue, ...currentValue };
+    }, {}) // for non-trivial-type items, we need to supply a "seed" value to the scan (and reduce) operators so that the "previousValue" has an initial value
+  )
+  .subscribe(console.log);
