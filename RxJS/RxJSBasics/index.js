@@ -1,5 +1,5 @@
 import { Observable, fromEvent, of, range, from, interval } from "rxjs";
-import { map, filter } from "rxjs/operators";
+import { map, filter, reduce } from "rxjs/operators";
 
 // Observables are "streams" of data. They provide the ability to asynchronously "emit" or "push" events to items that need to react to those events.
 
@@ -133,6 +133,7 @@ setTimeout(() => {
 // Operators are like members of an assembly line - each item makes its way through each piped operator before getting to the observer(s)
 // Each operator called on an observable itself returns an observable, with its items manipulated or transformed in some way. This allows
 // the original observable to remain unchanged.
+// Operators on a stream are passed as arguments to the "pipe" function, which is called on the observable itself.
 
 // The "map" operator transforms each item by applying some function to each
 of(1, 2, 3, 4, 5)
@@ -149,4 +150,20 @@ fromEvent(document, "keyup")
   .pipe(filter((event) => event.code === "Enter"))
   .subscribe(() => console.log("Enter pushed!"));
 
-// See scroll-progress for a more involved example of pipeable operators
+// See scroll-progress.js for a more involved example of pipeable operators
+
+// Demonstrating the "reduce" operator
+// Reduce can accumulate data in a stream in various ways
+const numbers = [1, 2, 3, 4, 5];
+const numbersStream = from(numbers);
+
+// reduce accepts a function which accepts two values. The first value is the "previous" value; i.e. the value returned by the function the last time it was
+// called (obviously on the first call this will be "empty"). The "current" value is simply substituted with each value in the stream.
+const sumReducer = (previousValue, currentValue) => {
+  console.log({ previousValue, currentValue });
+  return previousValue + currentValue;
+};
+
+numbersStream
+  .pipe(reduce(sumReducer))
+  .subscribe((sum) => console.log("Total: " + sum));
