@@ -1,5 +1,14 @@
 import { Observable, fromEvent, of, range, from, interval } from "rxjs";
-import { map, filter, reduce, scan, tap, take, first } from "rxjs/operators";
+import {
+  map,
+  filter,
+  reduce,
+  scan,
+  tap,
+  take,
+  first,
+  takeWhile,
+} from "rxjs/operators";
 
 // Observables are "streams" of data. They provide the ability to asynchronously "emit" or "push" events to items that need to react to those events.
 
@@ -221,6 +230,16 @@ numbersStreamForTakeOp.pipe(take(3)).subscribe({
 const numberStreamForFirstOp = of(1, 2, 3, 4, 5);
 numberStreamForFirstOp
   .pipe(
-    first((value) => value > 3) // will should emit 4
+    first((value) => value > 3) // should emit 4
   )
   .subscribe((value) => console.log("Emitting from first operator: " + value));
+
+// The "takeWhile" operator emits values until its predicate is found to be false
+const numberStreamForTakeWhileOp = of(1, 2, 3, 4, 5);
+numberStreamForTakeWhileOp
+  .pipe(takeWhile((value) => value <= 3)) // should emit until 3 is reached
+  .subscribe((value) =>
+    console.log("Emitting from takeWhile operator: " + value)
+  );
+
+// takeWhile might be preferable to "filter" if you want the observable to completely stop emitting items
