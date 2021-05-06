@@ -11,6 +11,8 @@ import {
   takeUntil,
   distinctUntilChanged,
   distinctUntilKeyChanged,
+  debounceTime,
+  pluck,
 } from "rxjs/operators";
 
 // Observables are "streams" of data. They provide the ability to asynchronously "emit" or "push" events to items that need to react to those events.
@@ -286,7 +288,7 @@ from(userState2)
     )
   );
 
-// distinctUntilKeyChanged is a help function for distinctUntilChanged that simplifies comparator functions. You can simply provide
+// distinctUntilKeyChanged is a helper function for distinctUntilChanged that simplifies comparator functions. You can simply provide
 // the property on which to compare each pair of items, and the operator will compare those with ===
 from(userState2)
   .pipe(
@@ -302,3 +304,26 @@ from(userState2)
         " since the name is unique"
     )
   );
+
+// Demonstrating "rate-limiting" operators
+// Rate-limiting operators are special time-based filtering operators
+
+// The "debounceTime" operator only emits items that arrive in the stream after a specified amount of time
+const click$ = fromEvent(document, "click");
+click$
+  .pipe(debounceTime(1000)) //only emit click events that arrive 1 second after the last received click
+  .subscribe((value) =>
+    console.log("Click event " + value + " occurred after 1 second")
+  );
+
+// Another example using debounceTime - logging user input on keyUp, but only if 1 second has passed since the last emitted event
+const inputBox = document.getElementById("text-input");
+const inputStream = fromEvent(inputBox, "keyup");
+inputStream
+  .pipe(
+    debounceTime(1000),
+    // Let's also map the key events to the values actually input into the text box, and ignore the non-unique values
+    map((event) => event.target.value),
+    distinctUntilChanged()
+  )
+  .subscribe(() => console.log("Text box content: " + inputBox.value));
