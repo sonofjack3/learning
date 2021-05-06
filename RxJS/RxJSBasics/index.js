@@ -13,6 +13,7 @@ import {
   distinctUntilKeyChanged,
   debounceTime,
   pluck,
+  throttleTime,
 } from "rxjs/operators";
 
 // Observables are "streams" of data. They provide the ability to asynchronously "emit" or "push" events to items that need to react to those events.
@@ -312,9 +313,7 @@ from(userState2)
 const click$ = fromEvent(document, "click");
 click$
   .pipe(debounceTime(1000)) //only emit click events that arrive 1 second after the last received click
-  .subscribe((value) =>
-    console.log("Click event " + value + " occurred after 1 second")
-  );
+  .subscribe(() => console.log("debounceTime allowing click after 1 second"));
 
 // Another example using debounceTime - logging user input on keyUp, but only if 1 second has passed since the last emitted event
 const inputBox = document.getElementById("text-input");
@@ -327,3 +326,14 @@ inputStream
     distinctUntilChanged()
   )
   .subscribe(() => console.log("Text box content: " + inputBox.value));
+
+// The "throttleTime" operator is similar to debounceTime, but it is not based on the time since the last emitted item, just a general fixed interval.
+// By default, it will ignore items received during that window, and only emit any events received at the beginning of the interval.
+const clickStreamWithThrottleTimeOp = fromEvent(document, "click");
+clickStreamWithThrottleTimeOp
+  .pipe(throttleTime(3000)) // only emit events received every 3 seconds
+  .subscribe(() =>
+    console.log("throttleTime allowing click event after 3 seconds")
+  );
+
+// See scroll-progress.js for an example of a slightly different usage of throttleTime
