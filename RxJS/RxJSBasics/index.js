@@ -204,3 +204,5 @@ anotherNumbersStream
     tap((value) => console.log("after mapping: " + value))
   )
   .subscribe();
+
+// There is a temptation to have tap "do" things and perform side-effects, but this is generally not good practice.
