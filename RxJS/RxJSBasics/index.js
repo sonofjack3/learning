@@ -8,6 +8,7 @@ import {
   take,
   first,
   takeWhile,
+  takeUntil,
 } from "rxjs/operators";
 
 // Observables are "streams" of data. They provide the ability to asynchronously "emit" or "push" events to items that need to react to those events.
@@ -242,4 +243,12 @@ numberStreamForTakeWhileOp
     console.log("Emitting from takeWhile operator: " + value)
   );
 
-// takeWhile might be preferable to "filter" if you want the observable to completely stop emitting items
+// The "takeUntil" operator is unique in that it accepts another observable as its argument.
+// The observable on which takeUntil is called will emit until the observable that is passed to takeUntil emits a value
+const numbersStreamForTakeUntilOp = interval(1000);
+const clickStream = fromEvent(document, "click");
+numbersStreamForTakeUntilOp.pipe(takeUntil(clickStream)).subscribe({
+  next: (value) => console.log("Emitting until click! " + value),
+  complete: () =>
+    console.log("Received a click so stopping the takeUntil stream"),
+});
