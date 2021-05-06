@@ -1,5 +1,5 @@
 import { Observable, fromEvent, of, range, from, interval } from "rxjs";
-import { map, filter, reduce, scan, tap } from "rxjs/operators";
+import { map, filter, reduce, scan, tap, take, first } from "rxjs/operators";
 
 // Observables are "streams" of data. They provide the ability to asynchronously "emit" or "push" events to items that need to react to those events.
 
@@ -206,3 +206,21 @@ anotherNumbersStream
   .subscribe();
 
 // There is a temptation to have tap "do" things and perform side-effects, but this is generally not good practice.
+
+// Demonstrating "filtering" operators
+
+// The "take" operator limits the amount of items an observable stream emits
+
+const numbersStreamForTakeOp = of(1, 2, 3, 4, 5);
+numbersStreamForTakeOp.pipe(take(3)).subscribe({
+  next: (num) => console.log("Emitting take value of " + num),
+  complete: () => console.log("Complete!"),
+});
+
+// The "first" operator is sort of a combination of filter and take - it will emit the first time a predicate is satisfied, and never again
+const numberStreamForFirstOp = of(1, 2, 3, 4, 5);
+numberStreamForFirstOp
+  .pipe(
+    first((value) => value > 3) // will should emit 4
+  )
+  .subscribe((value) => console.log("Emitting from first operator: " + value));
