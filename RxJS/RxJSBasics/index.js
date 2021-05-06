@@ -9,6 +9,8 @@ import {
   first,
   takeWhile,
   takeUntil,
+  distinctUntilChanged,
+  distinctUntilKeyChanged,
 } from "rxjs/operators";
 
 // Observables are "streams" of data. They provide the ability to asynchronously "emit" or "push" events to items that need to react to those events.
@@ -252,3 +254,51 @@ numbersStreamForTakeUntilOp.pipe(takeUntil(clickStream)).subscribe({
   complete: () =>
     console.log("Received a click so stopping the takeUntil stream"),
 });
+
+// The "distinctUntilChanged" operator will only emit values that are unique/distinct from the previous emitted value
+const numbersStreamForDistinctUntilChangedOp = of(1, 1, 2, 2, 3, 4, 4, 5);
+numbersStreamForDistinctUntilChangedOp
+  .pipe(distinctUntilChanged())
+  .subscribe((value) =>
+    console.log(
+      "Emitting unique " + value + " from distinctUntilChanged operator"
+    )
+  );
+
+// distinctUntilChanged compares using === by default, but you can provide your own "comparator" function
+const userState2 = [
+  { name: "Evan", loggedIn: false, token: null },
+  { name: "Evan", loggedIn: true, token: null },
+  { name: "Brian", loggedIn: true, token: "123" },
+];
+from(userState2)
+  .pipe(
+    scan((previousValue, currentValue) => {
+      return { ...previousValue, ...currentValue };
+    }, {}),
+    distinctUntilChanged((prev, curr) => prev.name === curr.name)
+  )
+  .subscribe((value) =>
+    console.log(
+      "With distinctUntilChanged, emitting user " +
+        value.name +
+        " since the name is unique"
+    )
+  );
+
+// distinctUntilKeyChanged is a help function for distinctUntilChanged that simplifies comparator functions. You can simply provide
+// the property on which to compare each pair of items, and the operator will compare those with ===
+from(userState2)
+  .pipe(
+    scan((previousValue, currentValue) => {
+      return { ...previousValue, ...currentValue };
+    }, {}),
+    distinctUntilKeyChanged("name")
+  )
+  .subscribe((value) =>
+    console.log(
+      "With distinctUntilKeyChanged, emitting user " +
+        value.name +
+        " since the name is unique"
+    )
+  );
