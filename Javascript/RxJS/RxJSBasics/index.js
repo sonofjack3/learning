@@ -14,6 +14,7 @@ import {
   debounceTime,
   pluck,
   throttleTime,
+  sampleTime,
 } from "rxjs/operators";
 
 // Observables are "streams" of data. They provide the ability to asynchronously "emit" or "push" events to items that need to react to those events.
@@ -337,3 +338,10 @@ clickStreamWithThrottleTimeOp
   );
 
 // See scroll-progress.js for an example of a slightly different usage of throttleTime
+
+// sampleTime emits the most recent item received from a source observable, based on a time interval. Earlier items received within that interval window
+// are simply ignored
+const clickStream2 = fromEvent(document, 'click');
+clickStream2.pipe(sampleTime(4000), map(({clientX, clientY}) => ({
+  clientX, clientY
+}))).subscribe((value) => console.log("Most recent click position received in the last 4 seconds: X = " + value.clientX + ", Y = " + value.clientY));
