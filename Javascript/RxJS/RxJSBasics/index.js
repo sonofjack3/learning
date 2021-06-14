@@ -1,4 +1,4 @@
-import { Observable, fromEvent, of, range, from, interval } from "rxjs";
+import { Observable, fromEvent, of, range, from, interval, timer } from "rxjs";
 import {
   map,
   filter,
@@ -15,6 +15,7 @@ import {
   pluck,
   throttleTime,
   sampleTime,
+  sample,
 } from "rxjs/operators";
 
 // Observables are "streams" of data. They provide the ability to asynchronously "emit" or "push" events to items that need to react to those events.
@@ -344,4 +345,12 @@ clickStreamWithThrottleTimeOp
 const clickStream2 = fromEvent(document, 'click');
 clickStream2.pipe(sampleTime(4000), map(({clientX, clientY}) => ({
   clientX, clientY
-}))).subscribe((value) => console.log("Most recent click position received in the last 4 seconds: X = " + value.clientX + ", Y = " + value.clientY));
+}))).subscribe((value) => console.log("Using sampleTime, most recent click position received in the last 4 seconds: X = " + value.clientX + ", Y = " + value.clientY));
+
+// sample is similar to sampleTime, but emits based on the output of another observable (the "notifier"), instead of a fixed time interval
+// This example is effectively the same as the one above, but uses "sample" and a source time interval observable (and emits every 6 seconds instead of 4)
+const clickStream3 = fromEvent(document, 'click');
+const timerStream = interval(6000); 
+clickStream3.pipe(sample(timerStream), map(({clientX, clientY}) => ({
+  clientX, clientY
+}))).subscribe((value) => console.log("Using sample, most recent click posotion received in the last 6 seconds: X = " + value.clientX + ", Y = " + value.clientY));
