@@ -353,4 +353,4 @@ const clickStream3 = fromEvent(document, 'click');
 const timerStream = interval(6000); 
 clickStream3.pipe(sample(timerStream), map(({clientX, clientY}) => ({
   clientX, clientY
-}))).subscribe((value) => console.log("Using sample, most recent click posotion received in the last 6 seconds: X = " + value.clientX + ", Y = " + value.clientY));
+}))).subscribe((value) => console.log("Using sample, most recent click position received in the last 6 seconds: X = " + value.clientX + ", Y = " + value.clientY));
